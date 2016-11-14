@@ -1,0 +1,6 @@
+# Jekyll config file for sfuco-site
+# Reinier E.
+# 2016
+
+markdown: redcarpet
+baseurl: sfuco-test
