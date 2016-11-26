@@ -96,9 +96,10 @@ textarea {
    ========================================================================== */
 
 
-
-
-
+#banner {
+    background-image: url("../img/stock2.jpg");
+    background-size: cover;
+}
 
 
 

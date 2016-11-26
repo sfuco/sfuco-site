@@ -4,3 +4,4 @@
 
 markdown: redcarpet
 baseurl: sfuco-test
+exclude: ['README.md', 'LICENSE.txt']
