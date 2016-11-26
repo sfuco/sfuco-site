@@ -3,5 +3,6 @@
 # 2016
 
 markdown: redcarpet
-baseurl: sfuco-test
+baseurl: ""
+url: "revangel.github.io"
 exclude: ['README.md', 'LICENSE.txt']
