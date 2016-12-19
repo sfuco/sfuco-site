@@ -92,13 +92,80 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Our custom styles
    ========================================================================== */
+/* Typgraphy */
+@font-face {
+    font-family: ch-bold;
+    src: url(fonts/CooperHewitt-Bold.otf);
+}
 
+@font-face {
+    font-family: ch-book;
+    src: url(fonts/CooperHewitt-Book.otf);
+}
 
-#banner {
-    background-image: url("../img/stock2.jpg");
-    background-size: cover;
+@font-face {
+    font-family: ch-thin;
+    src: url(fonts/CooperHewitt-Thin.otf);
+}
+
+/* Classes */
+
+.logo {
+    float: left;
+}
+
+.logo img {
+    max-width: 72px;
+    height: 72px;
+}
+
+.navigation {
+    float: right;
+}
+
+.navigation li {
+    display: table-cell;
+    vertical-align: middle;
+    float:left;
+    list-style-type: none;
+}
+
+.navigation a {
+    font-family: ch-thin;
+    font-size: 16px;
+    display: block;
+    padding: 12px;
+    color: rgb(26,26,26);
+    text-decoration: none;
+}
+
+#home {
+    height: 100vh;
+    position: relative;
+}
+
+#title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#sfu {
+    font-family: ch-book;
+    font-size: 48px;
+    display: inline-block;
+}
+
+#concert-orchestra {
+    font-family: ch-bold;
+    font-size: 48px;
+    display: inline-block;
+}
+
+#about {
+    height: 100vh;
 }
 
 
@@ -107,8 +174,16 @@ textarea {
 
 
 
+/* Debugging Classes */
+.debug-bg-black {
+    background-color: black;
+    outline-color: red;
+}
 
-
+.debug-bg-blue {
+    background-color: blue;
+    outline-color: red;
+}
 
 
 
