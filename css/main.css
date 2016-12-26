@@ -94,7 +94,7 @@ textarea {
 /* ==========================================================================
    Our custom styles
    ========================================================================== */
-/* Typgraphy */
+/* Global typgraphy rules */
 @font-face {
     font-family: ch-bold;
     src: url(fonts/CooperHewitt-Bold.otf);
@@ -110,15 +110,68 @@ textarea {
     src: url(fonts/CooperHewitt-Thin.otf);
 }
 
-/* Classes */
+.ch-bold {
+    font-family: ch-bold;
+}
+
+.ch-book {
+    font-family: ch-book;
+}
+
+.ch-thin {
+    font-family: ch-thin;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+/* Global layout classes */
+.inline {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.flex-element {
+    margin: auto;
+}
+
+.flex-element img {
+    height: 200px;
+    width: 200px;
+}
+
+/*
+    Site-specific rules:
+    These are organized in the same
+    order as the DOM
+*/
 
 .logo {
     float: left;
 }
 
 .logo img {
-    max-width: 72px;
     height: 72px;
+    max-width: 72px;
 }
 
 .navigation {
@@ -127,17 +180,17 @@ textarea {
 
 .navigation li {
     display: table-cell;
-    vertical-align: middle;
     float:left;
     list-style-type: none;
+    vertical-align: middle;
 }
 
 .navigation a {
+    color: rgb(26,26,26);
+    display: block;
     font-family: ch-thin;
     font-size: 16px;
-    display: block;
     padding: 12px;
-    color: rgb(26,26,26);
     text-decoration: none;
 }
 
@@ -146,33 +199,34 @@ textarea {
     position: relative;
 }
 
-#title {
+#home-title {
+    bottom: 0px;
+    left: 0px;
     position: absolute;
-    bottom: 0;
-    left: 0;
 }
 
-#sfu {
-    font-family: ch-book;
-    font-size: 48px;
-    display: inline-block;
+footer {
+    padding-top: 20px;
+    background: rgb(26,26,26);
+    width: 100vw;
 }
 
-#concert-orchestra {
-    font-family: ch-bold;
-    font-size: 48px;
-    display: inline-block;
+footer li {
+    list-style-type: none;
+    margin-bottom: 5px;
 }
 
-#about {
-    height: 100vh;
+footer a {
+    color: white;
+    font-family: ch-thin;
+    font-size: 14px;
+    text-decoration: none;
 }
 
-
-
-
-
-
+.foothr{
+    margin: 0px;
+    width: 100px;
+}
 
 /* Debugging Classes */
 .debug-bg-black {
