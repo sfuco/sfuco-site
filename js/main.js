@@ -7,6 +7,7 @@
 
 jQuery(document).ready(function()
 {
+
     var verticalNav = jQuery('#vertical-nav');
 
     // Initialize the vertical nav section as hidden
@@ -14,7 +15,7 @@ jQuery(document).ready(function()
     // horizontal nav visible
     verticalNav.hide();
 
-    jQuery(window).on('scroll', function()
+    jQuery(window).on("scroll", function()
     {
         updateVerticalNav();
     });
@@ -22,15 +23,48 @@ jQuery(document).ready(function()
     function updateVerticalNav ()
     {
         var windowPosition = jQuery(window).scrollTop();
-        var topOfPage = jQuery('section:first').offset().top;
+        var topOfPage = jQuery("section:first").offset().top;
 
         if(windowPosition >= topOfPage)
         {
             verticalNav.fadeIn();
+            updateNavColors();
         }
         else
         {
             verticalNav.fadeOut();
         }
     }
+
+    function updateNavColors ()
+    {
+        var windowPosition = jQuery(document).scrollTop();
+        
+        jQuery("section").each(function(index)
+        {
+            if(index < jQuery("section").size()-1)
+            {
+                var currentSectionTop = jQuery(this).offset().top;
+                var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
+
+                var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
+                var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
+
+                console.log("current: " + windowPosition);
+                if(windowPosition >= currentSectionTop && windowPosition < currentSectionBottom)
+                {
+
+                    currentSection.addClass("active-nav");
+                    jQuery("#vertical-nav a").not("#" + currentSectionID).each(function()
+                    {
+                        jQuery(this).removeClass("active-nav");
+                    });
+                }
+
+            }
+
+        });
+
+    }
+
 });

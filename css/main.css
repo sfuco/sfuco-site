@@ -94,7 +94,7 @@ textarea {
 /* ==========================================================================
    Our custom styles
    ========================================================================== */
-/* Global typgraphy rules */
+/* Global default typgraphy rules */
 @font-face {
     font-family: ch-bold;
     src: url(fonts/CooperHewitt-Bold.otf);
@@ -135,7 +135,7 @@ p {
 }
 
 
-/* Global layout classes */
+/* Global default layout classes */
 .inline {
     display: inline-block;
 }
@@ -154,13 +154,8 @@ p {
     margin: auto;
 }
 
-.flex-element img {
-    height: 200px;
-    width: 200px;
-}
-
 /*
-    Site-specific rules:
+    Site-specific default rules:
     These are organized in the same
     order as the DOM
 */
@@ -175,9 +170,7 @@ p {
 }
 
 .navigation a {
-    color: rgb(26,26,26);
     display: block;
-    font-family: ch-thin;
     font-size: 16px;
     padding: 12px;
     text-decoration: none;
@@ -221,6 +214,11 @@ p {
     padding-top: 10vh;
 }
 
+.exec-img {
+    height: 200px;
+    width: 200px;
+}
+
 footer {
     padding-top: 20px;
     background: rgb(26,26,26);
@@ -233,8 +231,6 @@ footer li {
 }
 
 footer a {
-    color: white;
-    font-family: ch-thin;
     font-size: 14px;
     text-decoration: none;
 }
@@ -243,6 +239,23 @@ footer a {
     margin: 0px;
     width: 100px;
 }
+
+/* Event-driven Classes */
+.default-nav {
+    font-family: ch-thin;
+    color: rgb(26,26,26); /* Eerie Black */
+}
+
+.default-footer-nav {
+    font-family: ch-thin;
+    color: white;
+}
+
+.active-nav {
+    font-family: ch-book;
+    color: rgb(5,47,95); /* Cool Black */
+}
+
 
 /* Debugging Classes */
 .debug-bg-black {
