@@ -174,17 +174,6 @@ p {
     max-width: 72px;
 }
 
-.navigation {
-    float: right;
-}
-
-.navigation li {
-    display: table-cell;
-    float:left;
-    list-style-type: none;
-    vertical-align: middle;
-}
-
 .navigation a {
     color: rgb(26,26,26);
     display: block;
@@ -194,8 +183,42 @@ p {
     text-decoration: none;
 }
 
+#horizontal-nav {
+    float: right;
+}
+
+#horizontal-nav li {
+    display: table-cell;
+    float:left;
+    list-style-type: none;
+    vertical-align: middle;
+}
+
+#vertical-nav ul {
+    left: 12px;
+    position: fixed;
+    top: 25vh;
+}
+
+#vertical-nav li {
+    clear: left;
+    display: block;
+    float: left;
+    list-style-type: none;
+    margin: 1px;
+    vertical-align: left;
+}
+
 #home-title {
     padding-top: 75vh;
+}
+
+#about-text {
+    padding-top: 25vh;
+}
+
+#about-images {
+    padding-top: 10vh;
 }
 
 footer {

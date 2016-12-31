@@ -52,7 +52,19 @@
 
     <body>
         <!-- Content -->
-        <div class="container">
+
+        <nav id="vertical-nav" class="navigation">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#execs">the execs</a></li>
+                <li><a href="#news">news</a></li>
+                <li><a href="#contact">contact</a></li>
+
+            </ul>
+        </nav>
+
+        <div id="content" class="container">
 
             <div class="row">
                 <div class="logo">
@@ -60,13 +72,13 @@
                         <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
                     </a>
                 </div>
-                <nav class="navigation">
+                <nav id="horizontal-nav" class="navigation">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about</a></li>
-                        <li><a href="#">the execs</a></li>
-                        <li><a href="#">news</a></li>
-                        <li><a href="#">contact</a></li>
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#execs">the execs</a></li>
+                        <li><a href="#news">news</a></li>
+                        <li><a href="#contact">contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -91,7 +103,7 @@
                         </p>
                 </div>
                 <div id="about-images" class="four columns">
-                    <p>Text</p>
+                    <p>Images</p>
                 </div>
             </section>
 
