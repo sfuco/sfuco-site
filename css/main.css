@@ -151,6 +151,7 @@ p {
 }
 
 .flex-element {
+    position: relative;
     margin: auto;
 }
 
@@ -214,10 +215,37 @@ p {
     padding-top: 10vh;
 }
 
-.exec-img {
+.exec-bio img {
     height: 200px;
     width: 200px;
 }
+
+.exec-bio:hover img {
+
+}
+
+.exec-bio:hover p{
+    color: white;
+    display: block;
+    font-family: ch-book;
+    font-size: 24px;
+    left: 25px;
+    position: absolute;
+    top: 150px;
+}
+
+.exec-bio:hover .overlay {
+    background-color: rgb(26,26,26);
+    opacity:0.5;
+    width:100%;
+    height:100%;
+    position:absolute;
+}
+
+.exec-bio p {
+    display: none;
+}
+
 
 footer {
     padding-top: 20px;
