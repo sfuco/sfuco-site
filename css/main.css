@@ -145,15 +145,17 @@ p {
 }
 
 .flex-container {
-    display: flex;
+    display: -webkit-flex;
     flex-wrap: wrap;
-    height: 100vh;
 }
 
 .flex-element {
     position: relative;
-    margin: auto;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
 }
+
 
 /*
     Site-specific default rules:
