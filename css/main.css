@@ -220,7 +220,7 @@ section {
     width: 200px;
 }
 
-.exec-bio:hover > span{
+.exec-bio:hover span{
     color: white;
     display: block;
     font-family: ch-book;
@@ -261,7 +261,7 @@ section {
 }
 
 .exec-detail {
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,255,255,1);
     width: 50%;
     margin-top: 5vh;
     margin-left: auto;
