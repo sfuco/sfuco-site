@@ -39,7 +39,7 @@ jQuery(document).ready(function()
     function updateNavColors ()
     {
         var windowPosition = jQuery(document).scrollTop();
-        
+
         jQuery("section").each(function(index)
         {
             if(index < jQuery("section").size()-1)
