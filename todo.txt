@@ -36,9 +36,10 @@ Concrete Tasks
     [x] Darken on hover
     [x] Exec detail popup on click
     Refinements:
+    [] Close when you click outside of the popup
     [] Transition when popup appears
-    [] Use Jekyll collections to manage content
-    
+    [x] Use Jekyll collections to manage content
+
 
 [] News Section
     [] Markup (Jekyll)
