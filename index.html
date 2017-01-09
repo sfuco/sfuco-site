@@ -27,36 +27,12 @@
         <![endif]-->
 
     <body>
-        <nav id="vertical-nav" class="navigation">
-            <ul>
-                <li><a id="v-home" class="default-nav" href="#home">home</a></li>
-                <li><a id="v-about" class="default-nav" href="#about">about</a></li>
-                <li><a id="v-execs" class="default-nav" href="#execs">the execs</a></li>
-                <li><a id="v-news" class="default-nav" href="#news">news</a></li>
-                <li><a id="v-contact" class="default-nav" href="#contact">contact</a></li>
-
-            </ul>
-        </nav>
+        {% include vertical-nav.html %}
 
         <div id="content" class="container">
 
-            <div class="row">
-                <div class="logo">
-                    <a href="#">
-                        <img src="/img/logo.png" alt="logo" />
-                    </a>
-                </div>
-                <nav id="horizontal-nav" class="navigation">
-                    <ul>
-                        <li><a class="default-nav" href="#home">home</a></li>
-                        <li><a class="default-nav" href="#about">about</a></li>
-                        <li><a class="default-nav" href="#execs">the execs</a></li>
-                        <li><a class="default-nav" href="#news">news</a></li>
-                        <li><a class="default-nav" href="#contact">contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-
+            {% include navbar.html %}
+            
             <section id="home" class="row">
                 {% include home.html %}
             </section>
