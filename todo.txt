@@ -1,0 +1,47 @@
+SFUCO Site TODO
+
+Last Updated: 1/6/2017
+
+----------------------------
+High Level Wishlist
+(Not all may be implemented)
+----------------------------
+[ ] Personalized greeting when member is logged in
+[ ] Modify nav trigger to be a music staff
+[ ] Playable instruments somewhere (interactivity)
+[ ] Exec broadcasting ability
+[ ] Member-member messaging?
+[ ] Mobile site
+[ ] Animated map to forum chambers
+
+---------------------
+Concrete Tasks
+---------------------
+[-] Vertical Navbar
+    [x] Markup
+    [x] Hide/Show
+    [x] Detect Page
+    [ ] Responsive
+
+[-] Home
+    [] Image?
+
+[-] About Section
+    [] Markup
+    [] Image Vector animate on reveal
+
+[-] Exec Section
+    [x] Markup
+    [x] Show name on hover
+    [x] Darken on hover
+    [x] Exec detail popup on click
+    Refinements:
+    [] Transition when popup appears
+    [] Use Jekyll collections to manage content
+    
+
+[] News Section
+    [] Markup (Jekyll)
+
+[] Contact section
+    [] Markup
