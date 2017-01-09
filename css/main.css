@@ -138,6 +138,10 @@ p {
     font-size: 12px;
 }
 
+li {
+    list-style-type: none;
+}
+
 /* Global default layout classes and rules */
 .inline {
     display: inline-block;
@@ -192,7 +196,6 @@ section {
 #horizontal-nav li {
     display: table-cell;
     float:left;
-    list-style-type: none;
     vertical-align: middle;
 }
 
@@ -206,7 +209,6 @@ section {
     clear: left;
     display: block;
     float: left;
-    list-style-type: none;
     margin: 1px;
     vertical-align: left;
 }
