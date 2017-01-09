@@ -1,0 +1,9 @@
+<h2 class="inline ch-bold">news</h2>
+<ul>
+    {% for news in site.posts %}
+    <li>
+        <a href="">{{news.title}}</a>
+        <p>{{news.content}}</p>
+    </li>
+    {% endfor %}
+</ul>
