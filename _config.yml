@@ -12,3 +12,7 @@ exclude: ['README.md', 'LICENSE.txt']
 title: sfuco.
 description: sfu concert orchestra's homepage
 favicon: img/favicons/sfuco_favicon.png
+
+# Collections: For managing non-post content
+collections:
+    - execs
