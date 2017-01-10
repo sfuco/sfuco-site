@@ -142,6 +142,15 @@ li {
     list-style-type: none;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(5,47,95); /* Cool Black */
+}
+
 /* Global default layout classes and rules */
 .inline {
     display: inline-block;
@@ -186,7 +195,6 @@ section {
     display: block;
     font-size: 16px;
     padding: 12px;
-    text-decoration: none;
 }
 
 #horizontal-nav {
@@ -319,7 +327,6 @@ footer li {
 
 footer a {
     font-size: 14px;
-    text-decoration: none;
 }
 
 .footer-hr{
@@ -350,7 +357,6 @@ footer a {
     float: right;
     padding-top: 2.5%;
     padding-right: 2.5%;
-    text-decoration: none;
 }
 
 /* Debugging Classes */
