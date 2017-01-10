@@ -134,6 +134,10 @@ h3 {
     font-size: 24px;
 }
 
+h4 {
+    font-size: 16px;
+}
+
 p {
     font-size: 12px;
 }
@@ -313,6 +317,19 @@ section {
     font-family: ch-book;
     text-align: left;
 }
+
+.news-title {
+    font-family: ch-bold;
+}
+
+.news-date {
+    font-family: ch-thin;
+}
+
+.news-content {
+    font-family: ch-book;
+}
+
 
 footer {
     padding-top: 20px;
