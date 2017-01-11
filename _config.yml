@@ -1,0 +1,18 @@
+# Jekyll config file for sfuco-site
+# Reinier E.
+# 2016
+
+# Technical networking
+markdown: kramdown
+baseurl: ""
+url: "revangel.github.io"
+exclude: ['README.md', 'LICENSE.txt']
+
+# Content
+title: sfuco.
+description: sfu concert orchestra's homepage
+favicon: img/favicons/sfuco_favicon.png
+
+# Collections: For managing non-post content
+collections:
+    - execs

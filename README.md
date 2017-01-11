@@ -1,2 +1,0 @@
-# sfuco-site
-SFUCO Website
