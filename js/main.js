@@ -49,8 +49,7 @@ jQuery(document).ready(function()
 
                 var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
                 var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
-
-                console.log("current: " + windowPosition);
+                
                 if(windowPosition >= currentSectionTop && windowPosition < currentSectionBottom)
                 {
 
