@@ -71,7 +71,7 @@ a {
 }
 
 a:hover {
-    color: rgb(5,47,95); /* Cool Black */
+    font-family: ch-book;
 }
 
 /*
