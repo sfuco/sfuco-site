@@ -141,7 +141,7 @@ section {
 
 #horizontal-nav li {
     display: table-cell;
-    float:left;
+    float: left;
     vertical-align: middle;
 }
 
@@ -245,21 +245,47 @@ footer {
     padding-top: 20px;
     background: rgb(26,26,26);
     width: 100vw;
+    color: white;
+    font-family: ch-thin;
+    text-align: center;
 }
 
 footer li {
     list-style-type: none;
-    margin-bottom: 5px;
+    display: inline;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
 
-footer a {
-    font-size: 14px;
+#social-links {
+    justify-content: center;
+    margin-bottom: 2.5rem /* since skeleton doesn't have margins for img only rows */
 }
 
-.footer-hr{
-    margin: 0px;
-    width: 100px;
+#social-links .flex-element {
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    margin-left: 1rem;
 }
+
+#social-links .flex-element a img{
+    height: 100%;
+}
+
+.social-link-overlay {
+    position:absolute;
+    opacity: 0;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+.social-link:hover .social-link-overlay {
+    opacity: 1;
+}
+
 
 /*
     Event-driven Classes
@@ -268,11 +294,6 @@ footer a {
 .default-nav {
     font-family: ch-thin;
     color: rgb(26,26,26); /* Eerie Black */
-}
-
-.default-footer-nav {
-    font-family: ch-thin;
-    color: white;
 }
 
 .active-nav {
