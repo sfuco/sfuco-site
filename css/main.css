@@ -186,7 +186,6 @@ section {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    text-align: center; /* Also centers image */
 }
 
 .exec-detail-overlay:target {
@@ -202,9 +201,6 @@ section {
 
 .exec-detail-image img {
     max-height: 50vh;
-}
-
-.exec-detail-image img {
     max-width: 100%;
     height: auto;
 }
