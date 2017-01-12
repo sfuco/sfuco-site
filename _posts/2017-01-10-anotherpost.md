@@ -1,5 +1,4 @@
 ---
-layout: news
 title: Some Event Coming Up
 category: news
 ---

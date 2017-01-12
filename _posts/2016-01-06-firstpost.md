@@ -1,5 +1,4 @@
 ---
-layout: news
 title: First Post
 category: news
 ---

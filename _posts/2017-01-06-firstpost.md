@@ -1,5 +1,4 @@
 ---
-layout: news
 title: First News Item
 category: news
 ---
