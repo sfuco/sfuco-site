@@ -4,9 +4,11 @@
  *  Reinier E.
  *  r.evangel@live.com
  *  2016-2017
- */
+*/
 
-/* Global default typgraphy defaults */
+/*
+    Global default typgraphy defaults
+*/
 @font-face {
     font-family: ch-bold;
     src: url(fonts/CooperHewitt-Bold.otf);
@@ -32,6 +34,11 @@
 
 .ch-thin {
     font-family: ch-thin;
+}
+
+body {
+    font-family: ch-book;
+    color: rgb(26,26,26);
 }
 
 h1 {
@@ -67,7 +74,9 @@ a:hover {
     color: rgb(5,47,95); /* Cool Black */
 }
 
-/* Global default layout classes and rules */
+/*
+    Global default layout classes and rules
+*/
 .inline {
     display: inline-block;
 }
@@ -94,8 +103,7 @@ section {
 
 /*
     Site-specific default rules:
-    These are organized in the same
-    order as the DOM
+        Organized in the same order as the DOM
 */
 
 .logo {
@@ -263,7 +271,10 @@ footer a {
     width: 100px;
 }
 
-/* Event-driven Classes */
+/*
+    Event-driven Classes
+        Used by JS functions
+*/
 .default-nav {
     font-family: ch-thin;
     color: rgb(26,26,26); /* Eerie Black */
@@ -288,7 +299,9 @@ footer a {
     padding-right: 2.5%;
 }
 
-/* Debugging Classes */
+/*
+    Debugging Classes
+*/
 .debug-bg-black {
     background-color: black;
     outline-color: red;
