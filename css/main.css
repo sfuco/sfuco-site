@@ -246,7 +246,7 @@ section {
 footer {
     padding-top: 20px;
     background: rgb(26,26,26);
-    width: 100vw;
+    width: 100%;
     color: white;
     font-family: ch-thin;
     text-align: center;
