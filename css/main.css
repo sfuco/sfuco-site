@@ -156,6 +156,7 @@ section {
 }
 
 .exec-bio:hover span{
+    font-family: ch-bold;
     color: white;
     display: block;
     font-size: 24px;
