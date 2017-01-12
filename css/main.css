@@ -88,6 +88,7 @@ a:hover {
 .flex-container {
     display: -webkit-flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .flex-element {
@@ -258,7 +259,6 @@ footer li {
 }
 
 #social-links {
-    justify-content: center;
     margin-bottom: 2.5rem /* since skeleton doesn't have margins for img only rows */
 }
 
