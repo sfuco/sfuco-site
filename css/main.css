@@ -244,29 +244,20 @@ section {
 }
 
 #contact-form .modal-box{
+    display: block;
+    width: 100%;
+    height: 80%;
     padding: 50px 100px;
-}
-
-#contact-form .toolbar {
-    clear: none;
-    float: right;
+    overflow: hidden;
 }
 
 #contact-logo {
-    height: 100px;;
-    width: 100px;
-}
-
-#contact-form h1 {
-    font-size: 24px;
-}
-
-#contact-form h2 {
-    font-size: 16px;
-}
-
-#contact-form hr {
     width: 100%;
+    height: auto;
+}
+
+#letterhead h3, #letterhead h4 {
+    font-size: 100%;
 }
 
 #contact-form-body span {
@@ -276,19 +267,40 @@ section {
 }
 
 #contact-form-body input[name=subject] {
-    width: 300px;
+    width: 15vw;
 }
 
 #contact-form-body input {
     border: none;
     border-bottom: 1px solid rgb(26,26,26);
     border-radius: 0px;
+    padding-bottom: 0px;
+    width: 10vw;
 }
 
 #contact-form-body input:focus {
     border-bottom: 1px solid rgb(81, 203, 238);
 }
 
+#contact-form-body input[type=submit] {
+    font-family: ch-bold;
+    border: 1px solid rgb(26,26,26);
+    float: right;
+}
+
+#contact-form-body input[type=submit]:hover {
+    color: white;
+    background-color: rgb(26,26,26);
+}
+
+#contact-form-body select {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    border-top: 1px solid rgb(26,26,26);
+    border-bottom: 1px solid rgb(26,26,26);
+    border-radius: 0px;
+}
 
 footer {
     padding-top: 20px;

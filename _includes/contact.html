@@ -12,27 +12,30 @@
 <div class="modal-overlay" id="contact-form">
     <div class="modal-box container">
         <div class="row">
-            <div class="two columns">
-                <img id="contact-logo" src="{{site.baseurl}}/img/logo.png" alt="logo"/>
-            </div>
-            <div class="eight columns">
-                <h1>
-                    sfu
-                    <span class="ch-bold">concert orchestra</span>
-                </h1>
-                <h2>
-                    simon sraser university, <br />
-                    burnaby, bc
-                </h2>
-            </div>
-            <div class="toolbar two columns">
+            <div class="toolbar twelve columns">
                 <a class="close-button" href="#contact">X</a>
             </div>
+        </div>
+        <div class="row" id="letterhead">
+            <div class="two columns ">
+                <img id="contact-logo" src="{{site.baseurl}}/img/logo.png" alt="logo"/>
+            </div>
+            <div class="ten columns">
+                <h3>
+                    sfu
+                    <span class="ch-bold">concert orchestra</span>
+                </h3>
+                <h4>
+                    simon sraser university, <br />
+                    burnaby, bc
+                </h4>
+            </div>
+            <hr />
         </div>
         <div class="row" id="contact-form-body">
             <div class="twelve rows">
                 <hr />
-                <form>
+                <form action="https://formspree.io/revangel@sfu.ca" method="POST">
                     <span>
                         Hello, <br /><br />
                         My name is
@@ -50,7 +53,27 @@
                     <br />
                     <span>Thanks!</span>
                     <br /><br />
+                    <span>P.S. I play  </span>
+                    <select name="instrument">
+                      <option value="violin">violin</option>
+                      <option value="viola">viola</option>
+                      <option value="cello">cello</option>
+                      <option value="bass">bass</option>
+                      <option value="flute">flute</option>
+                      <option value="clarinet">clarinet</option>
+                      <option value="oboe">oboe</option>
+                      <option value="bassoon">bassoon</option>
+                      <option value="trumpet">trumpet</option>
+                      <option value="trombone">trombone</option>
+                      <option value="horn">french horn</option>
+                      <option value="euphonium">euphonium</option>
+                      <option value="tuba">tuba</option>
+                      <option value="percussion">drums and stuff</option>
+                      <option value="other">another instrument not listed here</option>
+                      <option value="none">...actually I don't play an instrument</option>
+                    </select>
                     <br /><br /><br />
+                    <input type="submit" value="Send">
                 </form>
             </div>
         </div>
