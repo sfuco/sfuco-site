@@ -5,21 +5,9 @@
  * 2016
  */
 
+
 jQuery(document).ready(function()
 {
-
-    var verticalNav = jQuery('#vertical-nav');
-
-    // Initialize the vertical nav section as hidden
-    // since the top of the page will have the
-    // horizontal nav visible
-    verticalNav.hide();
-
-    jQuery(window).on("scroll", function()
-    {
-        updateVerticalNav();
-    });
-
     function updateVerticalNav ()
     {
         var windowPosition = jQuery(window).scrollTop();
@@ -49,7 +37,7 @@ jQuery(document).ready(function()
 
                 var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
                 var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
-                
+
                 if(windowPosition >= currentSectionTop && windowPosition < currentSectionBottom)
                 {
 
@@ -63,7 +51,44 @@ jQuery(document).ready(function()
             }
 
         });
-
     }
 
+    function closeModalBox()
+    {
+        // Since the exec section's modal boxes each have
+        // unique hashes, it's easier to check for whether
+        // the modal box is from one of the other sections
+        // with hashes that we already know beforehand
+        if(window.location.hash == "#contact-form")
+        {
+            window.location.hash = "#contact";
+        }
+        else
+        {
+            window.location.hash = '#execs';
+        }
+    };
+
+
+    var verticalNav = jQuery('#vertical-nav');
+
+    // Initialize the vertical nav section as hidden
+    // since the top of the page will have the
+    // horizontal nav visible
+    verticalNav.hide();
+
+    jQuery(window).on("scroll", function()
+    {
+        updateVerticalNav();
+    });
+
+
+    jQuery(".modal-overlay").on("click", function(e)
+    {
+        if(e.target != this)
+        {
+            return; // Only close if click is outside window
+        }
+        closeModalBox();
+    });
 });
