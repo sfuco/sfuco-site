@@ -8,6 +8,8 @@
 
 jQuery(document).ready(function()
 {
+    // Function Definitions
+    ////////////////////////////////////////
     function updateVerticalNav ()
     {
         var windowPosition = jQuery(window).scrollTop();
@@ -70,6 +72,9 @@ jQuery(document).ready(function()
     };
 
 
+    // Events
+    ////////////////////////////////////////
+
     var verticalNav = jQuery('#vertical-nav');
 
     // Initialize the vertical nav section as hidden
@@ -77,11 +82,13 @@ jQuery(document).ready(function()
     // horizontal nav visible
     verticalNav.hide();
 
+    // If the page was loaded somewhere halfway down
+    updateVerticalNav();
+
     jQuery(window).on("scroll", function()
     {
         updateVerticalNav();
     });
-
 
     jQuery(".modal-overlay").on("click", function(e)
     {
