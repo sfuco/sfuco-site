@@ -3,13 +3,13 @@
 
 
 <div class="twelve columns">
-    <a href="#contact-form">
+    <a href="#contact-form-overlay">
         <img src="{{site.baseurl}}/img/icons/envelope.png" alt="envelope" />
     </a>
 </div>
 
 <!-- Contact Form -->
-<div class="modal-overlay" id="contact-form">
+<div class="modal-overlay" id="contact-form-overlay">
     <div class="modal-box container">
         <div class="row">
             <div class="toolbar twelve columns">
@@ -35,7 +35,11 @@
         <div class="row" id="contact-form-body">
             <div class="twelve rows">
                 <hr />
-                <form action="https://formspree.io/revangel@sfu.ca" method="POST">
+                <form method="POST" id="contact-form">
+
+                    <!-- spambot protection -->
+                    <input type="text" name="_gotcha" style="display:none" />
+
                     <span>
                         Hello, <br /><br />
                         My name is
@@ -55,6 +59,7 @@
                     <br /><br />
                     <span>P.S. I play  </span>
                     <select name="instrument">
+                      <option value="" disabled selected>(pick an instrument)</option>
                       <option value="violin">violin</option>
                       <option value="viola">viola</option>
                       <option value="cello">cello</option>
@@ -68,6 +73,7 @@
                       <option value="horn">french horn</option>
                       <option value="euphonium">euphonium</option>
                       <option value="tuba">tuba</option>
+                      <option value="piano">piano</option>
                       <option value="percussion">drums and stuff</option>
                       <option value="other">another instrument not listed here</option>
                       <option value="none">...actually I don't play an instrument</option>
@@ -75,6 +81,7 @@
                     <br /><br /><br />
                     <input type="submit" value="Send">
                 </form>
+                <span id="error-text"></span>
             </div>
         </div>
     </div>
