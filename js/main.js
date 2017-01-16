@@ -32,26 +32,20 @@ jQuery(document).ready(function()
 
         jQuery("section").each(function(index)
         {
-            if(index < jQuery("section").size()-1)
+            var currentSectionTop = jQuery(this).offset().top;
+            var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
+
+            var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
+            var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
+
+            if(windowPosition >= currentSectionTop )
             {
-                var currentSectionTop = jQuery(this).offset().top;
-                var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
-
-                var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
-                var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
-
-                if(windowPosition >= currentSectionTop && windowPosition < currentSectionBottom)
+                currentSection.addClass("active-nav");
+                jQuery("#vertical-nav a").not("#" + currentSectionID).each(function()
                 {
-
-                    currentSection.addClass("active-nav");
-                    jQuery("#vertical-nav a").not("#" + currentSectionID).each(function()
-                    {
-                        jQuery(this).removeClass("active-nav");
-                    });
-                }
-
+                    jQuery(this).removeClass("active-nav");
+                });
             }
-
         });
     }
 
