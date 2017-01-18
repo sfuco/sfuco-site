@@ -1,5 +1,5 @@
 # sfuco-site
-<img src="img/header.png" width="500">
+[<img src="img/header.png" width="500">](https://sfuco.github.io/sfuco-site/)
 
 This is the SFU Concert Orchestra's webpage!
 
