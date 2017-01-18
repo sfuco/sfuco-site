@@ -1,5 +1,5 @@
 # SFUCO Webpage
-<img src="img/header.png" width="100">
+<img src="img/header.png" width="500">
 
 This is the SFU Concert Orchestra's webpage!
 
