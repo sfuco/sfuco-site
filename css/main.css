@@ -331,10 +331,6 @@ footer li {
     margin-left: 1rem;
 }
 
-#social-links {
-    margin-bottom: 2.5rem /* since skeleton doesn't have margins for img only rows */
-}
-
 #social-links .flex-element {
     width: 24px;
     height: 24px;
@@ -343,6 +339,7 @@ footer li {
 }
 
 #social-links .flex-element a img{
+    width: 100%;
     height: 100%;
 }
 
