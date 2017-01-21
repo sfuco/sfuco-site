@@ -272,9 +272,12 @@ footer {
     padding-top: 20px;
     background: rgb(26,26,26);
     width: 100%;
-    color: white;
-    font-family: ch-thin;
     text-align: center;
+}
+
+footer li, footer a, footer h1, footer span, footer p {
+    color: white;
+    font-weight: 100;
 }
 
 footer li {
