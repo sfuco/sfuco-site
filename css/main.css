@@ -146,7 +146,7 @@ section {
 }
 
 .exec-bio:hover span{
-    font-family: ch-bold;
+    font-weight: bold;
     color: white;
     display: block;
     font-size: 24px;
@@ -181,12 +181,12 @@ section {
 }
 
 #exec-name h3 {
-    font-family: ch-bold;
+    font-weight: bold;
     text-align: right;
 }
 
 #exec-name span {
-    font-family: ch-thin;
+    font-weight: 100;
     font-size: 24px;
     color: rgb(26,26,26);
     display: block;
