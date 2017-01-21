@@ -113,44 +113,48 @@ section {
     Site-specific default rules:
         Organized in the same order as the DOM
 ------------------------------------------------*/
-
-.vertical-nav ul {
-    left: 12px;
+/* Navigation */
+#vertical-nav ul {
     position: fixed;
+    left: 12px;
     top: 25vh;
 }
 
-.vertical-nav li {
-    clear: left;
+#vertical-nav li {
     display: block;
+    clear: left;
     float: left;
-    margin: 1px;
+    margin: 12px;
     vertical-align: left;
 }
 
-.logo {
-    float: left;
-}
-
-.logo img {
-    height: 72px;
-    max-width: 72px;
-}
-
-.navigation a {
-    display: block;
-    font-size: 16px;
-    padding: 12px;
-}
-
 #horizontal-nav {
-    float: right;
+    position: relative;
+    height: 72px;
+    width: auto;
+}
+
+#horizontal-nav div {
+    height: 100%;
+}
+
+#horizontal-nav img {
+    /* The nav logo */
+    height: 100%;
+    width: auto;
+}
+
+#horizontal-nav ul {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+    margin: 0;
 }
 
 #horizontal-nav li {
-    display: table-cell;
-    float: left;
-    vertical-align: middle;
+    display: inline;
+    padding: 0px 12px;
 }
 
 /* Home */
