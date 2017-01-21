@@ -41,26 +41,6 @@ body {
     color: rgb(26,26,26);
 }
 
-h1 {
-    font-size: 72px;
-}
-
-h2 {
-    font-size: 36px;
-}
-
-h3 {
-    font-size: 24px;
-}
-
-h4 {
-    font-size: 16px;
-}
-
-p {
-    font-size: 12px;
-}
-
 li {
     list-style-type: none;
 }
