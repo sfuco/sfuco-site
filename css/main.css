@@ -134,13 +134,13 @@ section {
         Organized in the same order as the DOM
 ------------------------------------------------*/
 
-#vertical-nav ul {
+.vertical-nav ul {
     left: 12px;
     position: fixed;
     top: 25vh;
 }
 
-#vertical-nav li {
+.vertical-nav li {
     clear: left;
     display: block;
     float: left;

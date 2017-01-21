@@ -34,13 +34,13 @@ jQuery(document).ready(function()
             var currentSectionTop = jQuery(this).offset().top;
             var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
 
-            var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
-            var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
+            var currentSection = jQuery(".vertical-nav a:eq(" + index + ")");
+            var currentSectionID = jQuery(".vertical-nav a:eq(" + index + ")").attr("id");
 
             if(windowPosition >= currentSectionTop )
             {
                 currentSection.addClass("active-nav");
-                jQuery("#vertical-nav a").not("#" + currentSectionID).each(function()
+                jQuery(".vertical-nav a").not("#" + currentSectionID).each(function()
                 {
                     jQuery(this).removeClass("active-nav");
                 });
@@ -119,7 +119,7 @@ jQuery(document).ready(function()
     // Events
     ////////////////////////////////////////
 
-    var verticalNav = jQuery('#vertical-nav');
+    var verticalNav = jQuery('.vertical-nav');
 
     // Initialize the vertical nav section as hidden
     // since the top of the page will have the
