@@ -7,42 +7,31 @@
 */
 
 /*
-    Global default typgraphy defaults
+    Global defaults
 ------------------------------------------------*/
+/* Typography */
 @font-face {
-    font-family: ch-bold;
+    font-family: CooperHewitt;
     src: url(fonts/CooperHewitt-Bold.otf);
+    font-weight: bold;
 }
 
 @font-face {
-    font-family: ch-book;
+    font-family: CooperHewitt;
     src: url(fonts/CooperHewitt-Book.otf);
+    font-weight: normal;
 }
 
 @font-face {
-    font-family: ch-thin;
+    font-family: CooperHewitt;
     src: url(fonts/CooperHewitt-Thin.otf);
+    font-weight: 100;
 }
 
-.ch-bold {
-    font-family: ch-bold;
-}
-
-.ch-book {
-    font-family: ch-book;
-}
-
-.ch-thin {
-    font-family: ch-thin;
-}
-
-body {
-    font-family: ch-book;
+body, h1, h2, h3, h4, p {
+    font-family: CooperHewitt, sans-serif;
+    font-weight: normal;
     color: rgb(26,26,26);
-}
-
-li {
-    list-style-type: none;
 }
 
 a {
@@ -54,66 +43,29 @@ a:hover {
     font-family: ch-book;
 }
 
-/*
-    Global default layout classes and rules
-------------------------------------------------*/
-.inline {
-    display: inline-block;
-}
-
-.block {
-    display: block;
-}
-
-.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.flex-element {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-}
-
-.exec-bio a span {
-    display: none;
-}
-
-.modal-overlay {
-    background-color: rgba(26,26,26,0.9);
-    display: none;
-    position: fixed;
-    z-index: 2;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-}
-
-.modal-overlay:target {
-    display: block;
-}
-
-.modal-box {
-    background-color: rgba(255,255,255,1);
-    width: 50%;
-    margin-top: 5vh;
-    margin-left: auto;
-}
-
+/* Other defaults */
 section {
     padding-top: 10vh;
 }
 
+.page-title h1 {
+    display: inline;
+}
+
+.page-title h1:nth-child(2)
+{
+    font-weight: bold;
+}
+
 /*
-    Site-specific default rules:
+    Site-specific rules:
         Organized in the same order as the DOM
 ------------------------------------------------*/
 /* Navigation */
+.navigation li {
+    list-style-type: none;
+}
+
 #vertical-nav ul {
     position: fixed;
     left: 12px;
@@ -148,8 +100,8 @@ section {
     position: absolute;
     bottom: 0;
     right: 0;
-    text-align: right;
     margin: 0;
+    text-align: right;
 }
 
 #horizontal-nav li {
@@ -162,11 +114,18 @@ section {
     padding-top: 50vh;
 }
 
+#home-title h1 {
+    display: inline;
+}
 
 /* Execs */
 .exec-bio img {
     height: 200px;
     width: 200px;
+}
+
+.exec-bio a span {
+    display: none;
 }
 
 .exec-bio:hover span{
@@ -340,7 +299,64 @@ footer li {
     opacity: 1;
 }
 
+/*
+    Utility classes
+------------------------------------------------*/
 
+.inline {
+    display: inline-block;
+}
+
+.block {
+    display: block;
+}
+
+/* Structural */
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex-element {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
+
+.modal-overlay {
+    background-color: rgba(26,26,26,0.9);
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.modal-overlay:target {
+    display: block;
+}
+
+.modal-box {
+    background-color: rgba(255,255,255,1);
+    width: 50%;
+    margin-top: 5vh;
+    margin-left: auto;
+}
+
+.close-button {
+    font-family: ch-bold;
+    font-size: 16px;
+    color: rgb(26,26,26);
+    float: right;
+    padding-top: 2.5%;
+    padding-right: 2.5%;
+}
 
 /*
     Event-driven Classes
@@ -354,18 +370,6 @@ footer li {
 .active-nav {
     font-family: ch-book;
     color: rgb(5,47,95); /* Cool Black */
-}
-
-/*
-    Structural Objects
-*/
-.close-button {
-    font-family: ch-bold;
-    font-size: 16px;
-    color: rgb(26,26,26);
-    float: right;
-    padding-top: 2.5%;
-    padding-right: 2.5%;
 }
 
 /*
