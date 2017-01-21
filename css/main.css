@@ -28,24 +28,29 @@
     font-weight: 100;
 }
 
-body, h1, h2, h3, h4, p {
+body, h1, h2, h3, h4, p, li, a {
+    /* These are to overwrite the Skeleton css defaults */
     font-family: CooperHewitt, sans-serif;
     font-weight: normal;
     color: rgb(26,26,26);
 }
 
-a {
-    color: inherit;
+li, a {
+    font-weight: 100;
     text-decoration: none;
 }
 
 a:hover {
-    font-family: ch-book;
+    font-weight: normal;
 }
 
 /* Other defaults */
 section {
     padding-top: 10vh;
+}
+
+.page-title {
+    padding-bottom: 1.5rem;
 }
 
 .page-title h1 {
@@ -179,17 +184,22 @@ section {
 
 
 /* News */
-.news-title {
-    font-family: ch-bold;
+.news-item li{
+    list-style-type: none;
 }
 
-.news-date {
-    font-family: ch-thin;
+.news-item h2 {
+    font-size: 3.0rem;
 }
 
-.news-content {
-    font-family: ch-book;
+.news-item h2 a{
+    font-weight: bold;
 }
+
+.news-item h2 span {
+    font-weight: 100;
+}
+
 
 
 /* Contact */
@@ -302,15 +312,6 @@ footer li {
 /*
     Utility classes
 ------------------------------------------------*/
-
-.inline {
-    display: inline-block;
-}
-
-.block {
-    display: block;
-}
-
 /* Structural */
 
 .flex-container {
@@ -350,7 +351,7 @@ footer li {
 }
 
 .close-button {
-    font-family: ch-bold;
+    font-weight: bold;
     font-size: 16px;
     color: rgb(26,26,26);
     float: right;
@@ -363,12 +364,12 @@ footer li {
         Used by JS functions
 ------------------------------------------------*/
 .default-nav {
-    font-family: ch-thin;
+    font-weight: 100;
     color: rgb(26,26,26); /* Eerie Black */
 }
 
 .active-nav {
-    font-family: ch-book;
+    font-weight: normal;
     color: rgb(5,47,95); /* Cool Black */
 }
 

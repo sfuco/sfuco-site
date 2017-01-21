@@ -5,15 +5,17 @@
 <div class="twelve columns">
     <ul>
         {% for news in site.posts %}
-        <li>
-            <h3 class="news-title">
-                <a href="">{{news.title}}</a>
-                <span class="news-date"> | {{ news.date | date: "%B %-d, %Y" }}</span>
-            </h4>
-            <div class="news-content">
-                {{news.content}}
-            </div>
-        </li>
+        <div class="news-item">
+            <li>
+                <h2>
+                    <a href="">{{news.title}}</a>
+                    <span> | {{ news.date | date: "%B %-d, %Y" }}</span>
+                </h2>
+                <div class="news-content">
+                    {{news.content}}
+                </div>
+            </li>
+        </div>
         {% endfor %}
     </ul>
 </div>
