@@ -6,7 +6,7 @@
 markdown: kramdown
 baseurl: ""
 url: "revangel.github.io"
-exclude: ['README.md', 'LICENSE.txt']
+exclude: ['README.md', 'LICENSE.txt', 'node_modules', 'gulpfile.js']
 
 # Content
 title: sfuco.
