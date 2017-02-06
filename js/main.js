@@ -12,9 +12,9 @@ jQuery(document).ready(function()
     function updateVerticalNav ()
     {
         var windowPosition = jQuery(window).scrollTop();
-        var topOfPage = jQuery("section:first").offset().top;
+        var secondSection = jQuery("section:eq(1)").offset().top;
 
-        if(windowPosition >= topOfPage)
+        if(windowPosition >= secondSection)
         {
             verticalNav.fadeIn();
             updateNavColors();
