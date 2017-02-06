@@ -30,15 +30,17 @@
         <![endif]-->
 
     <body>
-        {% include vertical-nav.html %}
+        <div id="navigation" class="container">
+            {% include vertical-nav.html %}
+            {% include navbar.html %}
+        </div>
+        
+        <header id="home">
+            {% include home.html %}
+        </header>
+
 
         <div id="content" class="container">
-
-            {% include navbar.html %}
-
-            <section id="home" class="row">
-                {% include home.html %}
-            </section>
 
             <section id="about" class="row">
                 {% include about.html %}
