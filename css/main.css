@@ -232,7 +232,7 @@ nav li {
     width: 100%;
     height: 80%;
     padding: 50px 100px;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 #contact-logo {
@@ -391,6 +391,16 @@ footer li {
     height: 100%;
 }
 
+.loading-screen {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../img/animations/logo_animation.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
 /* Styling */
 .bg-black {
     background-color: black;
@@ -408,7 +418,6 @@ footer li {
     background-color: white;
 }
 
-
 /*
     Event-driven Classes
         Used by JS functions
@@ -422,9 +431,6 @@ footer li {
     font-weight: normal;
     color: rgb(5,47,95); /* Cool Black */
 }
-
-
-
 
 ::-moz-selection {
     background: #b3d4fc;

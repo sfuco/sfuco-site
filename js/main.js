@@ -119,6 +119,11 @@ jQuery(document).ready(function()
     // Events
     ////////////////////////////////////////
 
+    jQuery(window).load(function()
+    {
+        $(".loading-screen").fadeOut("slow");
+    });
+
     var verticalNav = jQuery('#vertical-nav');
 
     // Initialize the vertical nav section as hidden
@@ -152,4 +157,5 @@ jQuery(document).ready(function()
         var form =  document.getElementById('contact-form');
         form.setAttribute('action', '//formspree.io/' + 'revangel' + '@' + 'sfu' + '.' + 'ca');
     });
+
 });
