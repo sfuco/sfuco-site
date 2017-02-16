@@ -12,9 +12,9 @@ jQuery(document).ready(function()
     function updateVerticalNav ()
     {
         var windowPosition = jQuery(window).scrollTop();
-        var secondSection = jQuery("section:eq(1)").offset().top;
+        var firstSection = jQuery("section:eq(0)").offset().top;
 
-        if(windowPosition >= secondSection)
+        if(windowPosition >= firstSection)
         {
             verticalNav.fadeIn();
             updateNavColors();
@@ -31,6 +31,7 @@ jQuery(document).ready(function()
 
         jQuery("section").each(function(index)
         {
+            index++; // Since #home is not a <section> but it's still a link
             var currentSectionTop = jQuery(this).offset().top;
             var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
 

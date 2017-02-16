@@ -46,7 +46,7 @@ a:hover {
 
 /* Other defaults */
 section {
-    padding-top: 10vh;
+    padding: 5vh 0;
 }
 
 .page-title {
