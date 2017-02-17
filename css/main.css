@@ -49,10 +49,6 @@ section {
     padding: 5vh 0;
 }
 
-.page-title {
-    padding-bottom: 1.5rem;
-}
-
 /*
     Site-specific rules:
         Organized in the same order as the DOM
@@ -121,7 +117,8 @@ nav li {
 
 /* Home */
 #home {
-    padding-top: 0; /* All other sections have padding top to make vertical nav smoother*/
+    padding: 0; /* All other sections have padding top to make vertical nav smoother */
+                /* This also makes the overlay actually cover the entire width */
     position: relative;
     background-image: url("../img/bg2.jpg");
     background-repeat: no-repeat;
