@@ -1,10 +1,21 @@
-<div class="page-title">
-    <h1>
-        the
-        <b>news</b>
-    </h1>
+<div class="dropdown-container">
+    <ul>
+        <li class="dropdown-parent">
+            <h1>
+                current
+                <div class="down-triangle"></div>
+            </h1>
+            <div class="dropdown-submenu">
+                <ul>
+                    <li><a href="">older</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><h1><b>news</b></h1></li>
+    </ul>
 </div>
-<div class="twelve columns">
+
+<div class="col-sm-12">
     <ul>
         {% for news in site.posts %}
         <div class="news-item">
