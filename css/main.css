@@ -360,6 +360,10 @@ footer li {
     width: 100%;
 }
 
+.dropdown-container h1 {
+    margin: 0;
+}
+
 .dropdown-container li {
     list-style-type: none;
     display: inline-block;
@@ -368,6 +372,8 @@ footer li {
 
 .dropdown-parent {
     position: relative;
+    display: inline-block;
+    z-index: 100;
 }
 
 .dropdown-parent:hover > .dropdown-submenu {
@@ -382,6 +388,7 @@ footer li {
     background-color: rgba(26,26,26,0.9);
     opacity: 0;
     transition:opacity linear 0.15s;
+    padding: 5px 0;
 }
 
 .dropdown-submenu ul {
@@ -395,7 +402,7 @@ footer li {
 
 .dropdown-submenu li a{
     color: white;
-    font-size: 24px; /* Based on h1 size of 36px */ 
+    font-size: 24px; /* Based on h1 size of 36px */
 }
 
 
