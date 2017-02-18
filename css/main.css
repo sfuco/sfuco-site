@@ -383,7 +383,7 @@ footer li {
 .dropdown-parent {
     position: relative;
     display: inline-block;
-    z-index: 100;
+    z-index: 1;
 }
 
 .dropdown-parent:hover > .dropdown-submenu {
