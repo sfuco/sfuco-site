@@ -19,15 +19,23 @@
     <ul>
         {% for news in site.posts %}
         <div class="news-item">
-            <li>
-                <h2>
-                    <a href="">{{news.title}}</a>
-                    <span> | {{ news.date | date: "%B %-d, %Y" }}</span>
-                </h2>
-                <div class="news-content">
-                    {{news.content}}
-                </div>
-            </li>
+            <div class="news-photo col-md-4">
+                {% if news.image %}
+                    <img src="{{site.baseurl}}/img/post-photos/{{news.image}}" alt="news-image"/>
+                {% endif %}
+            </div>
+
+            <div class="news-text col-md-8">
+                <li>
+                    <h2>
+                        <a href="">{{news.title}}</a>
+                        <span> | {{ news.date | date: "%B %-d, %Y" }}</span>
+                    </h2>
+                    <div class="news-content">
+                        {{news.content}}
+                    </div>
+                </li>
+            </div>
         </div>
         {% endfor %}
     </ul>

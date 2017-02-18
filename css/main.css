@@ -28,6 +28,10 @@
     font-weight: 100;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body, h1, h2, h3, h4, p, li, a {
     /* These are to overwrite the Skeleton css defaults */
     font-family: CooperHewitt, sans-serif;
@@ -207,12 +211,18 @@ nav li {
 }
 
 /* News */
-.news-item li{
-    list-style-type: none;
+.news-item {
+    overflow: auto;
+    margin: 12px 0;
 }
 
-.news-item h2 {
-    font-size: 3.0rem;
+.news-photo img {
+    max-width: 100%;
+    max-height: 400px; /* Double the height of flexbox photos */
+}
+
+.news-item li {
+    list-style-type: none;
 }
 
 .news-item h2 a{
