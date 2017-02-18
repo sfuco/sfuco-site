@@ -1,12 +1,23 @@
-<div id="execs-content">
-    <div class="page-title">
-        <h1>
-            the
-            <b>execs</b>
-        </h1>
-    </div>
+<!-- Page Title -->
+<div class="dropdown-container">
+    <ul>
+        <li class="dropdown-parent">
+            <h1>
+                current
+                <div class="down-triangle"></div>
+            </h1>
+            <div class="dropdown-submenu">
+                <ul>
+                    <li><a href="">past</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><h1><b>execs</b></h1></li>
+    </ul>
+</div>
 
-    <!-- Exec Thumbnail Gallery -->
+<!-- Exec Thumbnail Gallery -->
+<div id="execs-content">
     <div class="flex-container">
 
         {% assign sorted = (site.execs | sort: 'order') %}
@@ -31,20 +42,19 @@
             <a class="close-button" href="#execs">X</a>
         </div>
         <div class="row">
-            <div class="eight columns offset-by-four">
-                <img id="exec-detail-image"
-                    src="{{site.baseurl}}/img/exec-photos/{{exec.image}}"
+            <div class="exec-image-container col-md-8 col-md-offset-4">
+                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}"
                     alt="exec-image"/>
             </div>
         </div>
-        <div id="exec-detail-text row">
-            <div class="four columns" id="exec-name">
+        <div class="exec-detail-text row">
+            <div class="exec-name col-md-4">
                 <h3>
                     {{exec.title}}
                     <span>{{exec.position}}</span>
                 </h3>
             </div>
-            <div class="eight columns" id="exec-description">
+            <div class="exec-description col-md-8">
                 {{exec.content}}
             </div>
         </div>

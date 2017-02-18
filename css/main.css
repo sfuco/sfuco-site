@@ -181,27 +181,30 @@ nav li {
     z-index: 1;
 }
 
-#exec-detail-image {
+.exec-image-container {
+    padding: 0; /* Reset Bootstrap padding*/
+    margin-bottom: 12px;
+}
+
+.exec-image-container img {
     max-height: 50vh;
     max-width: 100%;
     height: auto;
 }
 
-#exec-detail-text {
-    padding: 12px;
-}
-
-#exec-description {
+.exec-description {
     max-height: 25vh;
     overflow-y: auto;
+    padding: 0;
 }
 
-#exec-name h3 {
+.exec-name > h3 {
+    margin: 0;
     font-weight: bold;
     text-align: right;
 }
 
-#exec-name span {
+.exec-name span {
     font-weight: 100;
     font-size: 24px;
     color: rgb(26,26,26);
