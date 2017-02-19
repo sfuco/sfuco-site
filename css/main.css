@@ -476,27 +476,34 @@ footer li {
     height: 100%;
 }
 
-.nav-wrapper {
+/* Note: Can't use a generalized .nav-wrapper and :nth-child()s here
+    since the templating messes up the :nth-child() order if one side
+    gets eliminated by the logic (i.e. the first page doesn't get a
+    prev button) */
+
+.nav-wrapper-prev {
     content: "";
     position: absolute;
     height: 50%;
     width: 5%;
     top: 25%;
-}
-
-.nav-wrapper:first-child {
     left: 0;
 }
 
-.nav-wrapper:last-child {
-    right: 0;
-}
-
-.nav-wrapper:first-child:hover .prev-button {
+.nav-wrapper-prev:hover .prev-button {
     opacity: 1;
 }
 
-.nav-wrapper:last-child:hover .next-button {
+.nav-wrapper-next {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 5%;
+    top: 25%;
+    right: 0;
+}
+
+.nav-wrapper-next:hover .next-button {
     opacity: 1;
 }
 
