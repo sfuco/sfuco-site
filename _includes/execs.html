@@ -48,14 +48,35 @@
             </div>
         </div>
         <div class="exec-detail-text row">
-            <div class="exec-name col-md-4">
-                <h3>
-                    {{exec.title}}
-                </h3>
-                <span>{{exec.position}}</span>
+            <div class="col-md-4">
+                <div class="exec-name row">
+                    <div class="col-md-12">
+                        <h3>
+                            <b>{{exec.title}}</b>
+                        </h3>
+                    </div>
+                </div>
+                <div class="exec-position row">
+                    <div class="col-md-12">
+                        <span>{{exec.position}}</span>
+                    </div>
+                </div>
             </div>
             <div class="exec-description col-md-8">
                 {{exec.content}}
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <div class="nav-wrapper">
+                <div class="prev-button">
+                    <span><b> < </b></span>
+                </div>
+            </div>
+
+            <div class="nav-wrapper">
+                <div class="next-button">
+                    <span><b> > </b></span>
+                </div>
             </div>
         </div>
     </div>
