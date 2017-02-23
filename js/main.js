@@ -16,7 +16,7 @@ $(document).ready(function()
         var windowPosition = $(window).scrollTop();
         var firstSection = $("section:eq(0)").offset().top;
 
-        if(windowPosition >= firstSection)
+        if(windowPosition >= firstSection - (firstSection/4))
         {
             verticalNav.fadeIn();
             updateNavColors();
