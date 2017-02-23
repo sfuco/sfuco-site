@@ -72,10 +72,15 @@ nav li {
     list-style-type: none;
 }
 
-#vertical-nav ul {
+#vertical-nav {
+    visibility: hidden;
     position: fixed;
-    left: 12px;
+    left: 1vw;
     top: 25vh;
+}
+
+#vertical-nav ul {
+    padding: 0;
 }
 
 #vertical-nav li {
@@ -84,6 +89,15 @@ nav li {
     float: left;
     margin: 12px;
     vertical-align: left;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1400px) {
+    #vertical-nav {
+        visibility: visible;; /*1400 px is when the content
+                          containers start overlapping with
+                          the vertical nav*/
+    }
 }
 
 #horizontal-nav {
