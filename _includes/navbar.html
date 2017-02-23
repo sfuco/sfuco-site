@@ -2,11 +2,18 @@
 
     <!-- Mobile nav -->
     <div class="mobile-horizontal-nav">
-        <div class="row hidden-md hidden-lg hidden-xl">
-            <div class="two columns">
-                <a href="#home">
-                    <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
-                </a>
+        <div class="container-fluid">
+            <div class="row hidden-md hidden-lg hidden-xl">
+                <div class="col-sm-4">
+                    <a href="#home">
+                        <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+                    </a>
+                </div>
+                <div class="col-sm-8">
+                    <button type="button">
+
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -14,22 +21,21 @@
 
     <!-- Full navbar -->
     <div class="full-horizontal-nav">
-        <div class="row hidden-xs hidden-sm">
-            <div class="two columns">
-                <a href="#home">
-                    <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
-                </a>
-            </div>
-            <div class="ten columns">
-                <ul>
-                    <li><a class="default-nav" href="#home">home</a></li>
-                    <li><a class="default-nav" href="#about">about</a></li>
-                    <li><a class="default-nav" href="#execs">the execs</a></li>
-                    <li><a class="default-nav" href="#news">news</a></li>
-                    <li><a class="default-nav" href="#contact">contact</a></li>
-                </ul>
+        <div class="container">
+            <div class="row align-items-center hidden-xs hidden-sm">
+                <div class="col-md-2">
+                    <a href="#home" class="logo-link"></a>
+                </div>
+                <div class="col-md-10">
+                    <ul>
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#execs">the execs</a></li>
+                        <li><a href="#news">news</a></li>
+                        <li><a href="#contact">contact</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-
+        </div>
 </nav>

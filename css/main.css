@@ -39,11 +39,6 @@ body, h1, h2, h3, h4, p, li, a {
     color: rgb(26,26,26);
 }
 
-li, a {
-    font-weight: 100;
-    text-decoration: none;
-}
-
 a:hover {
     font-weight: normal;
 }
@@ -64,7 +59,11 @@ section {
 #horizontal-nav {
     position: relative;
     width: 100%;
-    height: 72px;
+}
+
+#horizontal-nav li a {
+    font-weight: normal;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 991px) { /* Horizontal nav changes to full at 992px (boostrap breakpoint)*/
@@ -73,27 +72,22 @@ section {
     }
 }
 
-#horizontal-nav img {
-    /* The nav logo */
-    height: 100%;
-    width: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.logo-link {
+    background-image: url("../img/logo.png");
+    background-size: contain;
+    width: 72px;
+    height: 72px;
+    display: block;
 }
 
 .full-horizontal-nav ul {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0;
     text-align: right;
-    padding-bottom: 24px;
+    margin: 46px 0 0 12px;
 }
 
 .full-horizontal-nav li {
     display: inline;
-    padding: 0px 12px;
+    margin: 0 12px;
 }
 
 #vertical-nav {
@@ -113,8 +107,10 @@ section {
     float: left;
     margin: 12px;
     vertical-align: left;
-    font-size: 16px;
 }
+
+/* Note: The styling for the vertical links is under
+    Event Driven Classes so that it can work with the JS scripts */
 
 @media screen and (min-width: 1400px) {
     #vertical-nav {
@@ -596,11 +592,12 @@ footer li {
 ------------------------------------------------*/
 .default-nav {
     font-weight: 100;
+    font-size: 18px;
     color: rgb(26,26,26); /* Eerie Black */
 }
 
 .active-nav {
-    font-weight: normal;
+    font-weight: bold;
     color: rgb(5,47,95); /* Cool Black */
 }
 
