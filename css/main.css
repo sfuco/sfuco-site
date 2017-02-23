@@ -380,6 +380,10 @@ footer li {
     width: 100%;
 }
 
+.dropdown-container ul{
+    padding: 15px; /* To match bootstrap's default row padding */
+}
+
 .dropdown-container h1 {
     margin: 0;
 }
