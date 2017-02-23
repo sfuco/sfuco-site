@@ -32,64 +32,58 @@
 </div>
 
 <!-- Exec Detail Overlays -->
-{% for exec in site.execs %}
-    {% if {{forloop.index}} > 1 %}
-        {% assign prevIndex = {{forloop.index}} - 1 %}
-    {% endif %}
-    {% unless forloop.last %}
-        {% assign nextIndex = {{forloop.index}} + 1 %}
-    {% endunless %}
-    {% assign prevID = site.execs[{{prevIndex}}].firstName %}
-    {% assign nextID = site.execs[{{nextIndex}}].firstName %}
-    <div class="modal-overlay" id="{{exec.firstName}}">
-        <div class="modal-box container">
-            <div class="toolbar row">
-                <a class="close-button" href="#execs">X</a>
-            </div>
-            <div class="row">
-                <div class="exec-image-container col-md-8 col-md-offset-4">
-                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}"
-                        alt="exec-image"/>
+<div class="exec-overlays">
+    {% for exec in site.execs %}
+        <div class="modal-overlay" id="{{exec.firstName}}">
+            <div class="modal-box container">
+                <div class="toolbar row">
+                    <a class="close-button" href="#execs">X</a>
                 </div>
-            </div>
-            <div class="exec-detail-text row">
-                <div class="col-md-4">
-                    <div class="exec-name row">
-                        <div class="col-md-12">
-                            <h3>
-                                <b>{{exec.title}}</b>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="exec-position row">
-                        <div class="col-md-12">
-                            <span>{{exec.position}}</span>
-                        </div>
+                <div class="row">
+                    <div class="exec-image-container col-md-8 col-md-offset-4">
+                        <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}"
+                            alt="exec-image"/>
                     </div>
                 </div>
-                <div class="exec-description col-md-8">
-                    {{exec.content}}
-                </div>
-            </div>
-            <div class="nav-buttons">
-                {% if {{forloop.index}} > 1 %}
-                    <div class="nav-wrapper-prev">
-                        <div class="prev-button">
-                            <span><a href="#{{prevID}}"> < </a></span>
+                <div class="exec-detail-text row">
+                    <div class="col-md-4">
+                        <div class="exec-name row">
+                            <div class="col-md-12">
+                                <h3>
+                                    <b>{{exec.title}}</b>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="exec-position row">
+                            <div class="col-md-12">
+                                <span>{{exec.position}}</span>
+                            </div>
                         </div>
                     </div>
-                {% endif %}
+                    <div class="exec-description col-md-8">
+                        {{exec.content}}
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    {% if {{forloop.index}} > 1 %}
+                        <div class="nav-wrapper-prev">
+                            <div class="prev-button">
+                                <span id="x"><a href=""> < </a></span>
+                            </div>
+                        </div>
+                    {% endif %}
 
-                <!-- Note: the following is equivalent to "if != forloop.last" -->
-                {% unless forloop.last %}
-                    <div class="nav-wrapper-next">
-                        <div class="next-button">
-                            <span><a href="#{{nextID}}"> > </a></span>
+                    <!-- Note: the following is equivalent to "if != forloop.last" -->
+                    {% unless forloop.last %}
+                        <div class="nav-wrapper-next">
+                            <div class="next-button">
+                                <span><a href=""> > </a></span>
+                            </div>
                         </div>
-                    </div>
-                {% endunless %}
+                    {% endunless %}
 
+                </div>
             </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>

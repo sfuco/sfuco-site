@@ -4,15 +4,17 @@
  * revangel@sfu.ca
  * 2016
  */
-jQuery(document).ready(function()
+$(document).ready(function()
 {
     // Function Definitions
     ////////////////////////////////////////
 
+    // Navigation
+
     function updateVerticalNav ()
     {
-        var windowPosition = jQuery(window).scrollTop();
-        var firstSection = jQuery("section:eq(0)").offset().top;
+        var windowPosition = $(window).scrollTop();
+        var firstSection = $("section:eq(0)").offset().top;
 
         if(windowPosition >= firstSection)
         {
@@ -27,27 +29,29 @@ jQuery(document).ready(function()
 
     function updateNavColors ()
     {
-        var windowPosition = jQuery(document).scrollTop();
+        var windowPosition = $(document).scrollTop();
 
-        jQuery("section").each(function(index)
+        $("section").each(function(index)
         {
             index++; // Since #home is not a <section> but it's still a link
-            var currentSectionTop = jQuery(this).offset().top;
-            var currentSectionBottom = currentSectionTop + jQuery(this).outerHeight(true);
+            var currentSectionTop = $(this).offset().top;
+            var currentSectionBottom = currentSectionTop + $(this).outerHeight(true);
 
-            var currentSection = jQuery("#vertical-nav a:eq(" + index + ")");
-            var currentSectionID = jQuery("#vertical-nav a:eq(" + index + ")").attr("id");
+            var currentSection = $("#vertical-nav a:eq(" + index + ")");
+            var currentSectionID = $("#vertical-nav a:eq(" + index + ")").attr("id");
 
             if(windowPosition >= currentSectionTop )
             {
                 currentSection.addClass("active-nav");
-                jQuery("#vertical-nav a").not("#" + currentSectionID).each(function()
+                $("#vertical-nav a").not("#" + currentSectionID).each(function()
                 {
-                    jQuery(this).removeClass("active-nav");
+                    $(this).removeClass("active-nav");
                 });
             }
         });
-    }
+    };
+
+    // Overlays
 
     function closeModalBox()
     {
@@ -65,16 +69,44 @@ jQuery(document).ready(function()
         }
     };
 
+    function loadPrevExecPage(button)
+    {
+        var link = "#";
+        link = link.concat(getPrevExecID(button));
+        button.find("a").attr("href", link);
+    };
+
+    function loadNextExecPage(button)
+    {
+        var link = "#";
+        link = link.concat(getNextExecID(button));
+        button.find("a").attr("href", link);
+    };
+
+    function getPrevExecID(button)
+    {
+        var execID = button.parents().eq(3).prev().attr("id");
+        return execID;
+    }
+
+    function getNextExecID(button)
+    {
+        var execID = button.parents().eq(3).next().attr("id");
+        return execID;
+    }
+
+    // Contact Form
+
     function validateContactForm()
     {
         var str;
 
-        str = jQuery("input[name='name']").val();
+        str = $("input[name='name']").val();
         str = str.replace(/\s+/g, '');
 
         if (!str)
         {
-            jQuery("#error-text").text("Sorry, what was your name again?");
+            $("#error-text").text("Sorry, what was your name again?");
             return false;
         }
 
@@ -83,31 +115,30 @@ jQuery(document).ready(function()
         // be able to leave the message field blank in case
         // the user just wants to leave contact info
 
-        str = jQuery("input[name='email']").val();
+        str = $("input[name='email']").val();
         str = str.replace(/\s+/g, '');
 
         if (!str)
         {
-            jQuery("#error-text").text("Please enter an email so we can get back to you!");
+            $("#error-text").text("Please enter an email so we can get back to you!");
             return false;
         }
         else if(!ValidateEmail(str))
         {
-            jQuery("#error-text").text("We need a valid email address from you!");
+            $("#error-text").text("We need a valid email address from you!");
             return false;
         }
 
-        str = jQuery("select[name='instrument']").val();
+        str = $("select[name='instrument']").val();
         if (!str)
         {
-            jQuery("#error-text").text("Do you play an instrument?");
+            $("#error-text").text("Do you play an instrument?");
             return false;
         }
 
         return true;
     };
 
-    // Helper Functions
     function ValidateEmail(mail)
     {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
@@ -115,17 +146,17 @@ jQuery(document).ready(function()
             return (true);
         }
             return (false);
-    }
+    };
 
     // Events
     ////////////////////////////////////////
 
-    jQuery(window).load(function()
+    $(window).load(function()
     {
         $(".loading-screen").fadeOut("slow");
     });
 
-    var verticalNav = jQuery('#vertical-nav');
+    var verticalNav = $('#vertical-nav');
 
     // Initialize the vertical nav section as hidden
     // since the top of the page will have the
@@ -135,12 +166,12 @@ jQuery(document).ready(function()
     // If the page was loaded somewhere halfway down
     updateVerticalNav();
 
-    jQuery(window).on("scroll", function()
+    $(window).on("scroll", function()
     {
         updateVerticalNav();
     });
 
-    jQuery(".modal-overlay").on("click", function(e)
+    $(".modal-overlay").on("click", function(e)
     {
         if(e.target != this)
         {
@@ -149,7 +180,17 @@ jQuery(document).ready(function()
         closeModalBox();
     });
 
-    jQuery("#contact-form").on("submit", function(e)
+    $(".prev-button").on("click", function (e)
+    {
+        loadPrevExecPage($(this));
+    });
+
+    $(".next-button").on("click", function (e)
+    {
+        loadNextExecPage($(this));
+    });
+
+    $("#contact-form").on("submit", function(e)
     {
         if (!validateContactForm())
         {
