@@ -230,6 +230,10 @@ nav li {
 }
 
 /* News */
+.news-list ul {
+    padding: 0;
+}
+
 .news-item {
     overflow: auto;
     margin: 12px 0;
@@ -242,6 +246,7 @@ nav li {
 
 .news-item li {
     list-style-type: none;
+    padding: 0;
 }
 
 .news-title {
