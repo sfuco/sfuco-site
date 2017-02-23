@@ -40,7 +40,10 @@ $(document).ready(function()
             var currentSection = $("#vertical-nav a:eq(" + index + ")");
             var currentSectionID = $("#vertical-nav a:eq(" + index + ")").attr("id");
 
-            if(windowPosition >= currentSectionTop )
+            // Note: The (currentSectionTop/4) is to give some padding to the edge detection
+            // so that the beginning of the current section doesn't have to be at the
+            // very top of the window for it to be registered as the active-nav.
+            if(windowPosition >= currentSectionTop - (currentSectionTop/4) )
             {
                 currentSection.addClass("active-nav");
                 $("#vertical-nav a").not("#" + currentSectionID).each(function()
