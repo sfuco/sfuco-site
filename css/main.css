@@ -230,12 +230,17 @@ nav li {
     list-style-type: none;
 }
 
-.news-item h2 a{
+.news-title {
+    margin-bottom: 12px;
+}
+
+.news-title h4{
     font-weight: bold;
 }
 
-.news-item h2 span {
+.news-title h4 span {
     font-weight: 100;
+    text-align: right;
 }
 
 /* Contact */

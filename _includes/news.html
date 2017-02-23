@@ -29,10 +29,12 @@
 
             <div class="news-text col-md-8">
                 <li>
-                    <h2>
-                        <a href="">{{news.title}}</a>
-                        <span> | {{ news.date | date: "%B %-d, %Y" }}</span>
-                    </h2>
+                    <div class="news-title">
+                        <h4>
+                            {{news.title}}
+                        </h4>
+                        <span>{{ news.date | date: "%B %-d, %Y" }}</span>
+                    </div>
                     <div class="news-content">
                         {{news.content}}
                     </div>
