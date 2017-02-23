@@ -1,18 +1,35 @@
-<div class="container">
-    <nav class="row" id="horizontal-nav">
-        <div class="two columns">
-            <a href="#home">
-                <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
-            </a>
+<nav id="horizontal-nav">
+
+    <!-- Mobile nav -->
+    <div class="mobile-horizontal-nav">
+        <div class="row hidden-md hidden-lg hidden-xl">
+            <div class="two columns">
+                <a href="#home">
+                    <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+                </a>
+            </div>
         </div>
-        <div class="ten columns">
-            <ul>
-                <li><a class="default-nav" href="#home">home</a></li>
-                <li><a class="default-nav" href="#about">about</a></li>
-                <li><a class="default-nav" href="#execs">the execs</a></li>
-                <li><a class="default-nav" href="#news">news</a></li>
-                <li><a class="default-nav" href="#contact">contact</a></li>
-            </ul>
+    </div>
+
+
+    <!-- Full navbar -->
+    <div class="full-horizontal-nav">
+        <div class="row hidden-xs hidden-sm">
+            <div class="two columns">
+                <a href="#home">
+                    <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+                </a>
+            </div>
+            <div class="ten columns">
+                <ul>
+                    <li><a class="default-nav" href="#home">home</a></li>
+                    <li><a class="default-nav" href="#about">about</a></li>
+                    <li><a class="default-nav" href="#execs">the execs</a></li>
+                    <li><a class="default-nav" href="#news">news</a></li>
+                    <li><a class="default-nav" href="#contact">contact</a></li>
+                </ul>
+            </div>
         </div>
-    </nav>    
-</div>
+    </div>
+
+</nav>
