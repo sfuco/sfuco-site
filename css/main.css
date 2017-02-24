@@ -302,6 +302,10 @@ section {
 }
 
 /* Contact */
+#contact-form .container {
+    overflow-y: auto;
+}
+
 #contact-form .row {
     margin-bottom: 24px;
 }
