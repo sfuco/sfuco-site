@@ -297,68 +297,53 @@ section {
 }
 
 /* Contact */
-#contact-form-overlay .modal-box{
+#contact-form .row {
+    margin-bottom: 24px;
+}
+
+#contact-form img {
+    width: 72px;
+    height: 72px;
+}
+
+#contact-form label {
     display: block;
-    width: 100%;
-    height: 80%;
-    padding: 50px 100px;
-    overflow: scroll;
-}
-
-#contact-logo {
-    width: 100%;
-    height: auto;
-}
-
-#letterhead h3, #letterhead h4 {
-    font-size: 100%;
-}
-
-#contact-form-body form span {
-    font-family: EB Garamond;
+    font-weight: normal;
     font-size: 16px;
-    margin-right: 10px;
+    text-align: right;
 }
 
-#contact-form-body input[name=subject] {
-    width: 15vw;
-}
-
-#contact-form-body input {
+#contact-form input {
+    width: 100%;
     border: none;
     border-bottom: 1px solid rgb(26,26,26);
     border-radius: 0px;
     padding-bottom: 0px;
-    width: 10vw;
+    outline: none;
 }
 
-#contact-form-body input:focus {
-    border-bottom: 1px solid rgb(81, 203, 238);
+#contact-form textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(26,26,26);
 }
 
-#contact-form-body input[type=submit] {
-    font-family: ch-bold;
+#contact-form select {
+    border: none;
+    border-bottom: 1px solid rgb(26,26,26);
+}
+
+#contact-form input[type=submit] {
+    font-weight: bold;
     border: 1px solid rgb(26,26,26);
     float: right;
+    background-color: white;
 }
 
-#contact-form-body input[type=submit]:hover {
+#contact-form input[type=submit]:hover {
     color: white;
     background-color: rgb(26,26,26);
-}
-
-#contact-form-body select {
-    padding: 0px;
-    margin: 0px;
-    border: none;
-    border-top: 1px solid rgb(26,26,26);
-    border-bottom: 1px solid rgb(26,26,26);
-    border-radius: 0px;
-}
-
-#error-text {
-    font-family: ch-book;
-    color: rgb(230, 25, 25);
 }
 
 /* Footer */
@@ -415,8 +400,8 @@ footer li {
     font-size: 16px;
     color: rgb(26,26,26);
     float: right;
-    padding-top: 2.5%;
-    padding-right: 2.5%;
+    padding-top: 5%;
+    padding-right: 5%;
 }
 
 .down-triangle {
@@ -525,12 +510,29 @@ footer li {
     display: block;
 }
 
-.modal-box {
-    background-color: rgba(255,255,255,1);
+.modal-overlay > .container {
     width: 50%;
-    margin-top: 5vh;
-    margin-left: auto;
-    position: relative;
+    height: 90%;
+    z-index: 3;
+    background-color: white;
+    margin-top: 2.5%;
+}
+
+.modal-overlay > .container .row {
+    padding: 0 2.5%;
+    overflow: hidden;
+}
+
+/* Note: Make modal box fullscreen for less than large devices*/
+/* 991px is the BS limit for medium screens */
+@media screen and (max-width: 991px) {
+    .modal-overlay > .container {
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: white;
+        margin-top: 0;
+    }
 }
 
 .overlay {
@@ -542,7 +544,6 @@ footer li {
     since the templating messes up the :nth-child() order if one side
     gets eliminated by the logic (i.e. the first page doesn't get a
     prev button) */
-
 .nav-wrapper-prev {
     content: "";
     position: absolute;

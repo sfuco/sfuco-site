@@ -1,53 +1,58 @@
 <!-- Contact Form -->
-<div class="modal-overlay" id="contact-form-overlay">
-    <div class="modal-box container">
+<div class="modal-overlay" id="contact-form">
+    <div class="container">
         <div class="row">
-            <div class="toolbar twelve columns">
-                <a class="close-button" href="#contact">X</a>
+            <div class="col-xs-4">
+                <img src="{{site.baseurl}}/img/logo.png" alt="envelope" />
+            </div>
+            <div class="col-1 col-xs-offset-7">
+                <a class="close-button" href="#execs">X</a>
             </div>
         </div>
-        <div class="row" id="letterhead">
-            <div class="two columns ">
-                <img id="contact-logo" src="{{site.baseurl}}/img/logo.png" alt="logo"/>
-            </div>
-            <div class="ten columns">
-                <h3>
-                    sfu
-                    <span class="ch-bold">concert orchestra</span>
-                </h3>
-                <h4>
-                    simon sraser university, <br />
-                    burnaby, bc
-                </h4>
-            </div>
-            <hr />
-        </div>
-        <div class="row" id="contact-form-body">
-            <div class="twelve rows">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>contact <b>us</b></h1>
                 <hr />
-                <form method="POST" id="contact-form">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>hi, sfuco!</h3>
+            </div>
+        </div>
+        <form method="POST" id="contact-form-content">
+            <!-- spambot protection -->
+            <input type="text" name="_gotcha" style="display:none" />
 
-                    <!-- spambot protection -->
-                    <input type="text" name="_gotcha" style="display:none" />
-
-                    <span>
-                        Hello, <br /><br />
-                        My name is
-                    </span>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>My <b>name</b> is:</label>
+                </div>
+                <div class="col-xs-8">
                     <input type="text" name="name"/>
-                    <span>.</span>
-                    <span>I'd like to ask about</span>
-                    <input type="text" name="subject"/>
-                    <span>.</span>
-                    <br />
-                    <span>You can reach me at</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>You can <b>email</b> me at:</label>
+                </div>
+                <div class="col-xs-8">
                     <input type="text" name="email"/>
-                    <span>.</span>
-                    <br />
-                    <br />
-                    <span>Thanks!</span>
-                    <br /><br />
-                    <span>P.S. I play  </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label>I'm writing to you because:</label>
+                </div>
+                <div class="col-xs-8">
+                    <textarea rows="4" cols="50" name="message" form="contact-form-content"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <label><em>p.s.</em> &nbsp I play the : </label>
+                </div>
+                <div class="col-xs-8">
                     <select name="instrument">
                       <option value="" disabled selected>(pick an instrument)</option>
                       <option value="violin">violin</option>
@@ -65,14 +70,20 @@
                       <option value="tuba">tuba</option>
                       <option value="piano">piano</option>
                       <option value="percussion">drums and stuff</option>
-                      <option value="other">another instrument not listed here</option>
-                      <option value="none">...actually I don't play an instrument</option>
+                      <option value="other">I can't believe you didn't list my instrument here!</option>
+                      <option value="none">...wait, I don't play an instrument!</option>
                     </select>
-                    <br /><br /><br />
-                    <input type="submit" value="Send">
-                </form>
-                <span id="error-text"></span>
+                </div>
             </div>
-        </div>
+            <br /><br /><br />
+            <div class="row">
+                <div class="col-xs-8">
+                    <label id="error-text"></label>
+                </div>
+                <div class="col-xs-4">
+                    <input type="submit" value="SEND">
+                </div>
+            </div>
+        </form>
     </div>
 </div>
