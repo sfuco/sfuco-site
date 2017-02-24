@@ -302,10 +302,6 @@ section {
 }
 
 /* Contact */
-#contact-form .container {
-    overflow-y: auto;
-}
-
 #contact-form .row {
     margin-bottom: 24px;
 }
@@ -537,6 +533,7 @@ footer li {
         z-index: 3;
         background-color: white;
         margin-top: 0;
+        overflow-y: auto;
     }
 }
 
