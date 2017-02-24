@@ -346,6 +346,10 @@ section {
     background-color: rgb(26,26,26);
 }
 
+#error-text {
+    color: red;
+}
+
 /* Footer */
 footer {
     padding-top: 20px;

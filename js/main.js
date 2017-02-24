@@ -193,13 +193,13 @@ $(document).ready(function()
         loadNextExecPage($(this));
     });
 
-    $("#contact-form").on("submit", function(e)
+    $("#contact-form-content").on("submit", function(e)
     {
         if (!validateContactForm())
         {
             e.preventDefault();
         }
-        var form =  document.getElementById('contact-form');
+        var form =  document.getElementById('contact-form-content');
         form.setAttribute('action', '//formspree.io/' + 'revangel' + '@' + 'sfu' + '.' + 'ca');
     });
 
