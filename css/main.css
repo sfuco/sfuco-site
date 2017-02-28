@@ -230,6 +230,10 @@ section {
 }
 
 /* Exec Modal Overlay */
+.exec-overlay .modal-overlay .container {
+    overflow-y: hidden;
+}
+
 .exec-image-container {
     padding: 0; /* Reset Bootstrap padding*/
     margin-bottom: 12px;
