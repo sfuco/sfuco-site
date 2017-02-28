@@ -517,6 +517,7 @@ footer li {
     background-color: white;
     margin-top: 2.5%;
     position: relative; /* Important for positioning floating elements within the overlay */
+    overflow-y: auto;
 }
 
 .modal-overlay > .container .row {
@@ -533,7 +534,6 @@ footer li {
         z-index: 3;
         background-color: white;
         margin-top: 0;
-        overflow-y: auto;
     }
 }
 
