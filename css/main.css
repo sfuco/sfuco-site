@@ -210,17 +210,28 @@ section {
     text-align: center;
 }
 
+#about img {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.9;
+}
+
+#about-mobile {
+    overflow-x: hidden;
+}
+
+#about-mobile .about-vision-text,
+#about-mobile .about-history-text {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
 #about-full .row {
     height: 75vh;
     padding: 10vh 0;
     display: flex;
     align-items: baseline;
-}
-
-#about-full img {
-    max-height: 100%;
-    max-width: 100%;
-    opacity: 0.9;
 }
 
 #about-full .about-vision-text{
