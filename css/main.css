@@ -45,7 +45,8 @@ a:hover {
 
 /* Other defaults */
 section {
-    padding: 5vh 0;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 
 /*
@@ -120,21 +121,6 @@ section {
     transform: rotate(-45deg);
     top: -8px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .full-horizontal-nav ul {
@@ -238,6 +224,7 @@ section {
     bottom: 0;
     right: 0;
     text-align: right;
+    margin-right: 15px;
 }
 
 .mobile-bg .page-title h1 {
@@ -247,6 +234,13 @@ section {
 
 
 /* About Section */
+#about {
+    /* Mystery: these should be BS defaults (as in the News section)
+        but are being set to 0 somewhere */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 #about p {
     font-family: 'EB Garamond', serif ;
     font-size: 16px;
@@ -266,12 +260,6 @@ section {
 
 #about-mobile {
     overflow-x: hidden;
-}
-
-#about-mobile .about-vision-text,
-#about-mobile .about-history-text {
-    padding-left: 10vw;
-    padding-right: 10vw;
 }
 
 
