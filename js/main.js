@@ -176,7 +176,7 @@ $(document).ready(function()
 
     $("#nav-toggle-container, #mobile-nav-menu a").on("click", function()
     {
-        $(this).toggleClass("open");
+        $("#nav-toggle-container").toggleClass("open");
         $("#mobile-nav-menu").toggleClass("open");
     });
 
