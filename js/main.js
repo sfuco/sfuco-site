@@ -177,6 +177,7 @@ $(document).ready(function()
     $("#nav-toggle-container").on("click", function()
     {
         $(this).toggleClass("open");
+        $("#mobile-nav-menu").toggleClass("open");
     });
 
     $(".modal-overlay").on("click", function(e)

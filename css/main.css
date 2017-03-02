@@ -88,7 +88,7 @@ section {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3; /* Has to be above base (z=1) and the mobile nav menu (z=2)*/
     margin-top: 12px;
 }
 
@@ -103,7 +103,8 @@ section {
     transition: all ease-in-out 0.4s;
 }
 
-    /* Note: The following are the transformations that occur when the mobile
+    /* Note: The following span rules
+    are the transformations that occur when the mobile
     nav menu button is toggled */
 #nav-toggle-container.open span:nth-child(1),
 #nav-toggle-container.open span:nth-child(3),
@@ -120,6 +121,60 @@ section {
 #nav-toggle-container.open span:nth-child(4) {
     transform: rotate(-45deg);
     top: -8px;
+}
+
+#mobile-nav-menu {
+    width: 100vw;
+    height: 100vh;
+    z-index: 2; /* Has to be above base (z=1) but below nav toggle (z=3)*/
+    background-color: rgb(26,26,26);
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0; /* For some reason, grid.less sets L-R margins to -15px */
+    padding: 5px 15px 15px 0;
+    transform: translateX(-110vw);
+    transition-duration: 1s;
+}
+
+#mobile-nav-menu.open {
+    transform: translateX(0);
+    transition-duration: 1s;
+}
+
+#mobile-nav-menu .row:first-child {
+    margin-bottom: 10vh;
+}
+
+#mobile-nav-menu .mobile-nav-menu-contents { /* Thiscontains the menu items (piano) */
+    padding: 0;
+}
+
+#mobile-nav-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#mobile-nav-menu li {
+    display: block;
+    text-align: center;
+    list-style-type: none;
+    line-height: 48px; /* So that we know how to size the black key */
+    padding: 8px 0;
+    background-color: white;
+    position: relative;
+    margin: 8px 0;
+}
+
+#mobile-nav-menu .black-key {
+    background-color: rgb(26,26,26);
+    width: 35%;
+    height: 40px;
+    position: absolute;
+    top: 80%;
+    right: 0;
+    z-index: 3;
+    box-shadow: 5px 5px 5px rgba(26,26,26,0.25);
 }
 
 
