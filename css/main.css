@@ -223,21 +223,22 @@ section {
     opacity: 0.9;
 }
 
-#about-vision-text {
+#about-full .about-vision-text{
     background-color: rgba(255,255,255,1);
     z-index: 2;
 }
 
-#about-vision img {
-    transform: translateX(-10%);
+#about-full .about-vision-img {
+    transform: translateX(-20%);
 }
 
-#about-history-text {
+#about-full .about-history-text {
+    display: block;
     background-color: rgba(255,255,255,1);
     z-index: 2;
 }
 
-#about-history img {
+#about-full .about-history-img {
     transform: translateX(10%);
 }
 
