@@ -200,7 +200,7 @@ section {
 
 /* About Section */
 #about p {
-    font-family: 'EB Garamond';
+    font-family: 'EB Garamond', serif ;
     font-size: 16px;
 }
 
@@ -325,6 +325,11 @@ section {
                     rows taking up roughly half the height (45vh), setting a height
                     of 40 gives some whitespace at the bottom for the text */
     overflow-y: auto;
+}
+
+.exec-description p {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
 }
 
 /* News */
