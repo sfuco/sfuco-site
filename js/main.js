@@ -174,7 +174,7 @@ $(document).ready(function()
         updateVerticalNav();
     });
 
-    $("#nav-toggle-container").on("click", function()
+    $("#nav-toggle-container, #mobile-nav-menu a").on("click", function()
     {
         $(this).toggleClass("open");
         $("#mobile-nav-menu").toggleClass("open");
