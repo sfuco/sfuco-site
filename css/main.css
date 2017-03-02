@@ -72,22 +72,70 @@ section {
     }
 }
 
-.mobile-horizontal-nav {
-    text-align: right;
-    margin: 0;
-    padding-top: 12px;
+#nav-toggle {
+    cursor: pointer;
+    display: block;
 }
 
-.mobile-horizontal-nav button {
-    background-image: url("../img/icons/navToggle.png");
-    background-color: rgba(0,0,0,0);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    border: none;
-    width: 36px;
-    height: 36px;
+#nav-toggle-container {
+    position: relative;
 }
+
+#nav-toggle {
+    display: block;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    margin-top: 12px;
+}
+
+#nav-toggle span {
+    background: white;
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin: 4px 0;
+    position: relative;
+    top: 0;
+    transition: all ease-in-out 0.4s;
+}
+
+    /* Note: The following are the transformations that occur when the mobile
+    nav menu button is toggled */
+#nav-toggle-container.open span:nth-child(1),
+#nav-toggle-container.open span:nth-child(3),
+#nav-toggle-container.open span:nth-child(5) {
+    opacity: 0;
+    width: 0;
+}
+
+#nav-toggle-container.open span:nth-child(2) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+#nav-toggle-container.open span:nth-child(4) {
+    transform: rotate(-45deg);
+    top: -8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .full-horizontal-nav ul {
     text-align: right;
@@ -127,7 +175,7 @@ section {
     vertical-align: left;
 }
 
-/* Note: The styling for the vertical links is under
+    /* Note: The styling for the vertical links is under
     Event Driven Classes so that it can work with the JS scripts */
 
 @media screen and (min-width: 1400px) {
