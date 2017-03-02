@@ -173,7 +173,7 @@ section {
     bottom: 0;
     padding: 1.5rem 0 0 1.5rem;
     background-color: rgba(26,26,26,0.9);
-    box-shadow: 10px 10px 10px rgba(26,26,26,0.9);
+    box-shadow: 5px 5px 5px rgba(26,26,26,0.25);
 }
 
 .mobile-bg {
@@ -197,6 +197,49 @@ section {
     font-size: 5rem;
 }
 
+
+/* About Section */
+#about p {
+    font-family: 'EB Garamond';
+    font-size: 16px;
+}
+
+#about h3 {
+    display: block;
+    font-weight: 100;
+    text-align: center;
+}
+
+#about-full .row {
+    height: 75vh;
+    padding: 10vh 0;
+    display: flex;
+    align-items: baseline;
+}
+
+#about-full img {
+    max-height: 100%;
+    max-width: 100%;
+    opacity: 0.9;
+}
+
+#about-vision-text {
+    background-color: rgba(255,255,255,1);
+    z-index: 2;
+}
+
+#about-vision img {
+    transform: translateX(-10%);
+}
+
+#about-history-text {
+    background-color: rgba(255,255,255,1);
+    z-index: 2;
+}
+
+#about-history img {
+    transform: translateX(10%);
+}
 
 
 /* Execs Section */
