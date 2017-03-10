@@ -23,8 +23,10 @@
         <div class="flex-element exec-bio">
             <a href="#{{exec.firstName}}">
                 <span>{{exec.firstName}}</span>
-                <div class="hover-overlay"></div>
-                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+                <div class="image-container">
+                    <div class="hover-overlay"></div>
+                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+                </div>
             </a>
         </div>
         {% endfor %}
