@@ -40,7 +40,11 @@
 
 
         <div id="content" class="container">
-        
+
+            <section id="news" class="row">
+                {% include news.html %}
+            </section>
+
             <section id="about" class="row">
                 {% include about.html %}
             </section>
@@ -52,10 +56,6 @@
             </section>
 
             <hr />
-
-            <section id="news" class="row">
-                {% include news.html %}
-            </section>
 
             <!-- This is just the contact form overlay -->
             <section id="contact" class="row">
