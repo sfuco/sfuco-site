@@ -1,0 +1,17 @@
+@import "variables";
+
+/*
+    Event-driven Classes
+        Used by JS functions
+------------------------------------------------*/
+
+.default-nav {
+    font-weight: 100;
+    font-size: 18px;
+    color: $black; /* Eerie Black */
+}
+
+.active-nav {
+    font-weight: bold;
+    color: $cool-black; /* Cool Black */
+}

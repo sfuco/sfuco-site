@@ -1,54 +1,49 @@
-/* main.js
- * JS functions for sfuco-site
- * Reinier E.
- * revangel@sfu.ca
- * 2016
+/*  main.js
+ *  JS functions for sfuco-site
+ *  Reinier E.
+ *  revangel@sfu.ca
+ *  2016
  */
-$(document).ready(function()
-{
+$(document).ready(function() {
+
     // Function Definitions
     ////////////////////////////////////////
 
     // Navigation
 
-    function updateVerticalNav ()
-    {
-        var windowPosition = $(window).scrollTop();
-        var firstSection = $("section:eq(0)").offset().top;
+    function updateVerticalNav() {
+      var windowPosition = $(window).scrollTop();
+      var firstSection = $('section:eq(0)').offset().top;
 
-        if(windowPosition >= firstSection - (firstSection/4))
-        {
-            verticalNav.fadeIn();
-            updateNavColors();
-        }
-        else
-        {
-            verticalNav.fadeOut();
-        }
+      if (windowPosition >= firstSection - (firstSection / 4)) {
+        verticalNav.fadeIn();
+        updateNavColors();
+      } else {
+        verticalNav.fadeOut();
+      }
     }
 
-    function updateNavColors ()
-    {
+    function updateNavColors() {
         var windowPosition = $(document).scrollTop();
 
-        $("section").each(function(index)
+        $('section').each(function(index)
         {
             index++; // Since #home is not a <section> but it's still a link
             var currentSectionTop = $(this).offset().top;
             var currentSectionBottom = currentSectionTop + $(this).outerHeight(true);
 
-            var currentSection = $("#vertical-nav a:eq(" + index + ")");
-            var currentSectionID = $("#vertical-nav a:eq(" + index + ")").attr("id");
+            var currentSection = $('#vertical-nav a:eq(' + index + ')');
+            var currentSectionID = $('#vertical-nav a:eq(' + index + ')').attr('id');
 
             // Note: The (currentSectionTop/4) is to give some padding to the edge detection
             // so that the beginning of the current section doesn't have to be at the
             // very top of the window for it to be registered as the active-nav.
-            if(windowPosition >= currentSectionTop - (currentSectionTop/4) )
+            if (windowPosition >= currentSectionTop - (currentSectionTop / 4))
             {
-                currentSection.addClass("active-nav");
-                $("#vertical-nav a").not("#" + currentSectionID).each(function()
+                currentSection.addClass('active-nav');
+                $('#vertical-nav a').not('#' + currentSectionID).each(function()
                 {
-                    $(this).removeClass("active-nav");
+                    $(this).removeClass('active-nav');
                 });
             }
         });
@@ -62,9 +57,9 @@ $(document).ready(function()
         // unique hashes, it's easier to check for whether
         // the modal box is from one of the other sections
         // with hashes that we already know beforehand
-        if(window.location.hash == "#contact-form-overlay")
+        if(window.location.hash == '#contact-form-overlay')
         {
-            window.location.hash = "#contact";
+            window.location.hash = '#contact';
         }
         else
         {
@@ -74,27 +69,27 @@ $(document).ready(function()
 
     function loadPrevExecPage(button)
     {
-        var link = "#";
+        var link = '#';
         link = link.concat(getPrevExecID(button));
-        button.find("a").attr("href", link);
+        button.find('a').attr('href', link);
     };
 
     function loadNextExecPage(button)
     {
-        var link = "#";
+        var link = '#';
         link = link.concat(getNextExecID(button));
-        button.find("a").attr("href", link);
+        button.find('a').attr('href', link);
     };
 
     function getPrevExecID(button)
     {
-        var execID = button.parents().eq(3).prev().attr("id");
+        var execID = button.parents().eq(3).prev().attr('id');
         return execID;
     }
 
     function getNextExecID(button)
     {
-        var execID = button.parents().eq(3).next().attr("id");
+        var execID = button.parents().eq(3).next().attr('id');
         return execID;
     }
 
@@ -109,7 +104,7 @@ $(document).ready(function()
 
         if (!str)
         {
-            $("#error-text").text("Sorry, what was your name again?");
+            $('#error-text').text('Sorry, what was your name again?');
             return false;
         }
 
@@ -123,19 +118,19 @@ $(document).ready(function()
 
         if (!str)
         {
-            $("#error-text").text("Please enter an email so we can get back to you!");
+            $('#error-text').text('Please enter an email so we can get back to you!');
             return false;
         }
         else if(!ValidateEmail(str))
         {
-            $("#error-text").text("We need a valid email address from you!");
+            $('#error-text').text('We need a valid email address from you!');
             return false;
         }
 
         str = $("select[name='instrument']").val();
         if (!str)
         {
-            $("#error-text").text("Do you play an instrument?");
+            $('#error-text').text('Do you play an instrument?');
             return false;
         }
 
@@ -156,7 +151,7 @@ $(document).ready(function()
 
     $(window).load(function()
     {
-        $(".loading-screen").fadeOut("slow");
+        $('.loading-screen').fadeOut('slow');
     });
 
     var verticalNav = $('#vertical-nav');
@@ -169,18 +164,18 @@ $(document).ready(function()
     // If the page was loaded somewhere halfway down
     updateVerticalNav();
 
-    $(window).on("scroll", function()
+    $(window).on('scroll', function()
     {
         updateVerticalNav();
     });
 
-    $("#nav-toggle-container, #mobile-nav-menu a").on("click", function()
+    $('#nav-toggle-container, #mobile-nav-menu a').on('click', function()
     {
-        $("#nav-toggle-container").toggleClass("open");
-        $("#mobile-nav-menu").toggleClass("open");
+        $('#nav-toggle-container').toggleClass('open');
+        $('#mobile-nav-menu').toggleClass('open');
     });
 
-    $(".modal-overlay").on("click", function(e)
+    $('.modal-overlay').on('click', function(e)
     {
         if(e.target != this)
         {
@@ -189,17 +184,17 @@ $(document).ready(function()
         closeModalBox();
     });
 
-    $(".prev-button").on("click", function (e)
+    $('.prev-button').on('click', function (e)
     {
         loadPrevExecPage($(this));
     });
 
-    $(".next-button").on("click", function (e)
+    $('.next-button').on('click', function (e)
     {
         loadNextExecPage($(this));
     });
 
-    $("#contact-form-content").on("submit", function(e)
+    $('#contact-form-content').on('submit', function(e)
     {
         if (!validateContactForm())
         {

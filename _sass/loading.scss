@@ -1,0 +1,11 @@
+@import "variables";
+/* Loading Screen */
+.loading-screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    background: url('../img/animations/logo_animation.gif') 50% 50% no-repeat $white;
+}

@@ -1,0 +1,170 @@
+@import "variables";
+
+#navigation {
+    padding: 0; /*Override bootstrap default padding since this should stretch the entire width*/
+}
+
+#horizontal-nav {
+    position: relative;
+    width: 100%;
+
+    li {
+        a {
+            font-weight: normal;
+            font-size: 16px;
+        }
+    }
+
+    @media screen and (max-width: 991px) { /* Horizontal nav changes to full at 992px (boostrap breakpoint)*/
+        background-color: $black;
+    }
+}
+
+#nav-toggle-container {
+    position: relative;
+
+    /* Note: The following span rules
+    are the transformations that occur when the mobile
+    nav menu button is toggled */
+    &.open {
+        span:nth-child(1),  & span:nth-child(3),  & span:nth-child(5) {
+            width: 0;
+            opacity: 0;
+        }
+
+        span:nth-child(2) {
+            transform: rotate(45deg);
+            top: 8px;
+        }
+
+        span:nth-child(4) {
+            transform: rotate(-45deg);
+            top: -8px;
+        }
+
+    }
+}
+
+#nav-toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3; /* Has to be above base (z=1) and the mobile nav menu (z=2)*/
+    margin-top: 12px;
+    float: right;
+    cursor: pointer;
+
+    span {
+        display: block;
+        position: relative;
+        width: 48px;
+        height: 4px;
+        margin: 4px 0;
+        top: 0;
+        background: $white;
+        transition: all ease-in-out 0.4s;
+    }
+}
+
+#mobile-nav-menu {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0; /* For some reason, grid.less sets L-R margins to -15px */
+    padding: 5px 15px 15px 0;
+    z-index: 2; /* Has to be above base (z=1) but below nav toggle (z=3)*/
+    background-color: $black;
+    transform: translateX(-110vw);
+    transition-duration: 1s;
+
+    &.open {
+        transform: translateX(0);
+        transition-duration: 1s;
+    }
+
+    .row:first-child {
+        margin-bottom: 10vh;
+    }
+
+    .mobile-nav-menu-contents { /* Thiscontains the menu items (piano) */
+        padding: 0;
+    }
+
+    .black-key {
+        position: absolute;
+        width: 35%;
+        height: 40px;
+        top: 80%;
+        right: 0;
+        z-index: 3;
+        background-color: $black;
+        box-shadow: 5px 5px 5px rgba($black ,0.25);
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: block;
+        position: relative;
+        margin: 8px 0;
+        padding: 8px 0;
+        background-color: $white;
+        line-height: 48px; /* So that we know how to size the black key */
+        text-align: center;
+        list-style-type: none;
+    }
+}
+
+.full-horizontal-nav {
+    ul {
+        margin: 46px 0 0 12px;
+        text-align: right;
+    }
+
+    li {
+        display: inline;
+        margin: 0 12px;
+    }
+}
+
+.logo-link {
+    display: block;
+    width: 72px;
+    height: 72px;
+    background-image: url("../img/logo.png");
+    background-size: contain;
+}
+
+#vertical-nav {
+    position: fixed;
+    left: 1vw;
+    top: 25vh;
+    visibility: hidden;
+
+    ul {
+        padding: 0;
+    }
+
+    li {
+       display: block;
+       clear: left;
+       float: left;
+       margin: 12px;
+       vertical-align: left;
+   }
+
+   /* Note: The styling for the vertical links is under
+   Event Driven Classes so that it can work with the JS scripts */
+    @media screen and (min-width: 1400px) {
+           visibility: visible;; /*1400 px is when the content
+                             containers start overlapping with
+                             the vertical nav*/
+    }
+
+}
