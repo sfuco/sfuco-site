@@ -1,6 +1,4 @@
 _site
 node_modules
-gulpfile.js
-package.json
 .bundle
 .sass-cache
