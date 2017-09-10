@@ -1,6 +1,6 @@
 SFUCO Site TODO
 
-Last Updated: 1/6/2017
+Last Updated: 9/10/2017
 
 ----------------------------
 High Level Wishlist
@@ -24,11 +24,11 @@ Concrete Tasks
     [ ] Responsive
 
 [-] Home
-    [] Image?
+    [x] Image?
 
-[-] About Section
-    [] Markup
-    [] Image Vector animate on reveal
+[x] About Section
+    [x] Markup
+    [-] Image Vector animate on reveal
 
 [-] Exec Section
     [x] Markup
@@ -41,8 +41,8 @@ Concrete Tasks
     [x] Use Jekyll collections to manage content
 
 
-[] News Section
-    [] Markup (Jekyll)
+[x] News Section
+    [x] Markup (Jekyll)
 
-[] Contact section
-    [] Markup
+[x] Contact section
+    [x] Markup
