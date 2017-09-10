@@ -5,7 +5,7 @@
 # Technical networking
 markdown: kramdown
 baseurl: ""
-url: "revangel.github.io"
+url: "sfuco.github.io"
 exclude: ['README.md', 'LICENSE.txt', 'node_modules', 'gulpfile.js']
 
 # Content
@@ -16,6 +16,3 @@ favicon: img/favicons/sfuco_favicon.png
 # Collections: For managing non-post content
 collections:
     - execs
-
-sass:
-    style: compressed
