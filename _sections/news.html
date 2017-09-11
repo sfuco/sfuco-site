@@ -1,0 +1,53 @@
+---
+name: news
+order: 1
+---
+
+<div class="container">
+  <!-- Page title -->
+  <div class="row">
+    <div class="dropdown-container">
+      <ul>
+        <li class="dropdown-parent">
+          <h1>
+            recent
+            <div class="down-triangle"></div>
+          </h1>
+          <div class="dropdown-submenu">
+            <ul>
+              <li><a href="">older</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><h1><b>news</b></h1></li>
+      </ul>
+    </div>
+  </div>
+  <!-- News Section -->
+  <div id="news-list" class="row">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <div class="news-item row">
+            <div class="news-photo col-md-4">
+              {% if post.image %}
+                <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+              {% endif %}
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <h4>{{post.title}}</h4>
+              </div>
+              <div class="row">
+                <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+              </div>
+              <div class="news-content row">
+                {{post.content}}
+              </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
