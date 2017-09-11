@@ -50,7 +50,8 @@ gulp.task('build-css', function() {
 // Watch Tasks
 gulp.task('watch', function() {
   gulp.watch('./_sass/**/*.scss', ['build-css']);
-  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*'],
+  gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*',
+   '_sections/*'],
   ['jekyll-rebuild']);
   gulp.watch(['./*.yml'], ['jekyll-rebuild']);
 });
