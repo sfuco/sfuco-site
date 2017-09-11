@@ -1,0 +1,34 @@
+@import 'colors';
+
+#about {
+  h3 {
+    text-align: center;
+    font-weight: 100;
+  }
+  p {
+    font-family: 'EB Garamond', serif;
+    font-size: 14px;
+  }
+  img {
+    max-width: 100%; // Prevent image from being too big
+    max-height: 100%;
+    opacity: 0.9;
+  }
+
+  .pop-box { // Center the content in the boxes
+    display: flex;
+    align-items: center;
+  }
+
+  .row {
+    padding: 24px 0;
+  }
+
+  // Shift images undeneath text boxes
+  .row:nth-child(1) img { // The image in the first row
+    transform: translate(-30px, -30px);
+  }
+  .row:nth-child(2) img {
+    transform: translate(40px, 40px);
+  }
+}
