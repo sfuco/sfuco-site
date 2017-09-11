@@ -9,7 +9,7 @@ layout: default
 </header>
 
 {% for section in site.sections %}
-  <section id="{{section.id}}">
-    {{content}}
+  <section id="{{section.name}}">
+    {{section.content}}
   </section>
 {% endfor %}
