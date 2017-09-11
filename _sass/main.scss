@@ -1,0 +1,25 @@
+@import "colors";
+@import "typography";
+
+body {
+  font-family: CooperHewitt, sans-serif;
+  color: $grey;
+}
+
+.hero-image {
+  height: 80vh;
+
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  h1 {
+    right: 5vw;
+    bottom: 0;
+    position: absolute;
+
+    font-size: 60px;
+    color: $white;
+  }
+}

@@ -1,0 +1,107 @@
+/* Colors */
+/* 'Eerie Black' */
+/* 'Cool Black' */
+
+/* Colors */
+/* 'Eerie Black' */
+/* 'Cool Black' */
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Book.otf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Thin.otf);
+  font-weight: 100; }
+
+body {
+  font-family: CooperHewitt, sans-serif;
+  color: #1a1a1a; }
+
+.hero-image {
+  height: 80vh;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+  .hero-image h1 {
+    right: 5vw;
+    bottom: 0;
+    position: absolute;
+    font-size: 60px;
+    color: white; }
+
+/* Colors */
+/* 'Eerie Black' */
+/* 'Cool Black' */
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Book.otf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Thin.otf);
+  font-weight: 100; }
+
+nav {
+  z-index: 10; }
+
+#full-nav .row {
+  height: 55px; }
+
+.logo {
+  height: 100%;
+  display: block;
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.menu {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+  .menu ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: end;
+    align-items: flex-end; }
+  .menu li {
+    list-style-type: none;
+    font-size: 0.9vw;
+    letter-spacing: 2px; }
+  .menu li a {
+    padding: 0 20px;
+    color: #1a1a1a; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Bold.otf);
+  font-weight: bold; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Book.otf);
+  font-weight: normal; }
+
+@font-face {
+  font-family: CooperHewitt;
+  src: url(fonts/CooperHewitt-Thin.otf);
+  font-weight: 100; }

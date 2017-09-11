@@ -1,0 +1,55 @@
+@import "colors";
+@import "typography";
+
+$navbar-height: 55px;
+
+nav {
+  z-index: 10; // Set nav as the top most layer
+}
+
+#full-nav {
+  .row {
+    height: $navbar-height;
+  }
+}
+
+.logo {
+  /// Setting a static width here apparently causes
+  /// the menu columns to get 'pulled' towards
+  /// the logo and end up leaving empty space
+  /// to the right
+  height: 100%;
+  display: block;
+
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.menu {
+  height: 100%;
+  display: flex; // allows ul to be centered horizontally
+  justify-content: space-around;
+
+  ul {
+    height: 100%;
+    margin: 0;
+    padding: 0; // remove default padding-left on ul
+    overflow: hidden;
+
+    display: flex; // allows li to be centered vertically
+    align-items: flex-end; // align li to bottom
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 0.9vw;
+    letter-spacing: 2px;
+  }
+
+  li a {
+      padding: 0 20px;
+
+      color: $grey;
+  }
+}

@@ -1,62 +1,19 @@
-<nav id="horizontal-nav">
-
-    <!-- Mobile nav -->
-    <div class="mobile-horizontal-nav hidden-md hidden-lg hidden-xl">
-        <div class="container-fluid">
-
-            <div class="toolbar row">
-                <div class="col-xs-12">
-                    <div id="nav-toggle-container">
-                        <div id="nav-toggle">
-                            <span>&nbsp</span>
-                            <span>&nbsp</span>
-                            <span>&nbsp</span>
-                            <span>&nbsp</span>
-                            <span>&nbsp</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="mobile-nav-menu" class="row">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <a href="#home" class="logo-link"></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mobile-nav-menu-contents col-xs-12">
-                        <ul>
-                            <li><a href="#home">home</a><div class="black-key"></div></li>
-                            <li><a href="#news">news</a></li>
-                            <li><a href="#about">about</a><div class="black-key"></div></li>
-                            <li><a href="#execs">execs</a><div class="black-key"></div></li>
-                            <li><a href="#contact">contact</a><div class="black-key"></div></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<nav>
+  <!-- Full nav -->
+  <div id="full-nav" class="hidden-sm-down">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-1">
+          <a href="{{site.baseurl}}/index.html"><div class="logo"></div></a>
         </div>
+        <div class="menu col-md-4 offset-md-7">
+          {% include nav-menu.html %}
+        </div>
+      </div>
     </div>
+  </div>
+  <!-- Mobile nav -->
+  <div id="mobile-nav" class="hidden-md-up">
 
-
-    <!-- Full navbar -->
-    <div class="full-horizontal-nav hidden-xs hidden-sm">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2">
-                    <a href="#home" class="logo-link"></a>
-                </div>
-                <div class="col-md-10">
-                    <ul>
-                        <li><a href="#home">home</a></li>
-                        <li><a href="#news">news</a></li>
-                        <li><a href="#about">about</a></li>
-                        <li><a href="#execs">execs</a></li>
-                        <li><a href="#contact">contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        </div>
+  </div>
 </nav>
