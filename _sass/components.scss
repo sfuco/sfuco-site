@@ -1,0 +1,174 @@
+// Reusable classes
+@import 'colors';
+
+/// Dropdown Menu
+.down-triangle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-image: url("../img/icons/downTriangle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.dropdown-container {
+    width: 100%;
+
+    ul {
+       padding: 15px; /* To match bootstrap's default row padding */
+    }
+    h1 {
+       margin: 0;
+    }
+    li {
+        display: inline-block;
+        padding: 0 12px 0 0;
+        list-style-type: none;
+    }
+}
+
+.dropdown-parent {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+
+    &:hover > .dropdown-submenu {
+        opacity: 1;
+    }
+}
+
+.dropdown-submenu {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+    background-color: rgba($grey,0.9);
+    opacity: 0;
+    transition:opacity linear 0.15s;
+
+    ul {
+        padding: 0;
+        text-align: center;
+    }
+    li {
+        display: block;
+        a {
+            color: $white;
+            font-size: 24px; /* Based on h1 size of 36px */
+        }
+    }
+}
+
+/// Flexbox
+// A collection of elements that are dynamically arranged
+// on the page.
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex-element {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  position: relative;
+}
+
+/// Image Container
+// A container for imgs with an overlay
+// (Takes on the width and height of its parent container
+// usually, a flex-element)
+.image-container {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.hover-overlay { // Usually goes inside an .image-container
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none; // Turned on by a trigger
+  z-index: 2;
+  opacity: 0.7;
+  background-color: $grey;
+}
+
+/// Modal window
+// A window that takes the foreground, darkening all
+// content behind it
+.modal-overlay { // The mask that dims background
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  z-index: 3;
+  background-color: rgba($grey, 0.9); // Dim the background
+
+  // This is activated when it's targeted - as such, it needs
+  // to contain a corresponding id.
+  // e.g. <div id="me" class="modal-overlay">
+  // This is activated when the url points to it, i.e.
+  // ".../#me"
+  &:target { // Show when it's the target
+    display: block;
+  }
+  .container {
+    width: 50vw;
+    height: 90vh;
+    position: relative; // necessary for positioning floating elements in window
+    margin-top: 2.5%;
+    z-index: 3;
+    background-color: $white;
+  }
+  .row {
+    padding: 0 2.5%;
+    overflow: hidden;
+  }
+  // Make modal window fullscreen for small devices
+  // Note: 991px is the BS limit for medium screens
+  @media screen and (max-width: 991px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+    }
+  }
+}
+
+.modal-image-container {
+  padding: 0; // Reset BS padding
+  margin-bottom: 12px;
+  img {
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+  }
+}
+
+.close-button {
+  display: block;
+  padding-top: 5%;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  color: $grey;
+}
+
+/// Pop Box
+// A box with a drop shadow
+.pop-box {
+  z-index: 2;
+  background-color: $white;
+  box-shadow: 0 0 15px rgba($grey, 0.5);
+}
