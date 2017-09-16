@@ -1,0 +1,47 @@
+@import 'colors';
+
+#execs {
+  .modal-overlay span {
+    position: relative;
+    display: block;
+    margin-bottom: 24px;
+    text-align: right;
+    font-weight: 100;
+    font-size: 24px;
+    color: $grey;
+  }
+  .modal-overlay h3 {
+    margin: 0;
+    margin-bottom: 12px;
+    text-align: right;
+  }
+  .modal-overlay .row:nth-child(3) div:nth-child(2) { // Exec content
+    height: 40vh; // With the modal window defaulting at 90vh, this allows for
+                  // some whitespace at the bottom
+    p {
+      font-family: 'EB Garamond', serif;
+      font-size: 16px;
+    }
+  }
+}
+
+#execs-content {
+  .flex-element:hover span { // Overlay name on hover
+    opacity: 1;
+  }
+  .flex-element:hover .hover-overlay{ // Darken image on hover
+    display: block;
+  }
+}
+
+#execs-content span {
+  position: absolute;
+  top: 150px;
+  left: 25px;
+  display: block;
+  z-index: 3;
+  color: $white;
+  opacity: 0;
+  font-size: 24px;
+  font-weight: bold;
+}

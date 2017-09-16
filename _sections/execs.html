@@ -1,0 +1,81 @@
+---
+name: execs
+order: 3
+---
+
+<div class="container">
+  <!-- Page Title -->
+  <div class="dropdown-container">
+    <ul>
+      <li class="dropdown-parent">
+        <h1>
+          current
+          <div class="down-triangle"></div>
+        </h1>
+        <div class="dropdown-submenu">
+          <ul>
+            <li><a href="">past</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><h1><b>execs</b></h1></li>
+    </ul>
+  </div>
+  <!-- Exec Thumbnail Gallery -->
+  <div id="execs-content">
+    <div class="flex-container">
+      {% for exec in site.execs %}
+        <div class="flex-element">
+          <a href="#{{exec.firstName}}"> <!-- To make image clickable, wrap in <a> -->
+            <span id="me">{{exec.firstName}}</span>
+            <div class="image-container">
+              <div class="hover-overlay"></div>
+              <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Exec detail modal windows -->
+  <div class="">
+    {% for exec in site.execs %}
+      {% if exec.status == 'active' %}
+        <div id="{{exec.firstName}}" class="modal-overlay">
+          <div class="container"> <!-- The actual modal window -->
+            <div class="row"> <!-- 1. Close button row -->
+              <div class="col-xs-1 offset-11">
+                <button class="close-button">X</button>
+              </div>
+            </div>
+            <div class="row"><!-- 2. Image row -->
+              <div class="col-md-8 offset-md-4">
+                <div class="modal-image-container">
+                  <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+                </div>
+              </div>
+            </div>
+            <div class="row"><!-- 3. Text row -->
+              <div class="col-md-4"><!-- 3a. Exec Info -->
+                <div class="row">
+                  <div class="col-md-12">
+                    <h3><b>{{exec.title}}</b></h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <span>{{exec.position}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8"><!-- 3b. Exec details -->
+                {{exec.content | markdownify}} 
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
