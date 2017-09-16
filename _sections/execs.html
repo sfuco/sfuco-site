@@ -24,23 +24,27 @@ order: 3
   <!-- Exec Thumbnail Gallery -->
   <div id="execs-content">
     <div class="flex-container">
-      {% for exec in site.execs %}
-        <div class="flex-element">
-          <a href="#{{exec.firstName}}"> <!-- To make image clickable, wrap in <a> -->
-            <span id="me">{{exec.firstName}}</span>
-            <div class="image-container">
-              <div class="hover-overlay"></div>
-              <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
-            </div>
-          </a>
-        </div>
+      {% assign sortedExecs = site.execs | sort: 'order' %}
+      {% for exec in sortedExecs %}
+        {% if exec.status == 'active' %}
+          <div class="flex-element">
+            <a href="#{{exec.firstName}}"> <!-- To make image clickable, wrap in <a> -->
+              <span id="me">{{exec.firstName}}</span>
+              <div class="image-container">
+                <div class="hover-overlay"></div>
+                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+              </div>
+            </a>
+          </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
 
   <!-- Exec detail modal windows -->
   <div class="">
-    {% for exec in site.execs %}
+    {% assign sortedExecs = site.execs | sort: 'order' %}
+    {% for exec in sortedExecs %}
       {% if exec.status == 'active' %}
         <div id="{{exec.firstName}}" class="modal-overlay">
           <div class="container"> <!-- The actual modal window -->
@@ -70,7 +74,7 @@ order: 3
                 </div>
               </div>
               <div class="col-md-8"><!-- 3b. Exec details -->
-                {{exec.content | markdownify}} 
+                {{exec.content | markdownify}}
               </div>
             </div>
           </div>
