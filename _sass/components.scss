@@ -159,11 +159,23 @@
 .close-button {
   display: block;
   padding-top: 5%;
+  margin: 12px 0;
   text-align: right;
   font-weight: bold;
   font-size: 16px;
+  border-style: none;
+  background-color: $white;
+  text-decoration: none;
   color: $grey;
 }
+
+.close-button:hover {
+  font-weight: bold;
+  background-color: $red;
+  color: $white;
+  transition: background-color 1s, color 0.2s;
+}
+
 
 /// Pop Box
 // A box with a drop shadow
