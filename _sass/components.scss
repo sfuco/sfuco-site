@@ -225,10 +225,10 @@
 .img-overlay {
   position: absolute;
   opacity: 0;
-  transition: opacity .5s ease-in;
+  transition: opacity .05s ease-in;
 }
 
 .img-overlay-container:hover .img-overlay {
   opacity: 1;
-  transition: opacity .5s ease-out;
+  transition: opacity .25s ease-out;
 }
