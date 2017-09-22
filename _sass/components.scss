@@ -212,3 +212,23 @@
   background-color: $white;
   box-shadow: 0 0 15px rgba($grey, 0.5);
 }
+
+/// Image Overlay
+// An <img class="img-overlay"> will
+// be invisible until hovered over
+// Used to show transformation between one image into another on hover
+// It's a variation on .hover-overlay
+// e.g. place an <img class="img-overlay"> of a colored
+// img above a black and white one - hovering over it
+// will transform the b&w one to colored
+// Note: both imgs should be in a <div class="img-overlay-container">
+.img-overlay {
+  position: absolute;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.img-overlay-container:hover .img-overlay {
+  opacity: 1;
+  transition: opacity .5s ease-out;
+}
