@@ -42,57 +42,55 @@ order: 3
   </div>
 
   <!-- Exec detail modal windows -->
-  <div class="">
-    {% assign sortedExecs = site.execs | sort: 'order' %}
-    {% for exec in sortedExecs %}
-      {% if exec.status == 'active' %}
-        <div id="{{exec.firstName}}" class="modal-overlay">
-          <div class="container"> <!-- The actual modal window -->
-            <div class="row"> <!-- 1. Close button row -->
-              <div class="col-xs-1 offset-11">
-                <button class="close-button">X</button>
-              </div>
+  {% assign sortedExecs = site.execs | sort: 'order' %}
+  {% for exec in sortedExecs %}
+    {% if exec.status == 'active' %}
+      <div id="{{exec.firstName}}" class="modal-overlay">
+        <div class="container"> <!-- The actual modal window -->
+          <div class="row"> <!-- 1. Close button row -->
+            <div class="col-xs-1 offset-11">
+              <button class="close-button">X</button>
             </div>
-            <div class="row"><!-- 2. Image row -->
-              <div class="col-md-8 offset-md-4">
-                <div class="modal-image-container">
-                  <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
-                </div>
-              </div>
-            </div>
-            <div class="row"><!-- 3. Text row -->
-              <div class="col-md-4"><!-- 3a. Exec Info -->
-                <div class="row">
-                  <div class="col-md-12">
-                    <h3><b>{{exec.title}}</b></h3>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <span>{{exec.position}}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-8"><!-- 3b. Exec details -->
-                {{exec.content | markdownify}}
-              </div>
-            </div>
-            <div> <!-- Nav Buttons -->
-              {% if {{forloop.index}} > 1 %}
-              <div class="nav-button">
-                <a class="prev-button" href=""><</a>
-              </div>
-              {% endif %}
-              <!-- Note: the following is equivalent to "if != forloop.last" -->
-              {% unless forloop.last %}
-              <div class="nav-button">
-                <a class="next-button" href="">></a>
-              </div>
-              {% endunless %}
-              </div>
           </div>
+          <div class="row"><!-- 2. Image row -->
+            <div class="col-md-8 offset-md-4">
+              <div class="modal-image-container">
+                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+              </div>
+            </div>
+          </div>
+          <div class="row"><!-- 3. Text row -->
+            <div class="col-md-4"><!-- 3a. Exec Info -->
+              <div class="row">
+                <div class="col-md-12">
+                  <h3><b>{{exec.title}}</b></h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <span>{{exec.position}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8"><!-- 3b. Exec details -->
+              {{exec.content | markdownify}}
+            </div>
+          </div>
+          <div> <!-- Nav Buttons -->
+            {% if {{forloop.index}} > 1 %}
+            <div class="nav-button">
+              <a class="prev-button" href=""><</a>
+            </div>
+            {% endif %}
+            <!-- Note: the following is equivalent to "if != forloop.last" -->
+            {% unless forloop.last %}
+            <div class="nav-button">
+              <a class="next-button" href="">></a>
+            </div>
+            {% endunless %}
+            </div>
         </div>
-      {% endif %}
-    {% endfor %}
-  </div>
+      </div>
+    {% endif %}
+  {% endfor %}
 </div>
