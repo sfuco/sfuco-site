@@ -80,13 +80,13 @@ order: 3
             <div> <!-- Nav Buttons -->
               {% if {{forloop.index}} > 1 %}
               <div class="nav-button">
-                <button class="prev-button"><</button>
+                <a class="prev-button" href=""><</a>
               </div>
               {% endif %}
               <!-- Note: the following is equivalent to "if != forloop.last" -->
               {% unless forloop.last %}
               <div class="nav-button">
-                <button class="next-button">></button>
+                <a class="next-button" href="">></a>
               </div>
               {% endunless %}
               </div>
