@@ -37,7 +37,7 @@ $(document).ready(function() {
           '#vertical-nav a:eq(' + index + ')'
       ).attr('id');
 
-      // Note: The (currentSectionTop/4) is to give some padding to the edge detection
+      // The (currentSectionTop/4) is to give some padding to the edge detection
       // so that the beginning of the current section doesn't have to be at the
       // very top of the window for it to be registered as the active-nav.
       if (windowPosition >= currentSectionTop - (currentSectionTop / 4)) {
@@ -63,26 +63,33 @@ $(document).ready(function() {
     }
   }
 
-  function loadPrevExecPage(button) {
+  // Sets the href for an <a>
+  // PARAMS:
+  // anchor -> the <a> that was pressed
+  // direction -> -1 for prev, 1 for next
+  function setNavLink(anchor, direction) {
     var link = '#';
-    link = link.concat(getPrevExecID(button));
-    button.find('a').attr('href', link);
+    if (direction == -1) {
+      link = link.concat(getPrevExecID(anchor));
+    } else if (direction == 1) {
+      link = link.concat(getNextExecID(anchor));
+    }
+    anchor.attr('href', link);
   }
 
-  function loadNextExecPage(button) {
-    var link = '#';
-    link = link.concat(getNextExecID(button));
-    button.find('a').attr('href', link);
+  // Returns the id of the sibling immediately
+  // before the anchor's top-level parent in the DOM
+  // (By default, the <a>s in the exec modal box
+  // are nested 4 times within the top level exec div,
+  // so that div will be the 4th ancestor element)
+  function getPrevExecID(anchor) {
+    return anchor.parents().eq(3).prev().attr('id');
   }
 
-  function getPrevExecID(button) {
-    var execID = button.parents().eq(3).prev().attr('id');
-    return execID;
-  }
-
-  function getNextExecID(button) {
-    var execID = button.parents().eq(3).next().attr('id');
-    return execID;
+  // Returns the id of the sibling immediately
+  // after the anchor's top-level parent in the DOM
+  function getNextExecID(anchor) {
+    return anchor.parents().eq(3).next().attr('id');
   }
 
   // Contact Form
@@ -150,6 +157,14 @@ $(document).ready(function() {
   // horizontal nav visible
   verticalNav.hide();
 
+  // Initialize exec modal window nav links
+  $('.prev-button').each(function() {
+    setNavLink($(this), -1);
+  });
+  $('.next-button').each(function() {
+    setNavLink($(this), 1);
+  });
+
   // If the page was loaded somewhere halfway down
   updateVerticalNav();
 
@@ -162,6 +177,7 @@ $(document).ready(function() {
     $('#mobile-nav-menu').toggleClass('open');
   });
 
+  /// Modal Window
   $('.modal-overlay').on('click', function(e) {
     if (e.target != this) {
       return; // Only close if click is outside window
@@ -169,14 +185,11 @@ $(document).ready(function() {
     closeModalBox();
   });
 
-  $('.prev-button').on('click', function(e) {
-    loadPrevExecPage($(this));
+  $('.close-button').on('click', function(e) {
+    closeModalBox();
   });
 
-  $('.next-button').on('click', function(e) {
-    loadNextExecPage($(this));
-  });
-
+  /// Contact Form
   $('#contact-form-content').on('submit', function(e) {
     if (!validateContactForm()) {
       e.preventDefault();
