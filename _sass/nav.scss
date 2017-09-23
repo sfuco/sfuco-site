@@ -43,13 +43,12 @@ nav {
 
   li {
     list-style-type: none;
-    font-size: 0.9vw;
     letter-spacing: 2px;
   }
 
   li a {
-      padding: 0 20px;
-
+      padding: 0 0.75vw;
+      font-size: 0.8vw;
       color: $grey;
   }
 }
