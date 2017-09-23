@@ -1,0 +1,53 @@
+@import 'colors';
+
+#contact {
+  height: 75vh; // Given that the footer is 25vh, this fills the screen
+  padding-top: 36px;
+  background-color: $white;
+
+  h1, h2, h3, h4, p, span, label {
+    color: $grey;
+  }
+
+  h1 {
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  b {
+    color: $grey;
+  }
+
+  hr {
+    border-color: rgba($grey, 0.3);
+  }
+
+  label {
+    color: rgba($grey, 0.6);
+    padding-right: 12px;
+  }
+
+  input {
+    width: 100%;
+    color: $grey;
+    background-color: $white;
+    padding-bottom: 0px;
+    border: none;
+    border-bottom: 1px solid $grey;
+    border-radius: 0px;
+    outline: none;
+  }
+
+  textarea {
+    width: 100%;
+    border: none;
+    color: $grey;
+    background-color: $white;
+    border-bottom: 1px solid $grey;
+    outline: none;
+  }
+
+  #error-text {
+    color: $red;
+  }
+}

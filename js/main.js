@@ -96,51 +96,48 @@ $(document).ready(function() {
 
   function validateContactForm() {
     var str;
-    str = $('input[name="name"]').val();
-    str = str.replace(/\s+/g, '');
 
-    if (!str) {
+    str = $('input[name="name"]').val();
+    if (!isNonEmptyField(str)) { // Check that name isn't blank
       $('#error-text').text(
           'Sorry, what was your name again?'
       );
       return false;
     }
 
-    // Design note:
-    // At the time of writing this, it seems plausible to
-    // be able to leave the message field blank in case
-    // the user just wants to leave contact info
-
     str = $('input[name="email"]').val();
-    str = str.replace(/\s+/g, '');
-
-    if (!str) {
-      $('#error-text').text(
-        'Please enter an email so we can get back to you!'
-      );
-      return false;
-    } else if (!ValidateEmail(str)) {
+    if (!isValidEmail(str)) { // Check that email is valid (and non-blank)
       $('#error-text').text(
         'We need a valid email address from you!'
       );
       return false;
     }
 
-    str = $('select[name="instrument"]').val();
-    if (!str) {
+    str = $('textarea[name="message"]').val();
+    if (!isNonEmptyField(str)) { // Check that message isn't blank
       $('#error-text').text(
-        'Do you play an instrument?'
+          'What did you want to contact us about (fill in message field)?'
       );
       return false;
     }
     return true;
   }
 
-  function ValidateEmail(mail) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-      return (true);
+  // Returns true if fieldValue is non-empty
+  function isNonEmptyField(fieldValue) {
+    fieldValue.replace(/\s+/g, ''); // Remove whitespace
+    if (fieldValue) {
+      return true;
     }
-    return (false);
+    return false;
+  }
+
+  // Returns true if emailString is a valid email address
+  function isValidEmail(emailString) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailString)) {
+      return true;
+    }
+    return false;
   }
 
   // Events
@@ -190,13 +187,13 @@ $(document).ready(function() {
   });
 
   /// Contact Form
-  $('#contact-form-content').on('submit', function(e) {
+  $('#contact-form').on('submit', function(e) {
     if (!validateContactForm()) {
       e.preventDefault();
     }
-    var form =  document.getElementById('contact-form-content');
+    var form = document.getElementById('contact-form');
     form.setAttribute(
-        'action', '//formspree.io/' + 'revangel' + '@' + 'sfu' + '.' + 'ca'
+        'action', '//formspree.io/' + 'sfuco.team' + '@' + 'gmail' + '.' + 'com'
     );
   });
 });
