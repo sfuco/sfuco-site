@@ -8,7 +8,8 @@ layout: default
   </div>
 </header>
 
-{% assign sorted = site.sections | sort: 'order' %}
+{% assign sections = site.sections | where: "onHomePage", "true" %}
+{% assign sorted = sections | sort: 'order' %}
 {% for section in sorted %}
   <section id="{{section.name}}">
     {{section.content}}
