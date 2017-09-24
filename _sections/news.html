@@ -20,7 +20,9 @@ permalink: /home/#news
             <ul>
               {% assign sections = site.sections | where: "name", "news archive" %}
               {% for section in sections %}
-                <li><a href="{{section.permalink}}">older</a></li>
+                <!-- Unlike in index.html, apparently you have to loop here to access
+                the yaml values? (maybe because this page is nested?)-->
+                <li><a href="{{sections.permalink}}">older</a></li>
               {% endfor %}
             </ul>
           </div>
