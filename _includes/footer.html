@@ -1,48 +1,50 @@
 <div class="container">
-    <div class="row">
-        <div class="twelve columns">
-            <h1>get in touch!</h1>
-        </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <h4>SFUCO</h4>
+      <ul>
+        {% assign sections = site.sections | where: "category", "main" %}
+        {% assign sorted = sections | sort: 'order' %}
+        {% for section in sorted %}
+          <li><a href="{{section.permalink}}">{{section.name}}</a></li>
+        {% endfor %}
+      </ul>
     </div>
-    <div class="row" id="contact">
-        <div class="flex-container twelve columns" id="social-links">
-            <div class="flex-element">
-                <a class="social-link" href="#contact-form">
-                    <img class="social-link-overlay" src="{{site.baseurl}}/img/icons/envelope_red.png" />
-                    <img src="{{site.baseurl}}/img/icons/envelope.png" alt="envelope" />
-                </a>
-            </div>
-            <div class="flex-element">
-                <a class="social-link" href="https://www.facebook.com/sfuorchestra/">
-                    <img class="social-link-overlay" src="{{site.baseurl}}/img/icons/fb_colored.png" />
-                    <img src="{{site.baseurl}}/img/icons/fb_white.png" />
-                </a>
-            </div>
-            <div class="flex-element">
-                <a class="social-link" href="https://twitter.com/sfuorchestra">
-                    <img class="social-link-overlay" src="{{site.baseurl}}/img/icons/tw_colored.png" />
-                    <img src="{{site.baseurl}}/img/icons/tw_white.png" />
-                </a>
-            </div>
-        </div>
+    <div class="col-sm-3">
+      <h4>ARCHIVES</h4>
+      <ul>
+        {% assign sections = site.sections | where: "category", "archive" %}
+        {% assign sorted = sections | sort: 'order' %}
+        {% for section in sorted %}
+          <li><a href="{{section.permalink}}">{{section.name}}</a></li>
+        {% endfor %}
+      </ul>
     </div>
-    <div class="row">
-        <div class="twelve columns">
-            <hr />
-            <ul>
-                <li><a class="default-footer-nav" href="#home">home</a></li>
-                <span> | </span>
-                <li><a class="default-footer-nav" href="#about">about</a></li>
-                <span> | </span>
-                <li><a class="default-footer-nav" href="#execs">execs</a></li>
-                <span> | </span>
-                <li><a class="default-footer-nav" href="#news">news</a></li>
-            </ul>
-        </div>
+    <div class="col-sm-3" id="social-links">
+      <h4>SOCIAL</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/sfuorchestra/">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/fb_col.png" />
+            <img src="{{site.baseurl}}/img/icons/social/fb_white.png" />
+          </div>
+        </a></li>
+        <li><a href="https://twitter.com/sfuorchestra">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/tw_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/tw_white.png" alt="envelope" />
+          </div>
+        </a></li>
+        <li><a href="https://www.youtube.com/channel/UCtXPR57Dp0Uy1G1nAajO0HQ">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/yt_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/yt_white.png" alt="envelope" />
+          </div>
+        </a></li>
+      </ul>
     </div>
-    <div class="row">
-        <div class="twelve columns">
-            <p>&copy sfuco 2017</p>
-        </div>
+    <div class="col-sm-3">
+      <h4>stuff</h4>
     </div>
+  </div>
 </div>
