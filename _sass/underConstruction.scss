@@ -1,0 +1,17 @@
+@import 'colors';
+
+#under-construction {
+  padding-top: 25vh;
+
+  span {
+    font-family: 'EB Garamond', sans-serif;
+    font-size: 20px;
+  }
+
+  .row > div {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+}

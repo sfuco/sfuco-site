@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{site.title}}</title>
+    <meta name="description" content="{{site.description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    {% if site.favicon %}
+      <link rel="icon" href="{{ site.favicon }}" type="image/x-icon">
+    {% endif %}
+    <!-- HTML Boilerplate -->
+    <script src="{{site.baseurl}}/js/vendor/modernizr-2.8.3.min.js"></script>
+    <!-- Typography -->
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{site.baseurl}}/css/bs4/bootstrap.min.css">
+    <!--Our Css-->
+    <link rel="stylesheet" href="{{site.baseurl}}/css/style.css">
+  </head>
+
+  <body>
+    {% include navbar.html %}
+    <section id="under-construction">
+      <div class="container">
+        <div class="row">
+          <div>
+            <img src="{{site.baseurl}}/img/misc/underConstruction.png" alt="underConstruction"/>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <span>Much like the bar above, this page is still incomplete.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script>
+    window.jQuery ||
+    document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>');
+  </script>
+  <!-- Bootstrap -->
+  <script src="{{site.baseurl}}/js/bs4/bootstrap.min.js"></script>
+  <!-- Our Scripts -->
+  <script src="{{site.baseurl}}/js/plugins.js"></script>
+  <script src="{{site.baseurl}}/js/main.js"></script>
+</html>
