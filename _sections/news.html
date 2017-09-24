@@ -18,7 +18,10 @@ permalink: /home/#news
           </h1>
           <div class="dropdown-submenu">
             <ul>
-              <li><a href="">older</a></li>
+              {% assign sections = site.sections | where: "name", "news archive" %}
+              {% for section in sections %}
+                <li><a href="{{section.permalink}}">older</a></li>
+              {% endfor %}
             </ul>
           </div>
         </li>
