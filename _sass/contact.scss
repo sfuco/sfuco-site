@@ -38,6 +38,18 @@
     outline: none;
   }
 
+  input[type=submit] {
+    float: right;
+    font-weight: bold;
+    border: 1px solid $grey;
+    background-color: $white;
+
+    &:hover {
+        color: $white;
+        background-color: $grey;
+    }
+  }
+
   textarea {
     width: 100%;
     border: none;
