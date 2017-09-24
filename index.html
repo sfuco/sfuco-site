@@ -4,8 +4,11 @@ permalink: /home/
 ---
 
 <div id="homepage">
-  {% assign home = site.sections | where: "name", "home" %}
-    {{home.content}}
+  <header>
+    <div class="hero-image">
+      <h1>sfu<b>concert orchestra</b></h1>
+    </div>
+  </header>
 
   {% assign sections = site.sections | where: "onHomePage", "true" %}
   {% assign sorted = sections | sort: 'order' %}
