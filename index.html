@@ -1,19 +1,17 @@
 ---
 layout: default
+permalink: /home/
 ---
 
-<header>
-  <div class="hero-image">
-    <h1>sfu <b>concert orchestra</b></h1>
-  </div>
-</header>
-
-{% assign sections = site.sections | where: "onHomePage", "true" %}
-{% assign sorted = sections | sort: 'order' %}
-{% for section in sorted %}
 <div id="homepage">
-  <section id="{{section.name}}">
-    {{section.content}}
-  </section>
+  {% assign home = site.sections | where: "name", "home" %}
+    {{home.content}}
+
+  {% assign sections = site.sections | where: "onHomePage", "true" %}
+  {% assign sorted = sections | sort: 'order' %}
+  {% for section in sorted %}
+    <section id="{{section.name}}">
+      {{section.content}}
+    </section>
+  {% endfor %}
 </div>
-{% endfor %}
