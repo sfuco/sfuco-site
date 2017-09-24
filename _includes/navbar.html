@@ -8,7 +8,8 @@
         </div>
         <div class="menu col-md-4 offset-md-7">
           <ul>
-            {% assign sorted = site.sections | sort: 'order' %}
+            {% assign sections = site.sections | where: "category", "main" %}
+            {% assign sorted = sections | sort: 'order' %}
             {% for section in sorted %}
               <li><a href="{{section.permalink}}">{{section.name}}</a></li>
             {% endfor %}
