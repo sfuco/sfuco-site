@@ -236,8 +236,9 @@
 /* Colors */
 /* 'Eerie Black' */
 #contact {
-  height: 75vh;
+  min-height: 80vh;
   padding-top: 36px;
+  overflow: auto;
   background-color: white; }
   #contact h1, #contact h2, #contact h3, #contact h4, #contact p, #contact span, #contact label {
     color: #1a1a1a; }

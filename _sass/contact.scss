@@ -1,8 +1,9 @@
 @import 'colors';
 
 #contact {
-  height: 75vh; // Given that the footer is 25vh, this fills the screen
+  min-height: 80vh;
   padding-top: 36px;
+  overflow: auto;
   background-color: $white;
 
   h1, h2, h3, h4, p, span, label {
