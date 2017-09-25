@@ -17,7 +17,12 @@ permalink:
   {% assign sections = site.sections | where: "onHomePage", "true" %}
   {% assign sorted = sections | sort: 'order' %}
   {% for section in sorted %}
-    <section id="{{section.name}}">
+    <!-- Full screen layout has different section padding than mobile -->
+    <section id="{{section.name}}" class="hidden-sm-down full-padding">
+      {{section.content}}
+    </section>
+
+    <section id="{{section.name}}" class="hidden-md-up mobile-padding">
       {{section.content}}
     </section>
   {% endfor %}
