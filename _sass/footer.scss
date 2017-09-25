@@ -1,0 +1,42 @@
+@import 'colors';
+
+footer {
+  height: 25vh;
+  padding-top: 24px;
+  background-color: $grey;
+
+  h4, p, a {
+    color: $white;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+
+  ul {
+    padding: 0; // Reset padding-left
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  .img-overlay-container, img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+#social-links {
+  ul {
+    display: flex;
+  }
+
+  li {
+    padding: 0 5px;
+  }
+}
