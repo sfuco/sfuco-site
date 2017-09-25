@@ -195,7 +195,7 @@
     font-weight: bold;
   }
 }
-.modal-overlay:hover .nav-button{
+.modal-overlay > .container:hover .nav-button{
   opacity: 1;
 }
 .nav-button:nth-of-type(1) { // 'prev' button
