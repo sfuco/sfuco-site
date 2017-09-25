@@ -6,7 +6,7 @@ onHomePage: true
 permalink: /#news
 ---
 
-<div class="container full-margins">
+<div id="news-full" class="container hidden-sm-down full-margins">
   <!-- Page title -->
   <div class="row">
     <div class="dropdown-container">
@@ -32,7 +32,61 @@ permalink: /#news
     </div>
   </div>
   <!-- News Section -->
-  <div id="news-list" class="row">
+  <div class="news-list row">
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <div class="news-item row">
+            <div class="news-photo col-md-4">
+              {% if post.image %}
+                <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+              {% endif %}
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <h4>{{post.title}}</h4>
+              </div>
+              <div class="row">
+                <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+              </div>
+              <div class="news-content row">
+                {{post.content}}
+              </div>
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div id="news-mobile" class="container-fluid hidden-md-up mobile-margins">
+  <!-- Page title -->
+  <div class="row">
+    <div class="dropdown-container">
+      <ul>
+        <li class="dropdown-parent">
+          <h1>
+            recent
+            <div class="down-triangle"></div>
+          </h1>
+          <div class="dropdown-submenu">
+            <ul>
+              {% assign sections = site.sections | where: "name", "news archive" %}
+              {% for section in sections %}
+                <!-- Unlike in index.html, apparently you have to loop here to access
+                the yaml values? (maybe because this page is nested?)-->
+                <li><a href="{{section.permalink}}">older</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        <li><h1><b>news</b></h1></li>
+      </ul>
+    </div>
+  </div>
+  <!-- News Section -->
+  <div class="news-list row">
     <ul>
       {% for post in site.posts %}
         <li>
