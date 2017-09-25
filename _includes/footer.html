@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-6 col-md-3">
       <h4>SECTIONS</h4>
       <ul>
         {% assign sections = site.sections | where: "category", "main" %}
@@ -10,7 +10,7 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="col-sm-3">
+    <div class="col-6 col-md-3">
       <h4>ARCHIVES</h4>
       <ul>
         {% assign sections = site.sections | where: "category", "archive" %}
@@ -20,7 +20,7 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="col-sm-3" id="social-links">
+    <div class="col-6 col-md-3" id="social-links">
       <h4>SOCIAL</h4>
       <ul>
         <li><a href="https://www.facebook.com/sfuorchestra/">
@@ -43,7 +43,7 @@
         </a></li>
       </ul>
     </div>
-    <div class="col-sm-3">
+    <div class="col-6 col-md-3">
       <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
       <p>SIMON FRASER UNIVERSITY</p>
       <p>CONCERT ORCHESTRA</p>
