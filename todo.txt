@@ -1,5 +1,40 @@
 SFUCO Site TODO
 
+Last Updated: 9/25/2017
+Last Updater: Reinier
+
+---------
+Fixes
+---------
+[] Navbar
+- Contents get cut off to the right on small enough viewports
+
+[] Exec Section
+- Mobile layout looks clunky
+- Should reduce thumbnail size and make it a two column layout with
+names on the other column (especially since there's no hover on mobile)
+
+---------------
+To Implement
+---------------
+[] Mobile Nav
+[] News Archive
+[] Exec Archive
+
+---------------
+Would be cool
+---------------
+[] Modal swipe
+- On mobile, the modal windows (e.g. exec details) take up the full screen
+- Would be cool if you could swipe between them
+
+[] Interactive contact form
+
+
+================================================================
+---------------
+ARCHIVED LIST
+---------------
 Last Updated: 9/10/2017
 
 ----------------------------
