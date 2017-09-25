@@ -17,7 +17,10 @@ permalink: /home/#execs
         </h1>
         <div class="dropdown-submenu">
           <ul>
-            <li><a href="">past</a></li>
+            {% assign sections = site.sections | where: "name", "exec archive" %}
+            {% for section in sections %}
+            <li><a href="{{section.permalink}}">past</a></li>
+            {% endfor %}
           </ul>
         </div>
       </li>
