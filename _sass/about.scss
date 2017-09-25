@@ -1,6 +1,6 @@
 @import 'colors';
 
-#about {
+#about { // Affects both mobile and full layouts
   h3 {
     text-align: center;
     font-weight: 100;
@@ -23,12 +23,33 @@
   .row {
     padding: 24px 0;
   }
+}
 
+#about-full {
   // Shift images undeneath text boxes
   .row:nth-child(1) img { // The image in the first row
     transform: translate(-30px, -30px);
   }
   .row:nth-child(2) img {
     transform: translate(40px, 40px);
+  }
+}
+
+#about-mobile {
+  background-color: $grey;
+  h1, h2, p {
+    color: $white;
+  }
+  h2 {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    z-index: 3;
+    font-size: 56px;    
+    background-color: $grey;
+  }
+  img {
+    margin-bottom: 12px;
+    opacity: 0.75;
   }
 }
