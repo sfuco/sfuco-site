@@ -3,6 +3,7 @@
 #contact {
   min-height: 80vh;
   padding-top: 36px;
+  margin-bottom: 24px;
   overflow: auto;
   background-color: $white;
 
@@ -49,6 +50,7 @@
         color: $white;
         background-color: $grey;
     }
+
   }
 
   textarea {
@@ -62,5 +64,9 @@
 
   #error-text {
     color: $red;
+  }
+
+  #send-button {
+    width: 100px;
   }
 }
