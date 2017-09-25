@@ -93,6 +93,14 @@ function getNextExecID(anchor) {
   return anchor.parents().eq(3).next().attr('id');
 }
 
+function lockScrollingIfModalIsActive() {
+  if ($('.modal-overlay').is(':visible')) {
+    $('body').addClass('scroll-lock');
+  } else {
+    $('body').removeClass('scroll-lock');
+  }
+}
+
 // Contact Form
 
 function validateContactForm() {
@@ -171,8 +179,10 @@ $(document).ready(function() {
 
   /// Event handling ///
 
+  // General
   $(window).on('scroll', function() {
     updateVerticalNav();
+    lockScrollingIfModalIsActive();
   });
 
   $('#nav-toggle-container, #mobile-nav-menu a').on('click', function() {
