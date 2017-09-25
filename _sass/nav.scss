@@ -52,3 +52,37 @@ nav {
       color: $grey;
   }
 }
+
+#vertical-nav {
+  position: fixed;
+  left: 1vw;
+  top: 25vh;
+
+  ul {
+      padding: 0;
+  }
+
+  li {
+     display: block;
+     clear: left;
+     float: left;
+     margin: 12px;
+     vertical-align: left;
+ }
+
+
+ a {
+   color: $grey;
+ }
+
+ .active-nav {
+   color: $white;
+   background-color: rgba($grey, 0.8);
+ }
+
+  @media screen and (min-width: 1400px) {
+         visibility: visible;; /*1400 px is when the content
+                           containers start overlapping with
+                           the vertical nav*/
+  }
+}

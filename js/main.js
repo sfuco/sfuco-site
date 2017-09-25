@@ -4,155 +4,159 @@
  *  revangel@sfu.ca
  *  2016-2017
  */
-$(document).ready(function() {
 
-  // Function Definitions
-  ////////////////////////////////////////
+// Namespaces
+////////////////////////////////////////
+// This namespace is used to safely hold
+// global variables. Global variables are
+// necessary here since the function definitions
+// are outside the document.ready function so
+// using variables between the two will be out of
+// scope. The namespace prevents the unintended
+// use of these global variables
+var globals = {};
 
-  // Navigation
+// Function Definitions
+////////////////////////////////////////
 
-  function updateVerticalNav() {
-    var windowPosition = $(window).scrollTop();
-    var firstSection = $('section:eq(0)').offset().top;
+// Navigation
 
-    if (windowPosition >= firstSection - (firstSection / 4)) {
-      verticalNav.fadeIn();
-      updateNavColors();
-    } else {
-      verticalNav.fadeOut();
+// Hides the vertical nav when the horizontal nav
+// is still in view and highlights the anchor tag
+// corresponding to the current section in view
+function updateVerticalNav() {
+  var windowPosition = $(window).scrollTop();
+  var firstSection = $('section:eq(0)').offset().top;
+
+  if (windowPosition >= firstSection - (firstSection / 4)) {
+    globals.verticalNav.fadeIn();
+    updateNavColors();
+  } else {
+    globals.verticalNav.fadeOut();
+  }
+}
+
+// Updates the styling of the vertical nav <a>s based on the
+// current position on the document
+function updateNavColors() {
+  // The actual windowPosition is offset by 150 to compensate for the
+  // margin-bottom in the #homepage > section css
+  var windowPosition = $(document).scrollTop() + 150;
+  $('section').each(function(i) {
+    if ($(this).offset().top <= windowPosition) {
+      $('#vertical-nav a.active-nav').removeClass('active-nav');
+      $('#vertical-nav a').eq(i + 1).addClass('active-nav');
     }
+  });
+}
+
+// Overlays
+
+function closeModalBox() {
+  // Since the exec section's modal boxes each have
+  // unique hashes, it's easier to check for whether
+  // the modal box is from one of the other sections
+  // with hashes that we already know beforehand
+  if (window.location.hash == '#contact-form-overlay') {
+    window.location.hash = '#contact';
+  } else {
+    window.location.hash = '#execs';
+  }
+}
+
+// Sets the href for an <a>
+// PARAMS:
+// anchor -> the <a> that was pressed
+// direction -> -1 for prev, 1 for next
+function setNavLink(anchor, direction) {
+  var link = '#';
+  if (direction == -1) {
+    link = link.concat(getPrevExecID(anchor));
+  } else if (direction == 1) {
+    link = link.concat(getNextExecID(anchor));
+  }
+  anchor.attr('href', link);
+}
+
+// Returns the id of the sibling immediately
+// before the anchor's top-level parent in the DOM
+// (By default, the <a>s in the exec modal box
+// are nested 4 times within the top level exec div,
+// so that div will be the 4th ancestor element)
+function getPrevExecID(anchor) {
+  return anchor.parents().eq(3).prev().attr('id');
+}
+
+// Returns the id of the sibling immediately
+// after the anchor's top-level parent in the DOM
+function getNextExecID(anchor) {
+  return anchor.parents().eq(3).next().attr('id');
+}
+
+// Contact Form
+
+function validateContactForm() {
+  var str;
+
+  str = $('input[name="name"]').val();
+  if (!isNonEmptyField(str)) { // Check that name isn't blank
+    $('#error-text').text(
+      'Sorry, what was your name again?'
+    );
+    return false;
   }
 
-  function updateNavColors() {
-    var windowPosition = $(document).scrollTop();
-
-    $('section').each(function(index) {
-      index++; // Since #home is not a <section> but it's still a link
-      var currentSectionTop = $(this).offset().top;
-      var currentSectionBottom = currentSectionTop +
-                                 $(this).outerHeight(true);
-
-      var currentSection = $('#vertical-nav a:eq(' + index + ')');
-      var currentSectionID = $(
-          '#vertical-nav a:eq(' + index + ')'
-      ).attr('id');
-
-      // The (currentSectionTop/4) is to give some padding to the edge detection
-      // so that the beginning of the current section doesn't have to be at the
-      // very top of the window for it to be registered as the active-nav.
-      if (windowPosition >= currentSectionTop - (currentSectionTop / 4)) {
-        currentSection.addClass('active-nav');
-        $('#vertical-nav a').not('#' + currentSectionID).each(function() {
-          $(this).removeClass('active-nav');
-        });
-      }
-    });
+  str = $('input[name="email"]').val();
+  if (!isValidEmail(str)) { // Check that email is valid (and non-blank)
+    $('#error-text').text(
+     'We need a valid email address from you!'
+    );
+    return false;
   }
 
-  // Overlays
-
-  function closeModalBox() {
-    // Since the exec section's modal boxes each have
-    // unique hashes, it's easier to check for whether
-    // the modal box is from one of the other sections
-    // with hashes that we already know beforehand
-    if (window.location.hash == '#contact-form-overlay') {
-      window.location.hash = '#contact';
-    } else {
-      window.location.hash = '#execs';
-    }
+  str = $('textarea[name="message"]').val();
+  if (!isNonEmptyField(str)) { // Check that message isn't blank
+    $('#error-text').text(
+       'What did you want to contact us about (fill in message field)?'
+    );
+    return false;
   }
+  return true;
+}
 
-  // Sets the href for an <a>
-  // PARAMS:
-  // anchor -> the <a> that was pressed
-  // direction -> -1 for prev, 1 for next
-  function setNavLink(anchor, direction) {
-    var link = '#';
-    if (direction == -1) {
-      link = link.concat(getPrevExecID(anchor));
-    } else if (direction == 1) {
-      link = link.concat(getNextExecID(anchor));
-    }
-    anchor.attr('href', link);
-  }
-
-  // Returns the id of the sibling immediately
-  // before the anchor's top-level parent in the DOM
-  // (By default, the <a>s in the exec modal box
-  // are nested 4 times within the top level exec div,
-  // so that div will be the 4th ancestor element)
-  function getPrevExecID(anchor) {
-    return anchor.parents().eq(3).prev().attr('id');
-  }
-
-  // Returns the id of the sibling immediately
-  // after the anchor's top-level parent in the DOM
-  function getNextExecID(anchor) {
-    return anchor.parents().eq(3).next().attr('id');
-  }
-
-  // Contact Form
-
-  function validateContactForm() {
-    var str;
-
-    str = $('input[name="name"]').val();
-    if (!isNonEmptyField(str)) { // Check that name isn't blank
-      $('#error-text').text(
-          'Sorry, what was your name again?'
-      );
-      return false;
-    }
-
-    str = $('input[name="email"]').val();
-    if (!isValidEmail(str)) { // Check that email is valid (and non-blank)
-      $('#error-text').text(
-        'We need a valid email address from you!'
-      );
-      return false;
-    }
-
-    str = $('textarea[name="message"]').val();
-    if (!isNonEmptyField(str)) { // Check that message isn't blank
-      $('#error-text').text(
-          'What did you want to contact us about (fill in message field)?'
-      );
-      return false;
-    }
+// Returns true if fieldValue is non-empty
+function isNonEmptyField(fieldValue) {
+  fieldValue.replace(/\s+/g, ''); // Remove whitespace
+  if (fieldValue) {
     return true;
   }
+  return false;
+}
 
-  // Returns true if fieldValue is non-empty
-  function isNonEmptyField(fieldValue) {
-    fieldValue.replace(/\s+/g, ''); // Remove whitespace
-    if (fieldValue) {
-      return true;
-    }
-    return false;
+// Returns true if emailString is a valid email address
+function isValidEmail(emailString) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailString)) {
+    return true;
   }
+  return false;
+}
 
-  // Returns true if emailString is a valid email address
-  function isValidEmail(emailString) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailString)) {
-      return true;
-    }
-    return false;
-  }
+// Events
+////////////////////////////////////////
+$(document).ready(function() {
 
-  // Events
-  ////////////////////////////////////////
-
+  // Play loading screen animation when page loads
   $(window).load(function() {
     $('.loading-screen').fadeOut('slow');
   });
 
-  var verticalNav = $('#vertical-nav');
+  /// Initializations ///
+  globals.verticalNav = $('#vertical-nav');
 
   // Initialize the vertical nav section as hidden
   // since the top of the page will have the
   // horizontal nav visible
-  verticalNav.hide();
+  //verticalNav.hide();
 
   // Initialize exec modal window nav links
   $('.prev-button').each(function() {
@@ -165,6 +169,8 @@ $(document).ready(function() {
   // If the page was loaded somewhere halfway down
   updateVerticalNav();
 
+  /// Event handling ///
+
   $(window).on('scroll', function() {
     updateVerticalNav();
   });
@@ -174,7 +180,7 @@ $(document).ready(function() {
     $('#mobile-nav-menu').toggleClass('open');
   });
 
-  /// Modal Window
+  // Modal Window
   $('.modal-overlay').on('click', function(e) {
     if (e.target != this) {
       return; // Only close if click is outside window
@@ -186,7 +192,7 @@ $(document).ready(function() {
     closeModalBox();
   });
 
-  /// Contact Form
+  // Contact Form
   $('#contact-form').on('submit', function(e) {
     if (!validateContactForm()) {
       e.preventDefault();
