@@ -158,14 +158,14 @@
 
 .close-button {
   display: block;
-  padding-top: 5%;
-  margin: 12px 0;
+  padding-top: 0;
+  margin-bottom: 12px;
   text-align: right;
   font-weight: bold;
   font-size: 16px;
   border-style: none;
-  background-color: $white;
-  color: $grey;
+  background-color: $grey;
+  color: $white;
 }
 
 .close-button:hover {
@@ -176,10 +176,10 @@
 }
 
 .nav-button {
-  width: 10%;
-  height: 50%;
+  width: 36px;
+  height: 25%;
   position: absolute;
-  top: 25%;
+  top: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -203,6 +203,10 @@
 }
 .nav-button:nth-of-type(2) { // 'next' button
   right: 0;
+}
+
+.scroll-lock {
+  overflow: hidden;
 }
 
 /// Pop Box
