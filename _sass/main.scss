@@ -4,6 +4,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: $grey;
+
+  p {
+    font-size: 12px;
+  }
 }
 
 #homepage > section {
