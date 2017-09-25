@@ -1,7 +1,7 @@
 <nav id="vertical-nav" class="">
     <ul>
       <!-- since home is not a section, it won't show up in the loop -->
-      <li><a class="" href="{{site.baseurl}}/home">home</a></li>
+      <li><a class="" href="{{site.baseurl}}">home</a></li>
       {% assign sections = site.sections | where: "onHomePage", "true" %}
       {% assign sorted = sections | sort: 'order' %}
       {% for section in sorted %}
