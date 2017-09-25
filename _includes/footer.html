@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <h4>SFUCO</h4>
+      <h4>SECTIONS</h4>
       <ul>
         {% assign sections = site.sections | where: "category", "main" %}
         {% assign sorted = sections | sort: 'order' %}
@@ -44,7 +44,12 @@
       </ul>
     </div>
     <div class="col-sm-3">
-      <h4>stuff</h4>
+      <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+      <p>SIMON FRASER UNIVERSITY</p>
+      <p>CONCERT ORCHESTRA</p>
+      <p>Simon Fraser University,</p>
+      <p>Burnaby BC</p>
+      <span>&copy 2017</span>
     </div>
   </div>
 </div>

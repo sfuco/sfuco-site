@@ -1,11 +1,11 @@
 @import 'colors';
 
 footer {
-  height: 25vh;
+  min-height: 25vh;
   padding-top: 24px;
   background-color: $grey;
 
-  h4, p, a {
+  h4, p, a, span {
     color: $white;
   }
 
@@ -13,8 +13,17 @@ footer {
     font-size: 18px;
   }
 
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
   a {
     font-size: 14px;
+  }
+
+  span {
+    font-size: 8px;
   }
 
   ul {
@@ -25,9 +34,14 @@ footer {
     list-style-type: none;
   }
 
-  .img-overlay-container, img {
+  .img-overlay-container > img {
     width: 24px;
     height: 24px;
+  }
+
+  img {
+    width: 64px;
+    height: 64px;
   }
 }
 
