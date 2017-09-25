@@ -15,14 +15,16 @@
     margin-bottom: 12px;
     text-align: right;
   }
-  .modal-overlay .row:nth-child(3) div:nth-child(2) { // Exec content
+  .modal-overlay .row:nth-child(3) > div:nth-child(2) { // Exec content
     height: 40vh; // With the modal window defaulting at 90vh, this allows for
                   // some whitespace at the bottom
+    overflow-y: scroll;
     p {
       font-family: 'EB Garamond', serif;
       font-size: 16px;
     }
   }
+
 }
 
 #execs-content {
