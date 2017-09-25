@@ -6,6 +6,10 @@ Last Updater: Reinier
 ---------
 Fixes
 ---------
+[] Mobile Contact Form
+- Gets a 405 when trying to submit
+- Probably because there's two forms that share the same ID
+
 [] Navbar
 - Contents get cut off to the right on small enough viewports
 
