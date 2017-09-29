@@ -29,7 +29,7 @@ nav {
 .menu {
   height: 100%;
   display: flex; // allows ul to be centered horizontally
-  justify-content: space-around;
+  justify-content: flex-end;
 
   ul {
     height: 100%;
@@ -47,9 +47,9 @@ nav {
   }
 
   li a {
-      padding: 0 0.75vw;
-      font-size: 12px;
-      color: $grey;
+    padding: 0 12px;
+    font-size: 12px;
+    color: $grey;
   }
 }
 

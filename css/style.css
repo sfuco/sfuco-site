@@ -138,12 +138,17 @@
   z-index: 3;
   background-color: rgba(26, 26, 26, 0.9); }
   .modal-overlay:target {
-    display: block; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center; }
   .modal-overlay .container {
     width: 50vw;
-    height: 90vh;
+    min-height: 50vh;
+    height: 80%;
     position: relative;
     margin-top: 2.5%;
+    overflow-y: hidden;
     z-index: 3;
     background-color: white; }
   .modal-overlay .row {
@@ -160,7 +165,7 @@
   margin-bottom: 12px; }
   .modal-image-container img {
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 25vh;
     height: auto; }
 
 .close-button {
@@ -428,8 +433,8 @@ nav {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
   .menu ul {
     height: 100%;
     margin: 0;
@@ -443,7 +448,7 @@ nav {
     list-style-type: none;
     letter-spacing: 2px; }
   .menu li a {
-    padding: 0 0.75vw;
+    padding: 0 12px;
     font-size: 12px;
     color: #1a1a1a; }
 
