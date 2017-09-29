@@ -121,17 +121,21 @@
   // This is activated when the url points to it, i.e.
   // ".../#me"
   &:target { // Show when it's the target
-    display: block;
+    display: flex;
+    align-items: center; // centers the modal window vertically
   }
   .container {
     width: 50vw;
-    height: 90vh;
+    min-height: 50vh;
+    height: 80vh;
     position: relative; // necessary for positioning floating elements in window
     margin-top: 2.5%;
+    overflow-y: hidden;
     z-index: 3;
     background-color: $white;
   }
   .row {
+    max-height: 80vh;
     padding: 0 2.5%;
     overflow: hidden;
   }
@@ -149,9 +153,11 @@
 .modal-image-container {
   padding: 0; // Reset BS padding
   margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
   img {
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 25vh;
     height: auto;
   }
 }
