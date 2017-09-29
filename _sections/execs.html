@@ -87,7 +87,27 @@ permalink: /#execs
             </div>
           </div>
         </div>
-        
+
+        <div> <!-- Nav Buttons -->
+          {% unless forloop.first %} <!-- if not the first exec -->
+            <div class="nav-button">
+              <a class="prev-button" href=""><</a>
+            </div>
+          {% else %}
+            <!-- A hacky way of fixing the issue where the next button
+            collapses onto the left side. This is because of the css
+            rules targeting the .nav-buttons by nth-of-type. So for the
+            first exec, since there's no prev button, the next button
+            becomes the first .nav-button and takes on the prev button
+            styling. Here, we add an invisible dummy to prevent that -->
+            <div class="nav-button" style="opacity: 0"></div>
+          {% endunless %}
+          {% unless forloop.last %} <!-- if != the last exec -->
+            <div class="nav-button">
+              <a class="next-button" href="">></a>
+            </div>
+          {% endunless %}
+          </div>
       </div>
     </div>
   {% endfor %}
