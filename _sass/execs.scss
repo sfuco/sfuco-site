@@ -22,7 +22,8 @@
     }
 
     .col-8 .row:nth-child(2) { // The sub-row containing paragraphs
-      height: 85%;
+      max-height: 75vh; // Honestly, just eyeballed this one after not being able to
+                        // find an appropriate percentage relative to parent
       overflow-y: auto;
     }
   }
