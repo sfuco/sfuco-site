@@ -1,17 +1,16 @@
 SFUCO Site TODO
 
-Last Updated: 9/25/2017
+Last Updated: 9-28-2017
 Last Updater: Reinier
 
 ---------
 Fixes
 ---------
+
 [] Mobile Contact Form
 - Gets a 405 when trying to submit
 - Probably because there's two forms that share the same ID
 
-[] Navbar
-- Contents get cut off to the right on small enough viewports
 
 [] Exec Section
 - Mobile layout looks clunky
@@ -24,6 +23,7 @@ To Implement
 [] Mobile Nav
 [] News Archive
 [] Exec Archive
+[] FAQ
 
 ---------------
 Would be cool
@@ -35,9 +35,26 @@ Would be cool
 [] Interactive contact form
 
 
+--------------
+Archived Tasks
+--------------
+
+[x] Exec Window | Completed: 9-28-2017
+- Content overflows on small screen and gets cut off by the modal overlay
+-- i.e. the overlay wraps over the modal window content at the bottom so the
+text appears under the overlay at the bottom
+
+[x] Navbar | Completed: 9-28-2017
+- Contents get cut off to the right on small enough viewports
+
+
+
+
+
+
 ================================================================
 ---------------
-ARCHIVED LIST
+OLD LIST
 ---------------
 Last Updated: 9/10/2017
 
