@@ -22,7 +22,11 @@
                       <div class="dropdown-submenu">
                         <ul>
                           {% for subsection in section.subsections %}
-                          <li><a href="{{subsection.permalink}}">{{subsection.name}}</a></li>
+                          <li>
+                            <a href="{{site.baseurl}}/{{subsection.permalink}}">
+                            {{subsection.name}}
+                            </a>
+                          </li>
                           {% endfor %}
                         </ul>
                       </div>
