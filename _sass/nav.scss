@@ -21,10 +21,15 @@ nav {
     background-size: contain;
   }
   .dropdown-submenu {
-    width: 100%;
+    min-width: 100px;
     padding-left: 2px;
     position: absolute;
     background-color: $grey;
+    ul {
+      display: block; // resets horizontal nav styling to vertical
+      text-align: left; // overrite <ul> settings in components.scss
+      padding-left: 6px;
+    }
     a {
       font-size: 12px;
       color: $white;
