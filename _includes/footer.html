@@ -3,7 +3,7 @@
     <div class="col-6 col-md-3">
       <h4>SECTIONS</h4>
       <ul>
-        {% assign sections = site.pages | where: "category", "main" %}
+        {% assign sections = site.pages | where: "category", "page" %}
         {% assign sorted = sections | sort: 'order' %}
         {% for section in sorted %}
           <li><a href="{{section.permalink}}">{{section.name}}</a></li>
@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div class="col-6 col-md-3">
-      <h4>ARCHIVES</h4>
+      <h4>OTHER PAGES</h4>
       <ul>
         {% assign sections = site.pages | where: "category", "archive" %}
         {% assign sorted = sections | sort: 'order' %}
