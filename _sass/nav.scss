@@ -8,6 +8,28 @@ nav {
 }
 
 #nav-full {
+  .dropdown-container {
+    padding: 0 12px; // take over the default <a> padding so that
+                    // the arrow can be positioned
+    a {
+      padding: 0;
+    }
+  }
+  .down-triangle {
+    max-width: 8px;
+    max-height: 8px;
+    background-size: contain;
+  }
+  .dropdown-submenu {
+    width: 100%;
+    padding-left: 2px;
+    position: absolute;
+    background-color: $grey;
+    a {
+      font-size: 12px;
+      color: $white;
+    }
+  }
   .row {
     height: $navbar-height;
   }
@@ -35,7 +57,7 @@ nav {
     height: 100%;
     margin: 0;
     padding: 0; // remove default padding-left on ul
-    overflow: hidden;
+    //overflow: hidden; // having overflow hidden hides navbar dropdowns
 
     display: flex; // allows li to be centered vertically
     align-items: flex-end; // align li to bottom
@@ -69,17 +91,13 @@ nav {
      margin: 12px;
      vertical-align: left;
  }
-
-
  a {
    color: $grey;
  }
-
  .active-nav {
    color: $white;
    background-color: rgba($grey, 0.8);
  }
-
   @media screen and (min-width: 1400px) {
          visibility: visible;; /*1400 px is when the content
                            containers start overlapping with
