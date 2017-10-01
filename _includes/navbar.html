@@ -10,41 +10,27 @@
           <ul>
             <!-- since home is not a section, it won't show up in the loop -->
             <li><a href="{{site.baseurl}}/">home</a></li>
-            {% assign sections = site.sections | where: "category", "page" %}
+            {% assign sections = site.pages | where: "category", "page" %}
             {% assign sorted = sections | sort: 'order' %}
             {% for section in sorted %}
               <li>
-
-                  <!-- Count the number of subpages for this section -->
-                  {% assign count = 0 %}
-                  {% assign subpages = site.sections | where: "category", "subpage" %}
-                  {% for subpage in subpages %}
-                    {% if subpage.parent == section.name %}
-                      {% assign count = count | plus: 1 %} <!-- {{increment count}} doesn't work? -->
-                  {% endif %}
-                  {% endfor %}
-
-                  {% if count > 0 %} <!-- if the section has subpages, make a dropdown -->
-                    <div class="dropdown-container">
-                      <div class="dropdown-parent">
-                        <a href="{{section.permalink}}">{{section.name}}</a>
-                        <div class="down-triangle"></div>
-                        <div class="dropdown-submenu">
-                          <ul>
-                            <!-- Assign any subpages to this section's dropdown menu -->
-                            {% assign subpages = site.sections | where: "category", "subpage" %}
-                            {% for subpage in subpages %}
-                            {% if subpage.parent == section.name %}
-                              <li><a href="{{subpage.permalink}}">{{subpage.name}}</a></li>
-                            {% endif %}
-                            {% endfor %}
-                          </ul>
-                        </div>
+                {% if section.subsections %} <!-- if the section has subsections, make a dropdown -->
+                <div class="dropdown-container">
+                    <div class="dropdown-parent">
+                      <a href="{{section.permalink}}">{{section.name}}</a>
+                      <div class="down-triangle"></div>
+                      <div class="dropdown-submenu">
+                        <ul>
+                          {% for subsection in section.subsections %}
+                          <li><a href="{{subsection.permalink}}">{{subsection.name}}</a></li>
+                          {% endfor %}
+                        </ul>
                       </div>
                     </div>
-                  {% else %} <!-- otherwise, just the link -->
-                    <a href="{{section.permalink}}">{{section.name}}</a>
-                  {% endif %}
+                  </div>
+                {% else %}
+                  <a href="{{section.permalink}}">{{section.name}}</a>
+                {% endif %}
               </li>
             {% endfor %}
           </ul>

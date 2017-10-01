@@ -15,7 +15,7 @@ favicon: img/favicons/sfuco_favicon.png
 
 # Collections: For managing non-post content
 collections:
-  sections:
+  pages:
     output: true
   execs:
     output: true

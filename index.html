@@ -7,19 +7,9 @@ permalink:
   <div class="hidden-sm-down">
     {% include vertical-nav.html %}
   </div>
-
   <header>
     <div class="hero-image">
       <h1>sfu<b>concert orchestra</b></h1>
     </div>
   </header>
-
-  {% assign sections = site.sections | where: "onHomePage", "true" %}
-  {% assign sorted = sections | sort: 'order' %}
-  {% for section in sorted %}
-    <!-- Full screen layout has different section padding than mobile -->
-    <section id="{{section.name}}" class="">
-      {{section.content}}
-    </section>
-  {% endfor %}
 </div>
