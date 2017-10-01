@@ -505,6 +505,9 @@ nav {
 
 /* Colors */
 /* 'Eerie Black' */
+#news {
+  padding: 24px 0; }
+
 .news-list ul {
   padding: 0;
   list-style-type: none; }
