@@ -126,26 +126,18 @@
   }
   .container {
     width: 50vw;
-    min-height: 50vh;
     height: 80vh;
     position: relative; // necessary for positioning floating elements in window
-    margin-top: 2.5%;
-    overflow-y: hidden;
     z-index: 3;
     background-color: $white;
   }
-  .row {
-    max-height: 80vh;
-    padding: 0 2.5%;
-    overflow: hidden;
-  }
+
   // Make modal window fullscreen for small devices
   // Note: 991px is the BS limit for medium screens
   @media screen and (max-width: 991px) {
     .container {
-        width: 100%;
-        height: 100%;
-        margin-top: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }

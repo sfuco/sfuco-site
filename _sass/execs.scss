@@ -30,7 +30,18 @@
 
   .modal-image-container {
     justify-content: flex-end; // Override default image alignment so that it
-                               // matches the text alignment
+  }                             // matches the text alignment
+
+  #exec-modal-mobile {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    span {
+      line-height: 12px;
+    }
+    img {
+      width: 100%;
+    }
   }
 }
 

@@ -136,39 +136,68 @@ subsections:
       <div id="{{exec.firstName}}" class="modal-overlay">
         <div class="container"> <!-- The actual modal window -->
 
-          <div class="row">
-            <div class="col-4"> <!-- The left hand column (img, name, and position) -->
-              <div class="row">
-                <div class="col-12">
-                  <div class="modal-image-container">
-                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+          <div id="exec-modal-full" class="hidden-sm-down">
+            <div class="row">
+              <div class="col-4"> <!-- The left hand column (img, name, and position) -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="modal-image-container">
+                      <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <h3><b>{{exec.title}}</b></h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <span>{{exec.position}}</span>
                   </div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-12">
-                  <h3><b>{{exec.title}}</b></h3>
+              <div class="col-8"> <!-- The right hand column (close button, detail paragraphs) -->
+                <div class="row">
+                  <div class="col-12">
+                    <button class="close-button">X</button>
+                  </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <span>{{exec.position}}</span>
-                </div>
-              </div>
-            </div>
-            <div class="col-8"> <!-- The right hand column (close button, detail paragraphs) -->
-              <div class="row">
-                <div class="col-12">
-                  <button class="close-button">X</button>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  {{exec.content | markdownify}}
+                <div class="row">
+                  <div class="col-12">
+                    {{exec.content | markdownify}}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <div id="exec-modal-mobile" class="hidden-md-up">
+            <div class="row">
+              <div class="col-12">
+                <button class="close-button">X</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h3><b>{{exec.title}}</b></h3>
+              </div>
+              <div class="col-12">
+                <span>{{exec.position}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                {{exec.content | markdownify}}
+              </div>
+            </div>
+          </div>
+
 
           <div> <!-- Nav Buttons -->
             {% unless forloop.first %} <!-- if not the first exec -->
