@@ -117,7 +117,7 @@ subsections:
           {% if exec.status == 'active' %}
             <div class="flex-element">
               <a href="#{{exec.firstName}}"> <!-- To make image clickable, wrap in <a> -->
-                <span id="me">{{exec.firstName}}</span>
+                <span>{{exec.firstName}}</span>
                 <div class="image-container">
                   <div class="hover-overlay"></div>
                   <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image"/>
