@@ -1,6 +1,6 @@
 SFUCO Site TODO
 
-Last Updated: 9-28-2017
+Last Updated: 10-01-2017
 Last Updater: Reinier
 
 ---------
@@ -11,12 +11,6 @@ Fixes
 - Gets a 405 when trying to submit
 - Probably because there's two forms that share the same ID
 
-
-[] Exec Section
-- Mobile layout looks clunky
-- Should reduce thumbnail size and make it a two column layout with
-names on the other column (especially since there's no hover on mobile)
-
 ---------------
 To Implement
 ---------------
@@ -24,6 +18,7 @@ To Implement
 [] News Archive
 [] Exec Archive
 [] FAQ
+[] Google Analytics
 
 ---------------
 Would be cool
@@ -38,6 +33,11 @@ Would be cool
 --------------
 Archived Tasks
 --------------
+
+[x] Exec Section | Completed 10-01-2017
+- Mobile layout looks clunky
+- Should reduce thumbnail size and make it a two column layout with
+names on the other column (especially since there's no hover on mobile)
 
 [x] Exec Window | Completed: 9-28-2017
 - Content overflows on small screen and gets cut off by the modal overlay
