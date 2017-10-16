@@ -9,4 +9,59 @@ permalink:
       <h1>sfu<b>concert orchestra</b></h1>
     </div>
   </header>
+
+  <section id="latest-news">
+    <div class="container">
+      <div class="row">
+        <!-- Page Title -->
+        <div class="dropdown-container">
+          <ul>
+            <li class="dropdown-parent">
+              <h2>
+                latest
+                <div class="down-triangle"></div>
+              </h2>
+              <div class="dropdown-submenu">
+                <ul>
+                  {% assign sections = site.pages | where: "name", "news" %}
+                  {% for section in sections %}
+                  <li><a href="{{section.permalink}}">all</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            <li><h2><b>news</b></h2></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Latest News Content -->
+        <div class="flex-container">
+          {% for post in site.posts limit: 5 %}
+            <a href="{{post.url}}">
+              <div class="">
+                <div class="">
+                  {% if post.image %}
+                    <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+                  {% else %}
+                    <img src="{{site.baseurl}}/img/logo.png" alt="placeholder-image"/>
+                  {% endif %}
+                </div>
+                <div class="">
+                  <span><b>{{post.title}}</b><span>
+                </div>
+                <div class="">
+                  <p>{{ post.date | date: "%B %-d, %Y" }}</p>
+                </div>
+                <div class="">
+                  <p>{{post.summary}}</p>
+                </div>
+              </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

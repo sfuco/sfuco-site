@@ -40,3 +40,39 @@
 .news-content {
   margin-top: 16px;
 }
+
+#latest-news {
+  .flex-container a { // Have to target this specifically since we want to keep dropdown link white
+    color: $grey;
+  }
+
+  .flex-container a > div{ // container for news entry
+    width: 250px;
+    height: 300px;
+    margin: 5px;
+  }
+
+  .flex-container a > div div:nth-child(1) { // Image
+    display: flex;
+    justify-content: center;
+    height: 100px;
+  }
+
+  .flex-container a > div div:nth-child(2) { // Title
+    padding: 5px;
+  }
+
+  .flex-container a > div div:nth-child(3) { // Date
+    padding: 0 5px;
+  }
+
+  .flex-container a > div div:nth-child(4) { // Date
+    padding: 0 5px;
+  }
+
+  .flex-container img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover
+  }
+}
