@@ -2,6 +2,7 @@
 title: A Night Of World Music
 category: news
 image: ANOWM.jpg
+summary: SFUCO is proud to present "A Night of World Music". From Korea, to Norway, and then to England, come out and enjoy a round-trip around the world; all in the comfort of your own seat.
 ---
 
 SFUCO is proud to present "A Night of World Music". From Korea, to Norway, and then to England, come out and enjoy a round-trip around the world; all in the comfort of your own seat. This is also the last semester of executive leadership for our Co-President of 3 years, Nathalie Scott-Hsiung.
