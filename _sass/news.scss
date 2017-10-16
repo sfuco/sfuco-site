@@ -44,6 +44,7 @@
 #latest-news {
   .flex-container a { // Have to target this specifically since we want to keep dropdown link white
     color: $grey;
+    text-decoration: none; // Remove so that content doesn't get underlined
   }
 
   .flex-container a > div{ // container for news entry
@@ -61,6 +62,11 @@
   .flex-container a > div div:nth-child(2) { // Title
     padding: 5px;
   }
+
+  .flex-container a:hover span { // Manually put underline on hover on title    
+    text-decoration: underline;
+  }
+
 
   .flex-container a > div div:nth-child(3) { // Date
     padding: 0 5px;

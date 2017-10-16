@@ -550,7 +550,8 @@ nav {
   margin-top: 16px; }
 
 #latest-news .flex-container a {
-  color: #1a1a1a; }
+  color: #1a1a1a;
+  text-decoration: none; }
 
 #latest-news .flex-container a > div {
   width: 250px;
@@ -566,6 +567,9 @@ nav {
 
 #latest-news .flex-container a > div div:nth-child(2) {
   padding: 5px; }
+
+#latest-news .flex-container a:hover span {
+  text-decoration: underline; }
 
 #latest-news .flex-container a > div div:nth-child(3) {
   padding: 0 5px; }
