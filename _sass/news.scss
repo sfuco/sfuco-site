@@ -2,6 +2,10 @@
 
 #news {
   padding: 24px 0;
+
+  a {
+    color: $grey;
+  }
 }
 
 .news-list {
@@ -63,7 +67,7 @@
     padding: 5px;
   }
 
-  .flex-container a:hover span { // Manually put underline on hover on title    
+  .flex-container a:hover span { // Manually put underline on hover on title
     text-decoration: underline;
   }
 
