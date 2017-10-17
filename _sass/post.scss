@@ -1,0 +1,37 @@
+.post {
+  height: 100vh;
+  padding-top: 36px;
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+
+  span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+  }
+
+  p {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+  }
+
+  .container-fluid {
+    max-height: 45vh;
+    overflow: hidden;
+  }
+
+  .container-fluid div {
+    height: 45vh;
+    max-height: 45vh;
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .container {
+    margin-top: 24px;
+  }
+}
