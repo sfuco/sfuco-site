@@ -1,6 +1,6 @@
 SFUCO Site TODO
 
-Last Updated: 10-01-2017
+Last Updated: 10-17-2017
 Last Updater: Reinier
 
 ---------
@@ -14,6 +14,8 @@ Fixes
 ---------------
 To Implement
 ---------------
+
+[] Post Page Layout
 [] Mobile Nav
 [] News Archive
 [] Exec Archive
@@ -29,10 +31,14 @@ Would be cool
 
 [] Interactive contact form
 
+[] Footer stays at bottom of page regardless of content height
+
 
 --------------
 Archived Tasks
 --------------
+
+[x] News/Events preview section on home page | Completed 10-16-2017
 
 [x] Exec Section | Completed 10-01-2017
 - Mobile layout looks clunky
