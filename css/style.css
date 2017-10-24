@@ -585,16 +585,24 @@ nav {
   max-height: 100%;
   object-fit: cover; }
 
+/* Colors */
+/* 'Eerie Black' */
 .post {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 36px; }
   .post h1 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700; }
+  .post h2 {
+    font-size: 22px; }
+  .post h3 {
+    font-size: 18px; }
+  .post h4 {
+    font-size: 14px; }
   .post span {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100; }
-  .post p {
+  .post p, .post li {
     font-family: 'EB Garamond', serif;
     font-size: 16px; }
   .post .container-fluid {
@@ -604,7 +612,7 @@ nav {
     height: 45vh;
     max-height: 45vh;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat; }
   .post .container {
     margin-top: 24px; }

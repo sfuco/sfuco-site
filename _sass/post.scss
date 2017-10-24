@@ -1,5 +1,7 @@
+@import 'colors';
+
 .post {
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 36px;
 
   h1 {
@@ -7,12 +9,24 @@
     font-weight: 700;
   }
 
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
   span {
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
   }
 
-  p {
+  p, li {
     font-family: 'EB Garamond', serif;
     font-size: 16px;
   }
@@ -22,16 +36,17 @@
     overflow: hidden;
   }
 
-  .container-fluid div {
+  .container-fluid div { // The post image
     height: 45vh;
     max-height: 45vh;
 
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
   }
 
   .container {
     margin-top: 24px;
   }
+
 }
