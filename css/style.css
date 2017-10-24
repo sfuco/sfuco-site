@@ -549,6 +549,9 @@ nav {
 .news-item span {
   font-weight: 100; }
 
+.news-item .col-md-8 {
+  padding-left: 48px; }
+
 .news-content {
   margin-top: 16px; }
 
