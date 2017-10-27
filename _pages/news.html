@@ -11,7 +11,9 @@ permalink: /news/
   <div id="news-full" class="container hidden-sm-down full-margins">
     <!-- Page title -->
     <div class="row">
-      <h1>sfuco <b>news</b></h1>
+      <div class="col-12">
+        <h1>sfuco <b>news</b></h1>
+      </div>      
     </div>
     <!-- News Section -->
     <div class="news-list row">
@@ -49,26 +51,8 @@ permalink: /news/
   <div id="news-mobile" class="container-fluid hidden-md-up mobile-margins">
     <!-- Page title -->
     <div class="row">
-      <div class="dropdown-container">
-        <ul>
-          <li class="dropdown-parent">
-            <h1>
-              recent
-              <div class="down-triangle"></div>
-            </h1>
-            <div class="dropdown-submenu">
-              <ul>
-                {% assign sections = site.pages | where: "name", "news archive" %}
-                {% for section in sections %}
-                  <!-- Unlike in index.html, apparently you have to loop here to access
-                  the yaml values? (maybe because this page is nested?)-->
-                  <li><a href="{{section.permalink}}">older</a></li>
-                {% endfor %}
-              </ul>
-            </div>
-          </li>
-          <li><h1><b>news</b></h1></li>
-        </ul>
+      <div class="col-12">
+        <h1>sfuco <b>news</b></h1>
       </div>
     </div>
     <!-- News Section -->
