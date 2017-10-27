@@ -32,7 +32,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function() {
   });
 
 gulp.task('browser-sync', ['build-css', 'jekyll-build'], function() {
-  browserSync({server: {baseDir: '_site/'}});
+  browserSync({server: {baseDir: '_site/'}, notify: false});
 });
 
 // SASS compilation
