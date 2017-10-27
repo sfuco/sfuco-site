@@ -48,6 +48,9 @@ nav {
 }
 
 #nav-full {
+  .row {
+    height: $navbar-height;
+  }
   .dropdown-container {
     padding: 0 12px; // take over the default <a> padding so that
                     // the arrow can be positioned
@@ -75,64 +78,85 @@ nav {
       color: $white;
     }
   }
-  .row {
-    height: $navbar-height;
-  }
 }
 
 #nav-mobile {
+  width: 100vw;
   position: fixed;
   top: 0;
+  left: 0;
   min-height: $navbar-height;
-  width: 100%;
-  background-color: rgba($grey, 0.5);
+  background-color: rgba($grey, 1);
 
-  div .col-12 { // Nav bar
-    min-height: $navbar-height;
-    display: flex;
-    justify-content: flex-start;
-    z-index: 3;
+  .container-fluid:nth-child(1) {
+    z-index: 5;
+    height: $navbar-height;
+  }
+
+  .container-fluid:nth-child(1) .logo {
+    height: 55px;
+    width: 55px;
+    margin-left: 24px;
+    transition: transform .9s;
+  }
+
+  .container-fluid:nth-child(1) .logo.is-active {
+    transform: translateX(-50vw);
+  }
+
+
+  .nav-trigger-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: red;
   }
 
   // Nav Trigger
-  .trigger-icon { // Nav trigger middle bar
-    width: 18px;
-    height: 2px;
-    display: inline-block;
-    position: absolute;
-    left: 90%;
-    top: 50%;
-    bottom: auto;
-    right: auto;
-    background-color: white;
-
-    transition: background-color 0.3s;
-  }
-  .trigger-icon::before, .trigger-icon::after { // Add top and bottom bars to nav trigger
-    content: '';
-    width: 100%;
+  .nav-trigger {
     height: 100%;
+    width: 45px;
     position: absolute;
+    top: 0;
+    right: 10%;
+  }
+
+  .trigger-icon {
+    width: 100%;
+    height: 5%;
     background-color: white;
-    right: 0;
-    transition: transform .3s, top .3s, background-color 0s;
+    position: absolute;
   }
-  .trigger-icon::before { // Top bar position
-    top: -5px;
+
+  .trigger-icon:nth-child(1) {
+    top: 30%;
   }
-  .trigger-icon::after { // Bottom bar position
-    top: 5px;
+
+  .trigger-icon:nth-child(2) { // Middle bar
+    top: 50%;
+    transition: background-color 0.3s; // Disappears as top and bottom form an 'X'
   }
-  .trigger-icon.is-clicked {
-    background-color: rgba($white, 0); // Middle bar disappears since top and bottom morph into an 'X'
+
+  .trigger-icon:nth-child(3) {
+    top: 70%;
   }
-  .trigger-icon.is-clicked::before {
-    top: 0;
+
+  .trigger-icon:nth-child(1), .trigger-icon:nth-child(3) {
+    transition: transform .3s, top .3s, height .3s;
+  }
+
+  .trigger-icon.is-active:nth-child(2) {
+    background-color: rgba($white, 0);
+  }
+
+  .trigger-icon.is-active:nth-child(1) {
     transform: rotate(135deg);
+    top: 50%;
+    height: 15%;
   }
-  .trigger-icon.is-clicked::after {
-    top: 0;
+  .trigger-icon.is-active:nth-child(3) {
     transform: rotate(225deg);
+    top: 50%;
+    height: 15%;
   }
 
   .nav-menu {
@@ -144,29 +168,53 @@ nav {
     top: 0;
 
     padding-top: 25vh;
-    overflow-y: auto;
-
+    overflow-y: hidden;
     transform: translateY(-100%); // Hide menu by default
-    transition: transform 1s ease-in-out;
+    transition: transform .75s ease-in-out;
 
     ul {
       list-style-type: none;
+      text-align: right;
+      padding-right: 48px;
     }
 
     li a {
       color: $white;
-      font-size: 24px;
+      font-size: 2.5rem
     }
 
     ul ul { // Sublists
-      padding-left: 20px;
+      padding-right: 24px;
     }
 
-    ul ul li a {
+    ul ul li a{
+      font-size: 1.75rem;
       font-weight: 100;
     }
   }
-  .nav-menu.is-open {
+
+  hr {
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    border-color: $white;
+  }
+
+  .nav-menu .logo {
+    width: 55px;
+    height: 55px;
+    float: right;
+    margin: 5%;
+    transform: translateX(20vw);
+    transition: transform .9s ease-in-out;
+  }
+
+  .nav-menu .logo.is-active {
+    transform: translateX(0);
+  }
+
+
+  .nav-menu.is-active {
     transform: translateY(0);
   }
 

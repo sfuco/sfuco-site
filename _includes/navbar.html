@@ -45,15 +45,18 @@
 
 <!-- Mobile nav -->
 <nav id="nav-mobile" class="hidden-md-up">
+  <!-- Nav bar -->
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12">
-        <a href="#0" class="nav-trigger"> <!-- The #0 prevents the screen from snapping back to top when nav opens -->
-          <span class="trigger-icon"></span>
-        </a>
-      </div>
+      <a href="{{site.baseurl}}/"><div class="logo"></div></a>
+      <a href="#0" class="nav-trigger"> <!-- The #0 prevents the screen from snapping back to top when nav opens -->
+        <div class="trigger-icon"></div>
+        <div class="trigger-icon"></div>
+        <div class="trigger-icon"></div>
+      </a>
     </div>
   </div>
+  <!-- Dropdown nav menu -->
   <div class="container-fluid nav-menu">
     <ul>
       <!-- since home is not a section, it won't show up in the loop -->
@@ -79,5 +82,8 @@
         </li>
       {% endfor %}
     </ul>
+    <hr />
+    <br />
+    <div class="logo"></div>
   </div>
 </nav>

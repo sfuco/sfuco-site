@@ -186,8 +186,7 @@ $(document).ready(function() {
   });
 
   $('.nav-trigger').on('click', function() {
-    $('.trigger-icon').toggleClass('is-clicked');
-    $('.nav-menu').toggleClass('is-open');
+    $('.trigger-icon, .nav-menu, .logo').toggleClass('is-active');
   });
 
   // Modal Window
