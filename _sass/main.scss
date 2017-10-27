@@ -10,22 +10,37 @@ body {
   }
 }
 
-.hero-image {
-  height: 80vh;
+header h1 {  
+  font-weight: 100;
+  color: $white;
+}
 
+header div {
+  background-color: $grey;
   background-image: url("../img/bg.jpg");
   background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
 
+div .hidden-sm-down { // Full screen hero image
+  min-height: 85vh;
   h1 {
+    position: absolute;
     right: 5vw;
     bottom: 0;
-    position: absolute;
-
     font-size: 60px;
-    font-weight: 100;
-    color: $white;
+  }
+}
+
+div .hidden-md-up { // Mobile banner
+  min-height: 45vh;
+  h1 {
+    position: absolute;
+    right: 5vw;
+    bottom: 0;
+    font-size: 24px;
   }
 }

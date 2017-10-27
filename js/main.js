@@ -185,9 +185,9 @@ $(document).ready(function() {
     lockScrollingIfModalIsActive();
   });
 
-  $('#nav-toggle-container, #mobile-nav-menu a').on('click', function() {
-    $('#nav-toggle-container').toggleClass('open');
-    $('#mobile-nav-menu').toggleClass('open');
+  $('.nav-trigger').on('click', function() {
+    $('.trigger-icon').toggleClass('is-clicked');
+    $('.nav-menu').toggleClass('is-open');
   });
 
   // Modal Window

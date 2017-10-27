@@ -7,39 +7,6 @@ nav {
   z-index: 10; // Set nav as the top most layer
 }
 
-#nav-full {
-  .dropdown-container {
-    padding: 0 12px; // take over the default <a> padding so that
-                    // the arrow can be positioned
-    a {
-      padding: 0;
-    }
-  }
-  .down-triangle {
-    max-width: 8px;
-    max-height: 8px;
-    background-size: contain;
-  }
-  .dropdown-submenu {
-    min-width: 100px;
-    padding-left: 2px;
-    position: absolute;
-    background-color: $grey;
-    ul {
-      display: block; // resets horizontal nav styling to vertical
-      text-align: left; // overrite <ul> settings in components.scss
-      padding-left: 6px;
-    }
-    a {
-      font-size: 12px;
-      color: $white;
-    }
-  }
-  .row {
-    height: $navbar-height;
-  }
-}
-
 .logo {
   /// Setting a static width here apparently causes
   /// the menu columns to get 'pulled' towards
@@ -78,6 +45,131 @@ nav {
     font-size: 12px;
     color: $grey;
   }
+}
+
+#nav-full {
+  .dropdown-container {
+    padding: 0 12px; // take over the default <a> padding so that
+                    // the arrow can be positioned
+    a {
+      padding: 0;
+    }
+  }
+  .down-triangle {
+    max-width: 8px;
+    max-height: 8px;
+    background-size: contain;
+  }
+  .dropdown-submenu {
+    min-width: 100px;
+    padding-left: 2px;
+    position: absolute;
+    background-color: $grey;
+    ul {
+      display: block; // resets horizontal nav styling to vertical
+      text-align: left; // overrite <ul> settings in components.scss
+      padding-left: 6px;
+    }
+    a {
+      font-size: 12px;
+      color: $white;
+    }
+  }
+  .row {
+    height: $navbar-height;
+  }
+}
+
+#nav-mobile {
+  position: fixed;
+  top: 0;
+  min-height: $navbar-height;
+  width: 100%;
+  background-color: rgba($grey, 0.5);
+
+  div .col-12 { // Nav bar
+    min-height: $navbar-height;
+    display: flex;
+    justify-content: flex-start;
+    z-index: 3;
+  }
+
+  // Nav Trigger
+  .trigger-icon { // Nav trigger middle bar
+    width: 18px;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    background-color: white;
+
+    transition: background-color 0.3s;
+  }
+  .trigger-icon::before, .trigger-icon::after { // Add top and bottom bars to nav trigger
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    right: 0;
+    transition: transform .3s, top .3s, background-color 0s;
+  }
+  .trigger-icon::before { // Top bar position
+    top: -5px;
+  }
+  .trigger-icon::after { // Bottom bar position
+    top: 5px;
+  }
+  .trigger-icon.is-clicked {
+    background-color: rgba($white, 0); // Middle bar disappears since top and bottom morph into an 'X'
+  }
+  .trigger-icon.is-clicked::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  .trigger-icon.is-clicked::after {
+    top: 0;
+    transform: rotate(225deg);
+  }
+
+  .nav-menu {
+    background-color: $grey;
+
+    min-width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+
+    padding-top: 25vh;
+    overflow-y: auto;
+
+    transform: translateY(-100%); // Hide menu by default
+    transition: transform 1s ease-in-out;
+
+    ul {
+      list-style-type: none;
+    }
+
+    li a {
+      color: $white;
+      font-size: 24px;
+    }
+
+    ul ul { // Sublists
+      padding-left: 20px;
+    }
+
+    ul ul li a {
+      font-weight: 100;
+    }
+  }
+  .nav-menu.is-open {
+    transform: translateY(0);
+  }
+
 }
 
 #vertical-nav {

@@ -1,49 +1,83 @@
-<nav>
-  <!-- Full nav -->
-  <div id="nav-full" class="hidden-sm-down">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-1">
-          <a href="{{site.baseurl}}/"><div class="logo"></div></a>
-        </div>
-        <div class="menu col-md-11">
-          <ul>
-            <!-- since home is not a section, it won't show up in the loop -->
-            <li><a href="{{site.baseurl}}/">home</a></li>
-            {% assign sections = site.pages | where: "category", "page" %}
-            {% assign sorted = sections | sort: 'order' %}
-            {% for section in sorted %}
-              <li>
-                {% if section.subsections %} <!-- if the section has subsections, make a dropdown -->
-                <div class="dropdown-container">
-                    <div class="dropdown-parent">
-                      <a href="{{section.permalink}}">{{section.name}}</a>
-                      <div class="down-triangle"></div>
-                      <div class="dropdown-submenu">
-                        <ul>
-                          {% for subsection in section.subsections %}
-                          <li>
-                            <a href="{{site.baseurl}}/{{subsection.permalink}}">
-                            {{subsection.name}}
-                            </a>
-                          </li>
-                          {% endfor %}
-                        </ul>
-                      </div>
+
+<!-- Full nav -->
+<nav id="nav-full" class="hidden-sm-down">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1">
+        <a href="{{site.baseurl}}/"><div class="logo"></div></a>
+      </div>
+      <div class="menu col-md-11">
+        <ul>
+          <!-- since home is not a section, it won't show up in the loop -->
+          <li><a href="{{site.baseurl}}/">home</a></li>
+          {% assign sections = site.pages | where: "category", "page" %}
+          {% assign sorted = sections | sort: 'order' %}
+          {% for section in sorted %}
+            <li>
+              {% if section.subsections %} <!-- if the section has subsections, make a dropdown -->
+              <div class="dropdown-container">
+                  <div class="dropdown-parent">
+                    <a href="{{section.permalink}}">{{section.name}}</a>
+                    <div class="down-triangle"></div>
+                    <div class="dropdown-submenu">
+                      <ul>
+                        {% for subsection in section.subsections %}
+                        <li>
+                          <a href="{{site.baseurl}}/{{subsection.permalink}}">
+                          {{subsection.name}}
+                          </a>
+                        </li>
+                        {% endfor %}
+                      </ul>
                     </div>
                   </div>
-                {% else %}
-                  <a href="{{section.permalink}}">{{section.name}}</a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+                </div>
+              {% else %}
+                <a href="{{section.permalink}}">{{section.name}}</a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
-  <!-- Mobile nav -->
-  <div id="nav-mobile" class="hidden-md-up">
+</nav>
 
+<!-- Mobile nav -->
+<nav id="nav-mobile" class="hidden-md-up">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <a href="#0" class="nav-trigger"> <!-- The #0 prevents the screen from snapping back to top when nav opens -->
+          <span class="trigger-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid nav-menu">
+    <ul>
+      <!-- since home is not a section, it won't show up in the loop -->
+      <li><a href="{{site.baseurl}}/">home</a></li>
+      {% assign sections = site.pages | where: "category", "page" %}
+      {% assign sorted = sections | sort: 'order' %}
+      {% for section in sorted %}
+        <li>
+          {% if section.subsections %}
+            <a href="{{section.permalink}}">{{section.name}}</a>
+            <ul>
+              {% for subsection in section.subsections %}
+              <li>
+                <a href="{{site.baseurl}}/{{subsection.permalink}}">
+                {{subsection.name}}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <a href="{{section.permalink}}">{{section.name}}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </nav>
