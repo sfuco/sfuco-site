@@ -88,6 +88,13 @@ nav {
   min-height: $navbar-height;
   background-color: rgba($grey, 1);
 
+  hr {
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    border-color: $white;
+  }
+
   .container-fluid:nth-child(1) {
     z-index: 5;
     height: $navbar-height;
@@ -104,7 +111,6 @@ nav {
     transform: translateX(-50vw);
   }
 
-
   .nav-trigger-wrapper {
     height: 100%;
     width: 100%;
@@ -114,7 +120,7 @@ nav {
   // Nav Trigger
   .nav-trigger {
     height: 100%;
-    width: 45px;
+    width: 25px;
     position: absolute;
     top: 0;
     right: 10%;
@@ -128,7 +134,7 @@ nav {
   }
 
   .trigger-icon:nth-child(1) {
-    top: 30%;
+    top: 35%;
   }
 
   .trigger-icon:nth-child(2) { // Middle bar
@@ -137,7 +143,7 @@ nav {
   }
 
   .trigger-icon:nth-child(3) {
-    top: 70%;
+    top: 65%;
   }
 
   .trigger-icon:nth-child(1), .trigger-icon:nth-child(3) {
@@ -193,13 +199,6 @@ nav {
     }
   }
 
-  hr {
-    width: 50%;
-    position: absolute;
-    right: 5%;
-    border-color: $white;
-  }
-
   .nav-menu .logo {
     width: 55px;
     height: 55px;
@@ -208,16 +207,12 @@ nav {
     transform: translateX(20vw);
     transition: transform .9s ease-in-out;
   }
-
   .nav-menu .logo.is-active {
     transform: translateX(0);
   }
-
-
   .nav-menu.is-active {
     transform: translateY(0);
   }
-
 }
 
 #vertical-nav {

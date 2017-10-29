@@ -561,6 +561,11 @@ nav {
   left: 0;
   min-height: 55px;
   background-color: #1a1a1a; }
+  #nav-mobile hr {
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    border-color: white; }
   #nav-mobile .container-fluid:nth-child(1) {
     z-index: 5;
     height: 55px; }
@@ -579,7 +584,7 @@ nav {
     background-color: red; }
   #nav-mobile .nav-trigger {
     height: 100%;
-    width: 45px;
+    width: 25px;
     position: absolute;
     top: 0;
     right: 10%; }
@@ -589,12 +594,12 @@ nav {
     background-color: white;
     position: absolute; }
   #nav-mobile .trigger-icon:nth-child(1) {
-    top: 30%; }
+    top: 35%; }
   #nav-mobile .trigger-icon:nth-child(2) {
     top: 50%;
     transition: background-color 0.3s; }
   #nav-mobile .trigger-icon:nth-child(3) {
-    top: 70%; }
+    top: 65%; }
   #nav-mobile .trigger-icon:nth-child(1), #nav-mobile .trigger-icon:nth-child(3) {
     transition: -webkit-transform .3s, top .3s, height .3s;
     transition: transform .3s, top .3s, height .3s; }
@@ -634,11 +639,6 @@ nav {
     #nav-mobile .nav-menu ul ul li a {
       font-size: 1.75rem;
       font-weight: 100; }
-  #nav-mobile hr {
-    width: 50%;
-    position: absolute;
-    right: 5%;
-    border-color: white; }
   #nav-mobile .nav-menu .logo {
     width: 55px;
     height: 55px;
