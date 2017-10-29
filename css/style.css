@@ -399,7 +399,7 @@ footer {
   padding-top: 24px;
   background-color: #1a1a1a; }
   footer h4, footer p, footer a, footer span {
-    color: white; }
+    color: rgba(255, 255, 255, 0.5); }
   footer h4 {
     font-size: 18px; }
   footer p {
@@ -407,12 +407,17 @@ footer {
     margin: 0; }
   footer a {
     font-size: 14px; }
+  footer a:hover {
+    color: white; }
   footer span {
     font-size: 8px; }
   footer ul {
     padding: 0; }
   footer li {
     list-style-type: none; }
+  footer hr {
+    margin-top: 0;
+    border: 1px solid rgba(255, 255, 255, 0.25); }
   footer .img-overlay-container > img {
     width: 24px;
     height: 24px; }
@@ -420,12 +425,18 @@ footer {
     width: 64px;
     height: 64px; }
 
-#social-links ul {
+.social-links ul {
   display: -ms-flexbox;
   display: flex; }
 
-#social-links li {
+.social-links li {
   padding: 0 5px; }
+
+#footer-mobile {
+  text-align: center; }
+  #footer-mobile .social-links ul {
+    -ms-flex-pack: center;
+    justify-content: center; }
 
 /* Colors */
 /* 'Eerie Black' */

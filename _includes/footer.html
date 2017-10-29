@@ -1,6 +1,7 @@
-<div class="container">
+<!-- Full screen footer -->
+<div id="footer-full" class="container hidden-sm-down">
   <div class="row">
-    <div class="col-6 col-md-3">
+    <div class="col-md-3">
       <h4>SECTIONS</h4>
       <ul>
         {% assign sections = site.pages | where: "category", "page" %}
@@ -10,7 +11,7 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="col-6 col-md-3">
+    <div class="col-md-3">
       <h4>OTHER PAGES</h4>
       <ul>
         {% assign sections = site.pages | where: "category", "archive" %}
@@ -20,7 +21,7 @@
         {% endfor %}
       </ul>
     </div>
-    <div class="col-6 col-md-3" id="social-links">
+    <div class="col-md-3 social-links">
       <h4>SOCIAL</h4>
       <ul>
         <li><a href="https://www.facebook.com/sfuorchestra/">
@@ -43,12 +44,56 @@
         </a></li>
       </ul>
     </div>
-    <div class="col-6 col-md-3">
+    <div class="col-md-3">
       <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
       <p>SIMON FRASER UNIVERSITY</p>
       <p>CONCERT ORCHESTRA</p>
       <p>Simon Fraser University,</p>
       <p>Burnaby BC</p>
+      <span>&copy 2017</span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile footer -->
+<div id="footer-mobile" class="container-fluid hidden-md-up">
+  <div class="row">
+    <div class="col-12">
+      <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+      <p>SIMON FRASER UNIVERSITY</p>
+      <p>CONCERT ORCHESTRA</p>
+      <p>Simon Fraser University,</p>
+      <p>Burnaby BC</p>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-12 social-links">
+      <h4>SOCIAL</h4>
+      <ul>
+        <li><a href="https://www.facebook.com/sfuorchestra/">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/fb_col.png" />
+            <img src="{{site.baseurl}}/img/icons/social/fb_white.png" />
+          </div>
+        </a></li>
+        <li><a href="https://twitter.com/sfuorchestra">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/tw_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/tw_white.png" alt="envelope" />
+          </div>
+        </a></li>
+        <li><a href="https://www.youtube.com/channel/UCtXPR57Dp0Uy1G1nAajO0HQ">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/yt_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/yt_white.png" alt="envelope" />
+          </div>
+        </a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
       <span>&copy 2017</span>
     </div>
   </div>

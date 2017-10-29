@@ -6,7 +6,7 @@ footer {
   background-color: $grey;
 
   h4, p, a, span {
-    color: $white;
+    color: rgba($white, 0.5);
   }
 
   h4 {
@@ -22,6 +22,10 @@ footer {
     font-size: 14px;
   }
 
+  a:hover {
+    color: $white;
+  }
+
   span {
     font-size: 8px;
   }
@@ -32,6 +36,11 @@ footer {
 
   li {
     list-style-type: none;
+  }
+
+  hr {
+    margin-top: 0;
+    border: 1px solid rgba($white, 0.25)
   }
 
   .img-overlay-container > img {
@@ -45,12 +54,20 @@ footer {
   }
 }
 
-#social-links {
+.social-links {
   ul {
     display: flex;
   }
 
   li {
     padding: 0 5px;
+  }
+}
+
+#footer-mobile {
+  text-align: center;
+
+  .social-links ul {
+    justify-content: center;
   }
 }
