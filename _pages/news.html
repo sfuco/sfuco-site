@@ -13,22 +13,26 @@ permalink: /news/
     <div class="row">
       <div class="col-12">
         <h1>sfuco <b>news</b></h1>
-      </div>      
+      </div>
     </div>
     <!-- News Section -->
-    <div class="news-list row">
+    <div class="news-list">
       <ul>
         {% for post in site.posts %}
           <li>
             <div class="news-item row">
-              <div class="news-photo col-md-4">
-                {% if post.image %}
+              <div class="col-md-2">
+                <div class="news-photo">
                   <a href="{{post.url}}">
-                    <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+                    {% if post.image %}
+                      <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+                    {% else %}
+                      <img src="{{site.baseurl}}/img/logo.png" alt="news-image"/>
+                    {% endif %}
                   </a>
-                {% endif %}
+                </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-10">
                 <div class="row">
                   <a href="{{post.url}}">
                     <h4>{{post.title}}</h4>
@@ -43,6 +47,7 @@ permalink: /news/
               </div>
             </div>
           </li>
+          <hr />
         {% endfor %}
       </ul>
     </div>
@@ -57,30 +62,25 @@ permalink: /news/
     </div>
     <!-- News Section -->
     <div class="news-list row">
-      <ul>
-        {% for post in site.posts %}
-          <li>
-            <div class="news-item row">
-              <div class="news-photo col-md-4">
-                {% if post.image %}
+      <div class="col-12">
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{post.url}}">
+                <div class="news-item row">
                   <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
-                {% endif %}
-              </div>
-              <div class="col-md-8">
-                <div class="row">
-                  <h4>{{post.title}}</h4>
+                  <div class="col-10">
+                    <h2>{{post.title}}</h2>
+                  </div>
+                  <div class="col-2">
+                    <span>{{ post.date | date: "%D" }}</span>
+                  </div>
                 </div>
-                <div class="row">
-                  <span>{{ post.date | date: "%B %-d, %Y" }}</span>
-                </div>
-                <div class="news-content row">
-                  {{post.content}}
-                </div>
-              </div>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

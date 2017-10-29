@@ -1,54 +1,95 @@
 @import 'colors';
 
 #news {
-  padding-top: 60px;
+  padding-top: 80px;
 
   a {
     color: $grey;
   }
-}
+  h1 {
+    margin-bottom: 48px;
+  }
 
-.news-list {
-  ul {
-    padding: 0;
-    list-style-type: none;
+  .news-list {
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+  }
+  .news-item {
+    li {
+      padding: 0;
+      list-style-type: none;
+    }
+    h2 {
+      font-weight: bold;
+    }
+    span {
+      font-weight: 400;
+    }
+  }
+  .news-content {
+    margin-top: 16px;
   }
 }
 
-.news-item {
-  margin: 12px 0;
-  overflow: auto;
-}
+#news-full {
+  .news-item {
+    margin: 12px 0;
+    overflow: auto;
+  }
 
-.news-photo {
-  img {
-      max-width: 100%;
-      max-height: 400px; /* Double the height of flexbox photos */
+  .news-photo { // div containing photo
+    width: 100px;
+    height: 100px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .news-item .col-md-10 { // The text column
+    padding-left: 48px;
   }
 }
 
-.news-item {
-  li {
-    padding: 0;
-    list-style-type: none;
-  }
+#news-mobile {
 
-  h4 {
-    font-weight: bold;
+  h2, span, p {
+    color: $white;
   }
   span {
-    font-weight: 100;
+    font-size: 0.8rem;
+  }
+  h2 {
+    font-size: 2rem;
+    text-shadow: 2px 2px $grey;
+  }
+  li {
+    margin: 10px 0;
+  }
+
+  .news-item {
+    height: 100px;
+    position: relative;
+    padding: 5px 5px 5px 0;
+    overflow-y: hidden;
+    box-shadow: 5px 5px 1px rgba($grey, 0.25);
+    background-color: $grey;
+  }
+  .news-item img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    filter: blur(3px);
+    opacity: 0.3;
   }
 }
 
-.news-item .col-md-8 { // The text column
-  padding-left: 48px;
-}
-
-.news-content {
-  margin-top: 16px;
-}
-
+// This section appears on the home page
 #latest-news {
   .flex-container a { // Have to target this specifically since we want to keep dropdown link white
     color: $grey;
