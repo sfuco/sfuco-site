@@ -17,7 +17,6 @@ To Implement
 
 [] Post Page Layout
 [] Mobile Nav
-[] News Archive
 [] Exec Archive
 [] FAQ
 [] Google Analytics
