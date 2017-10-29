@@ -1,7 +1,7 @@
 /* Colors */
 /* 'Eerie Black' */
 #about {
-  padding-top: 60px; }
+  padding-top: 80px; }
   #about h3 {
     text-align: center;
     font-weight: 100; }
@@ -18,28 +18,77 @@
     -ms-flex-align: center;
     align-items: center; }
 
-#about-full .row:nth-child(2) img {
-  -webkit-transform: translate(-30px, -30px);
-  transform: translate(-30px, -30px); }
+#about-mobile h1, #about-mobile h2, #about-mobile p {
+  color: #1a1a1a; }
 
-#about-full .row:nth-child(3) img {
-  -webkit-transform: translate(40px, 40px);
-  transform: translate(40px, 40px); }
+#about-mobile h2 {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  z-index: 3;
+  font-size: 56px;
+  background-color: #1a1a1a;
+  color: white; }
 
-#about-mobile {
-  background-color: #1a1a1a; }
-  #about-mobile h1, #about-mobile h2, #about-mobile p {
-    color: white; }
-  #about-mobile h2 {
-    position: absolute;
-    bottom: 10%;
-    right: 10%;
-    z-index: 3;
-    font-size: 56px;
-    background-color: #1a1a1a; }
-  #about-mobile img {
-    margin-bottom: 12px;
-    opacity: 0.75; }
+#about-mobile img {
+  margin-bottom: 12px;
+  opacity: 0.75; }
+
+#about-full .pop-box:nth-child(1) {
+  -webkit-animation: fadeIn 3s, slideLeftRight 1s;
+  animation: fadeIn 3s, slideLeftRight 1s; }
+
+#about-full .pop-box:nth-child(2) {
+  -webkit-animation: fadeIn 3s, slideRightLeft 1s;
+  animation: fadeIn 3s, slideRightLeft 1s; }
+
+#about-full img {
+  -webkit-animation: fadeIn 3s;
+  animation: fadeIn 3s; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes slideLeftRight {
+  0% {
+    -webkit-transform: translateX(-50vw);
+    transform: translateX(-50vw); }
+  100% {
+    -webkit-transform: translateX(0vw);
+    transform: translateX(0vw); } }
+
+@keyframes slideLeftRight {
+  0% {
+    -webkit-transform: translateX(-50vw);
+    transform: translateX(-50vw); }
+  100% {
+    -webkit-transform: translateX(0vw);
+    transform: translateX(0vw); } }
+
+@-webkit-keyframes slideRightLeft {
+  0% {
+    -webkit-transform: translateX(50vw);
+    transform: translateX(50vw); }
+  100% {
+    -webkit-transform: translateX(0vw);
+    transform: translateX(0vw); } }
+
+@keyframes slideRightLeft {
+  0% {
+    -webkit-transform: translateX(50vw);
+    transform: translateX(50vw); }
+  100% {
+    -webkit-transform: translateX(0vw);
+    transform: translateX(0vw); } }
 
 /* Colors */
 /* 'Eerie Black' */

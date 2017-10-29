@@ -1,7 +1,7 @@
 @import 'colors';
 
 #about { // Affects both mobile and full layouts
-  padding-top: 60px;
+  padding-top: 80px;
 
   h3 {
     text-align: center;
@@ -23,20 +23,9 @@
   }
 }
 
-#about-full {
-  // Shift images undeneath text boxes
-  .row:nth-child(2) img { // The image in the first row
-    transform: translate(-30px, -30px);
-  }
-  .row:nth-child(3) img {
-    transform: translate(40px, 40px);
-  }
-}
-
 #about-mobile {
-  background-color: $grey;
   h1, h2, p {
-    color: $white;
+    color: $grey;
   }
   h2 {
     position: absolute;
@@ -45,9 +34,38 @@
     z-index: 3;
     font-size: 56px;
     background-color: $grey;
+    color: $white;
   }
   img {
     margin-bottom: 12px;
     opacity: 0.75;
   }
+}
+
+#about-full {
+  .pop-box:nth-child(1) {
+    animation: fadeIn 3s, slideLeftRight 1s;
+  }
+  .pop-box:nth-child(2) {
+    animation: fadeIn 3s, slideRightLeft 1s;
+  }
+  img {
+    animation: fadeIn 3s;
+  }
+}
+
+// Animations
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slideLeftRight {
+  0% {transform: translateX(-50vw);}
+  100% {transform: translateX(0vw);}
+}
+
+@keyframes slideRightLeft {
+  0% {transform: translateX(50vw);}
+  100% {transform: translateX(0vw);}
 }
