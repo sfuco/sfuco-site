@@ -324,9 +324,9 @@
     background-color: white;
     border-bottom: 1px solid #1a1a1a;
     outline: none; }
-  #contact #error-text {
+  #contact .error-text {
     color: #d8553e; }
-  #contact #send-button {
+  #contact .send-button {
     width: 100px; }
 
 /* Colors */

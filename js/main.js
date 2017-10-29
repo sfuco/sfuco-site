@@ -108,7 +108,7 @@ function validateContactForm() {
 
   str = $('input[name="name"]').val();
   if (!isNonEmptyField(str)) { // Check that name isn't blank
-    $('#error-text').text(
+    $('.error-text').text(
       'Sorry, what was your name again?'
     );
     return false;
@@ -116,7 +116,7 @@ function validateContactForm() {
 
   str = $('input[name="email"]').val();
   if (!isValidEmail(str)) { // Check that email is valid (and non-blank)
-    $('#error-text').text(
+    $('.error-text').text(
      'We need a valid email address from you!'
     );
     return false;
@@ -124,7 +124,7 @@ function validateContactForm() {
 
   str = $('textarea[name="message"]').val();
   if (!isNonEmptyField(str)) { // Check that message isn't blank
-    $('#error-text').text(
+    $('.error-text').text(
        'What did you want to contact us about (fill in message field)?'
     );
     return false;
@@ -206,7 +206,7 @@ $(document).ready(function() {
     if (!validateContactForm()) {
       e.preventDefault();
     }
-    var form = document.getElementById('contact-form');
+    var form = this;
     form.setAttribute(
         'action', '//formspree.io/' + 'sfuco.team' + '@' + 'gmail' + '.' + 'com'
     );
