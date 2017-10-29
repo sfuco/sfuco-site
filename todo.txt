@@ -1,6 +1,6 @@
 SFUCO Site TODO
 
-Last Updated: 10-17-2017
+Last Updated: 10-29-2017
 Last Updater: Reinier
 
 ---------
@@ -15,8 +15,6 @@ Fixes
 To Implement
 ---------------
 
-[] Post Page Layout
-[] Mobile Nav
 [] Exec Archive
 [] FAQ
 [] Google Analytics
@@ -36,6 +34,10 @@ Would be cool
 --------------
 Archived Tasks
 --------------
+
+[x] Mobile Nav | Completed 10-29-2017
+
+[x] Post Page Layout | Completed 10-29-2017
 
 [x] News/Events preview section on home page | Completed 10-16-2017
 
