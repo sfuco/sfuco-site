@@ -474,17 +474,17 @@ header div {
   background-size: cover;
   position: relative; }
 
-div .hidden-sm-down {
+header > div.hidden-sm-down {
   min-height: 85vh; }
-  div .hidden-sm-down h1 {
+  header > div.hidden-sm-down h1 {
     position: absolute;
     right: 5vw;
     bottom: 0;
     font-size: 60px; }
 
-div .hidden-md-up {
+header > div.hidden-md-up {
   min-height: 75vh; }
-  div .hidden-md-up h1 {
+  header > div.hidden-md-up h1 {
     position: absolute;
     right: 5vw;
     bottom: 0;
@@ -782,6 +782,39 @@ nav {
 #latest-news-mobile .news-item h2 {
   font-size: 1rem;
   font-weight: bold; }
+
+#latest-news-full .flex-container a {
+  color: #1a1a1a;
+  text-decoration: none; }
+
+#latest-news-full .flex-container a > div {
+  width: 250px;
+  height: 300px;
+  margin: 5px; }
+
+#latest-news-full .flex-container a > div div:nth-child(1) {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100px; }
+
+#latest-news-full .flex-container a > div div:nth-child(2) {
+  padding: 5px; }
+
+#latest-news-full .flex-container a:hover span {
+  text-decoration: underline; }
+
+#latest-news-full .flex-container a > div div:nth-child(3) {
+  padding: 0 5px; }
+
+#latest-news-full .flex-container a > div div:nth-child(4) {
+  padding: 0 5px; }
+
+#latest-news-full .flex-container img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover; }
 
 /* Colors */
 /* 'Eerie Black' */

@@ -88,7 +88,7 @@
   }
 }
 
-// This section appears on the home page
+// These section appears on the home page
 #latest-news-mobile {
   .dropdown-container h2 { // Reset from #news-mobile, #latest-news-mobile block
     padding-left: 15px;
@@ -111,5 +111,47 @@
   .news-item h2 {
     font-size: 1rem;
     font-weight: bold;
+  }
+}
+
+#latest-news-full {  
+  .flex-container a { // Have to target this specifically since we want to keep dropdown link white
+    color: $grey;
+    text-decoration: none; // Remove so that content doesn't get underlined
+  }
+
+  .flex-container a > div{ // container for news entry
+    width: 250px;
+    height: 300px;
+    margin: 5px;
+  }
+
+  .flex-container a > div div:nth-child(1) { // Image
+    display: flex;
+    justify-content: center;
+    height: 100px;
+  }
+
+  .flex-container a > div div:nth-child(2) { // Title
+    padding: 5px;
+  }
+
+  .flex-container a:hover span { // Manually put underline on hover on title
+    text-decoration: underline;
+  }
+
+
+  .flex-container a > div div:nth-child(3) { // Date
+    padding: 0 5px;
+  }
+
+  .flex-container a > div div:nth-child(4) { // Date
+    padding: 0 5px;
+  }
+
+  .flex-container img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover
   }
 }

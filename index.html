@@ -43,7 +43,7 @@ permalink:
         <div class="flex-container">
           {% for post in site.posts limit: 5 %}
             <a href="{{post.url}}">
-              <div class="">
+              <div class="news-item">
                 <div class="">
                   {% if post.image %}
                     <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
@@ -67,6 +67,7 @@ permalink:
       </div>
     </div>
   </section>
+
   <section id="latest-news-mobile" class="hidden-md-up">
     <div class="container-fluid">
       <div class="row">

@@ -25,7 +25,7 @@ header div {
   position: relative;
 }
 
-div .hidden-sm-down { // Full screen hero image
+header > div.hidden-sm-down { // Full screen hero image
   min-height: 85vh;
   h1 {
     position: absolute;
@@ -35,12 +35,12 @@ div .hidden-sm-down { // Full screen hero image
   }
 }
 
-div .hidden-md-up { // Mobile banner
+header > div.hidden-md-up { // Mobile banner
   min-height: 75vh;
   h1 {
     position: absolute;
     right: 5vw;
     bottom: 0;
     font-size: 2rem;
-  }  
+  }
 }
