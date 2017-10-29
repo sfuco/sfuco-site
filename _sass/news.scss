@@ -95,10 +95,16 @@
     color: $grey;
     text-shadow: none;
   }
+  .dropdown-submenu { // Override default opacity
+    background-color: $grey;
+    margin-left: 15px;
+  }
+
   ul {
     list-style-type: none;
     padding: 0;
   }
+
   .news-item {
     height: 75px;
   }

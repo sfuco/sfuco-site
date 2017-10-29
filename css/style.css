@@ -477,7 +477,7 @@ div .hidden-md-up {
     position: absolute;
     right: 5vw;
     bottom: 0;
-    font-size: 24px; }
+    font-size: 2rem; }
 
 /* Colors */
 /* 'Eerie Black' */
@@ -756,6 +756,10 @@ nav {
   padding-left: 15px;
   color: #1a1a1a;
   text-shadow: none; }
+
+#latest-news-mobile .dropdown-submenu {
+  background-color: #1a1a1a;
+  margin-left: 15px; }
 
 #latest-news-mobile ul {
   list-style-type: none;
