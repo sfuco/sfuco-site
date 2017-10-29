@@ -174,7 +174,7 @@ nav {
     top: 0;
 
     padding-top: 25vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     transform: translateY(-100%); // Hide menu by default
     transition: transform .75s ease-in-out;
 
@@ -199,6 +199,11 @@ nav {
     }
   }
 
+  .nav-menu.is-active {
+    transform: translateY(0);
+  }
+
+  /*
   .nav-menu .logo {
     width: 55px;
     height: 55px;
@@ -210,9 +215,13 @@ nav {
   .nav-menu .logo.is-active {
     transform: translateX(0);
   }
-  .nav-menu.is-active {
-    transform: translateY(0);
+  @media (max-height: 600px) { // hide bottom elements when screen too short
+    .nav-menu .logo, .nav-menu hr {
+      display: none;
+    }
   }
+  */
+
 }
 
 #vertical-nav {

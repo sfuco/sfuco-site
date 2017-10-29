@@ -560,7 +560,25 @@ nav {
   top: 0;
   left: 0;
   min-height: 55px;
-  background-color: #1a1a1a; }
+  background-color: #1a1a1a;
+  /*
+  .nav-menu .logo {
+    width: 55px;
+    height: 55px;
+    float: right;
+    margin: 5%;
+    transform: translateX(20vw);
+    transition: transform .9s ease-in-out;
+  }
+  .nav-menu .logo.is-active {
+    transform: translateX(0);
+  }
+  @media (max-height: 600px) { // hide bottom elements when screen too short
+    .nav-menu .logo, .nav-menu hr {
+      display: none;
+    }
+  }
+  */ }
   #nav-mobile hr {
     width: 50%;
     position: absolute;
@@ -622,7 +640,7 @@ nav {
     position: fixed;
     top: 0;
     padding-top: 25vh;
-    overflow-y: hidden;
+    overflow-y: auto;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
     transition: -webkit-transform .75s ease-in-out;
@@ -639,18 +657,6 @@ nav {
     #nav-mobile .nav-menu ul ul li a {
       font-size: 1.75rem;
       font-weight: 100; }
-  #nav-mobile .nav-menu .logo {
-    width: 55px;
-    height: 55px;
-    float: right;
-    margin: 5%;
-    -webkit-transform: translateX(20vw);
-    transform: translateX(20vw);
-    transition: -webkit-transform .9s ease-in-out;
-    transition: transform .9s ease-in-out; }
-  #nav-mobile .nav-menu .logo.is-active {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); }
   #nav-mobile .nav-menu.is-active {
     -webkit-transform: translateY(0);
     transform: translateY(0); }
