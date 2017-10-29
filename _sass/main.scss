@@ -10,7 +10,7 @@ body {
   }
 }
 
-header h1 {  
+header h1 {
   font-weight: 100;
   color: $white;
 }
@@ -36,7 +36,7 @@ div .hidden-sm-down { // Full screen hero image
 }
 
 div .hidden-md-up { // Mobile banner
-  min-height: 45vh;
+  min-height: 75vh;
   h1 {
     position: absolute;
     right: 5vw;

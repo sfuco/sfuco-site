@@ -11,9 +11,9 @@ permalink:
     <div class="hidden-md-up">
       <h1>sfu<b>concert orchestra</b></h1>
     </div>
-  </header> 
+  </header>
 
-  <section id="latest-news">
+  <section id="latest-news-full" class="hidden-sm-down">
     <div class="container">
       <div class="row">
         <!-- Page Title -->
@@ -67,4 +67,53 @@ permalink:
       </div>
     </div>
   </section>
+  <section id="latest-news-mobile" class="hidden-md-up">
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Page Title -->
+        <div class="dropdown-container">
+          <ul>
+            <li class="dropdown-parent">
+              <h2>
+                latest
+                <div class="down-triangle"></div>
+              </h2>
+              <div class="dropdown-submenu">
+                <ul>
+                  {% assign sections = site.pages | where: "name", "news" %}
+                  {% for section in sections %}
+                  <li><a href="{{section.permalink}}">all</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </li>
+            <li><h2><b>news</b></h2></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="news-list row">
+        <div class="col-12">
+          <ul>
+            {% for post in site.posts %}
+              <li>
+                <a href="{{post.url}}">
+                  <div class="news-item row">
+                    <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
+                    <div class="col-10">
+                      <h2>{{post.title}}</h2>
+                    </div>
+                    <div class="col-2">
+                      <span>{{ post.date | date: "%D" }}</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
