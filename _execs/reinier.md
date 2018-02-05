@@ -3,7 +3,7 @@ title: reinier evangelista
 firstName: reinier
 position: design
 image: reinier.jpg
-status: active
+status: inactive
 order: 6
 ---
 
