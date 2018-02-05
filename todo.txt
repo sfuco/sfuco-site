@@ -1,7 +1,16 @@
 SFUCO Site TODO
 
-Last Updated: 10-29-2017
+[Note: As of 02-01-2018, this file is outdated; move all project management stuff to github projects]
+
+Last Updated: 02-01-2018
 Last Updater: Reinier
+
+
+---------
+Updates
+---------
+[] Update to Spring 2018 execs
+
 
 ---------
 Fixes
@@ -18,6 +27,7 @@ To Implement
 [] Exec Archive
 [] FAQ
 [] Google Analytics
+[] Developer wiki
 
 ---------------
 Would be cool
@@ -34,6 +44,8 @@ Would be cool
 --------------
 Archived Tasks
 --------------
+
+[x] Added X: Part 2 post | Completed 02-01-2018
 
 [x] Mobile Nav | Completed 10-29-2017
 
