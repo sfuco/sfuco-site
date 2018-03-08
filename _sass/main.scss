@@ -1,5 +1,4 @@
 @import "colors";
-@import "typography";
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -15,7 +14,7 @@ header h1 {
   color: $white;
 }
 
-header div {
+#homepage header div {
   background-color: $grey;
   background-image: url("../img/bg.jpg");
   background-attachment: fixed;
