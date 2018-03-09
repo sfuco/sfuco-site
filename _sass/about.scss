@@ -1,4 +1,6 @@
-@import 'colors';
+// About page CSS
+
+@import 'global_variables';
 
 
 #about h1, #about h2 {
@@ -14,52 +16,47 @@
 }
 
 .grid-container { // CSS-Grid container
-    display: grid;
-    grid-template-columns: auto;
-    grid-column-gap: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+  display: grid;
+  grid-template-columns: auto;
 }
 
+#about-overview, #about-vision, #about-history, #about-execs {
+  margin-bottom: 20vh;
+  padding: 0 $PAGE_MARGINS;
+}
 
-#about-overview.grid-container, #about-vision.grid-container, #about-history.grid-container {
-  width: auto;
-  height: 100vh;
+#about-overview, #about-vision, #about-history {
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-#about-vision.grid-container, #about-history.grid-container {
-  height: 75vh;
+#about-overview {
+  height: 70vh;
+  grid-template-areas: "text text . ."
+                       "text text . .";
 }
 
-#about-overview.grid-container {
-  grid-template-areas: ". . . ."
-                       "text text . ."
-                       "text text . ."
-                       ". . . .";
+#about-vision {
+  grid-template-areas: "img img text text"
+                       "img img text text";
 }
 
-#about-vision.grid-container {
-  grid-template-areas: ". . . ."
-                       "img img text text"
-                       "img img text text"
-                       ". . . .";
-}
-
-#about-history.grid-container {
-  grid-template-areas: ". . . ."
-                       "text text img img"
-                       "text text img img"
-                       ". . . .";
+#about-history {
+  grid-template-areas: "text text img img"
+                       "text text img img";
 }
 
 #about-vision > img, #about-history > img {
   grid-area: img;
   width: 100%;
-  height: auto;
+  height: 100%;
   outline: 10px solid $grey2;
   outline-offset: -25px;
+  object-fit: cover;
+}
+
+#about-vision > img {
+  justify-self: end;
 }
 
 .text {
@@ -69,4 +66,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+}
+
+.background-shading {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  top: -5%;
+  left: 5%;
+  background-color: rgba($grey2, 0.1);
 }
