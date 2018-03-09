@@ -15,30 +15,6 @@
   text-align: justify;
 }
 
-.grid-container { // CSS-Grid container
-  display: grid;
-  grid-template-columns: auto;
-}
-
-.text {
-  width: auto;
-  padding: 15px;
-  grid-area: text;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.background-shading {
-  width: 75%;
-  height: 75%;
-  position: absolute;
-  top: -5%;
-  left: 5%;
-  background-color: rgba($grey2, 0.1);
-}
-
 #about-overview, #about-vision, #about-history, #about-execs {
   margin-bottom: 20vh;
   padding: 0 $PAGE_MARGINS;
