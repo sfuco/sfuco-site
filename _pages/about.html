@@ -39,7 +39,33 @@ subsections:
     </div>
     <img src="{{site.baseurl}}/img/about-photos/about2.jpg" alt="about-image" />
   </section>
-  <section id="about-execs">
-    <h2>Execs</h2>
+  <section class="grid-container" id="about-execs">
+    <div class="text">
+      <h2>Execs</h2>
+    </div>
+    <div class="grid-container">
+      <div class="flex-container">
+        {% assign sorted_active_execs = site.execs | sort: 'order' | where: "status", "active" %}
+        {% for exec in sorted_active_execs %}
+          <div class="flex-element">
+            <div class="image-container">
+              <a href="#{{exec.firstName}}">
+                <div class="hover-overlay"></div>
+                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="exec-text">
+        <div class="background-shading"></div>
+        <h3></h3>
+        <span></span>
+        <hr />
+        <div class="content">
+          <p></p>
+        </div>
+      </div>
+    </div>
   </section>
 </section>

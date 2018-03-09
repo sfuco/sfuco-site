@@ -20,6 +20,25 @@
   grid-template-columns: auto;
 }
 
+.text {
+  width: auto;
+  padding: 15px;
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.background-shading {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  top: -5%;
+  left: 5%;
+  background-color: rgba($grey2, 0.1);
+}
+
 #about-overview, #about-vision, #about-history, #about-execs {
   margin-bottom: 20vh;
   padding: 0 $PAGE_MARGINS;
@@ -59,21 +78,58 @@
   justify-self: end;
 }
 
-.text {
-  width: auto;
-  padding: 15px;
-  grid-area: text;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#about-execs {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 0.25fr 1fr;
+  grid-template-areas: "text text"
+                       "content content";
+  margin-bottom: 5vh;
+}
+
+#about-execs .text {
+  text-align: center;
+}
+
+// For the following two hover overlay rules, we're reversing
+// the implied default behavior where it would turn the
+// overlay on when you hover. Instead, we're setting them on
+// by default and toggled off (in JS) when clicked
+#about-execs .flex-element .hover-overlay {
+  display: block;
+}
+
+#about-execs .flex-element:hover img,  #about-execs .flex-element:hover .hover-overlay {
+  transform: scale(1.05);
+}
+
+
+#about-execs > .grid-container {
+  grid-area: content;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  padding: $PAGE_MARGINS;
   position: relative;
 }
 
-.background-shading {
-  width: 75%;
-  height: 75%;
-  position: absolute;
-  top: -5%;
-  left: 5%;
-  background-color: rgba($grey2, 0.1);
+#about-execs > .grid-container > .exec-text {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: $PAGE_MARGINS;
+}
+
+#about-execs .background-shading {
+  width: 50%;
+  height: 100%;
+  top: -20%;
+  z-index: -1;
+}
+
+.exec-text > h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.exec-text > hr {
+  width: 25%;
+  margin-left: 0;
 }

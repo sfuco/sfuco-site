@@ -64,6 +64,8 @@ function closeModalBox() {
   }
 }
 
+// [Old Exec Section]
+
 // Sets the href for an <a>
 // PARAMS:
 // anchor -> the <a> that was pressed
@@ -99,6 +101,27 @@ function lockScrollingIfModalIsActive() {
   } else {
     $('body').removeClass('scroll-lock');
   }
+}
+
+// Exec Section
+
+// Pulls the associated metadata from the selected exec
+// and fills in the .exec-text with that information
+function loadExecData(anchor) {
+  var title = anchor.children('img').attr('data-title');
+  var pos = anchor.children('img').attr('data-position');
+  var content = anchor.children('img').attr('data-content');
+  $('#about-execs .exec-text h3').replaceWith('<h3>' + title + '</h3>');
+  $('#about-execs .exec-text span').replaceWith('<span>' + pos + '</span>');
+  $('#about-execs .exec-text .content').replaceWith(
+    '<div class="content">' + content + '</div>');
+}
+
+// Toggles the grey overlay on for the exec photo that was clicked
+// and off for everyone else
+function toggleExecPhoto(anchor) {
+  $('#about-execs a').not(anchor).children('div').addClass('hover-overlay');
+  anchor.children('div').removeClass('hover-overlay');
 }
 
 // Contact Form
@@ -187,6 +210,13 @@ $(document).ready(function() {
 
   $('.nav-trigger').on('click', function() {
     $('.trigger-icon, .nav-menu, .logo').toggleClass('is-active');
+  });
+
+  // Exec Section
+  $('#about-execs a').on('click', function(e) {
+    e.preventDefault();
+    loadExecData($(this));
+    toggleExecPhoto($(this));
   });
 
   // Modal Window
