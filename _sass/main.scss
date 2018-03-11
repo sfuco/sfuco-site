@@ -22,13 +22,20 @@ body {
   grid-template-rows: repeat(3, 1fr);
 }
 
+#home .text {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #home > header.grid-container, #home-upcoming.grid-container, #home-news.grid-container {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
 }
 
 #home > header.grid-container {
-  height: 60vh;
+  //height: 60vh;
   //margin: $PAGE_MARGINS;
   opacity: 0.9;
   background-image: url("../img/bg.jpg");
