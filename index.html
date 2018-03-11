@@ -3,118 +3,58 @@ layout: default
 permalink:
 ---
 
-<div id="homepage">
-  <header>
-    <div class="hidden-sm-down">
-      <h1>sfu<b>concert orchestra</b></h1>
-    </div>
-    <div class="hidden-md-up">
-      <h1>sfu<b>concert orchestra</b></h1>
+<section class="grid-container" id="home">
+  <header class="grid-container">
+    <div class="text">
+      <h1>SFU Concert Orchestra</h1>
     </div>
   </header>
-
-  <section id="latest-news-full" class="hidden-sm-down">
-    <div class="container">
-      <div class="row">
-        <!-- Page Title -->
-        <div class="dropdown-container">
-          <ul>
-            <li class="dropdown-parent">
-              <h2>
-                latest
-                <div class="down-triangle"></div>
-              </h2>
-              <div class="dropdown-submenu">
-                <ul>
-                  {% assign sections = site.pages | where: "name", "news" %}
-                  {% for section in sections %}
-                  <li><a href="{{section.permalink}}">all</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </li>
-            <li><h2><b>news</b></h2></li>
-          </ul>
+  <section class="grid-container" id="home-upcoming">
+    <div class="grid-container content-wrapper">
+      {% assign concert = site.posts | where: "category", "feature" %}
+      {% for post in concert limit: 1%}
+        <div class="text">
+          <h3>{{post.title}}</h3>
+          <span>{{post.date | date: "%B %-d, %Y"}}</span>
+          <p>{{post.summary}}</p>
+          <a href="{{post.url}}">Read More...</a>
         </div>
-      </div>
-
-      <div class="row">
-        <!-- Latest News Content -->
-        <div class="flex-container">
-          {% for post in site.posts limit: 5 %}
-            <a href="{{post.url}}">
-              <div class="news-item">
-                <div class="">
-                  {% if post.image %}
-                    <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
-                  {% else %}
-                    <img src="{{site.baseurl}}/img/logo.png" alt="placeholder-image"/>
-                  {% endif %}
-                </div>
-                <div class="">
-                  <span><b>{{post.title}}</b><span>
-                </div>
-                <div class="">
-                  <p>{{ post.date | date: "%B %-d, %Y" }}</p>
-                </div>
-                <div class="">
-                  <p>{{post.summary}}</p>
-                </div>
-              </div>
-          </a>
-          {% endfor %}
-        </div>
-      </div>
+        <a href="{{site.baseurl}}/img/post-photos/{{post.image}}">
+          <div class="image" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="text">
+      <h2>Upcoming Concert</h2>
     </div>
   </section>
-
-  <section id="latest-news-mobile" class="hidden-md-up">
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Page Title -->
-        <div class="dropdown-container">
-          <ul>
-            <li class="dropdown-parent">
-              <h2>
-                latest
-                <div class="down-triangle"></div>
-              </h2>
-              <div class="dropdown-submenu">
-                <ul>
-                  {% assign sections = site.pages | where: "name", "news" %}
-                  {% for section in sections %}
-                  <li><a href="{{section.permalink}}">all</a></li>
-                  {% endfor %}
-                </ul>
+  <section class="grid-container" id="home-news">
+    <div class="text">
+      <h2>Latest News</h2>
+    </div>
+    <div class="grid-container content-wrapper">
+      {% assign news = site.posts | where: "category", "news" %}
+      {% for post in news limit: 4 %}
+        <a href="{{post.url}}">
+          <div class="news-item">
+            {% if post.image %}
+              <div class="news-img" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
               </div>
-            </li>
-            <li><h2><b>news</b></h2></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="news-list row">
-        <div class="col-12">
-          <ul>
-            {% for post in site.posts %}
-              <li>
-                <a href="{{post.url}}">
-                  <div class="news-item row">
-                    <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
-                    <div class="col-10">
-                      <h2>{{post.title}}</h2>
-                    </div>
-                    <div class="col-2">
-                      <span>{{ post.date | date: "%D" }}</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+            {% else %}
+              <div class="blank-news-img"></div>
+            {% endif %}
+            <div class="text">
+              <h3>{{post.title}}</h3>
+              <span>{{post.date | date: "%B %-d, %Y"}}</span>
+              <p>{{post.summary}}</p>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="text">
+      <a href="{{site.baseurl}}/news/"><span>All News ></span></a>
     </div>
   </section>
-
-</div>
+</section>

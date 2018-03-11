@@ -1,45 +1,178 @@
-@import "colors";
+@import 'global_variables';
 
+// Website global rules
 body {
   font-family: 'Montserrat', sans-serif;
   color: $grey;
 
   p {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
-#homepage header h1 {
-  font-weight: 100;
-  color: $white;
+// Homepage
+
+#home h2 { // For Upcoming Concert, Latest News headings
+  text-transform: uppercase;
+  letter-spacing: 10px;
 }
 
-#homepage header div {
-  background-color: $grey;
+#home.grid-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#home > header.grid-container, #home-upcoming.grid-container, #home-news.grid-container {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+
+#home > header.grid-container {
+  height: 60vh;
+  //margin: $PAGE_MARGINS;
   background-image: url("../img/bg.jpg");
-  background-attachment: fixed;
+  background-position: center;
+  grid-template-areas: "text text text text text text text text";
+}
+
+#home > header > .text {
+  grid-area: text;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#home > header h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  letter-spacing: 24px;
+}
+
+#home-upcoming.grid-container {
+  background-color: $grey;
+  grid-template-areas: "text content content content";
+}
+
+#home-upcoming.grid-container > .grid-container.content-wrapper {
+  grid-area: content;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "text text text img img .";
+  margin-left: $PAGE_MARGINS;
+}
+
+#home-upcoming.grid-container > .text { // "Upcoming Concert"
+  grid-area: text;
+  color: white;
+  text-align: right;
+}
+
+#home-upcoming.grid-container > .grid-container.content-wrapper > .text {
+  grid-area: text;
+  max-height: 100%;
+  overflow-y: auto;
+  color: white;
+  text-align: justify;
+}
+
+#home-upcoming.grid-container > .grid-container.content-wrapper > a {
+  grid-area: img;
+}
+
+#home-upcoming h2 {
+  font-weight: bold;
+}
+
+#home-upcoming h3 {
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+#home-upcoming span {
+  font-weight: 200;
+}
+
+#home-upcoming p {
+  font-family: "EB Garamond";
+}
+
+#home-upcoming .image {
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  box-shadow: 2px 2px 10px rgba(white, 0.2);
+  transform:translateY(-2.5vh);
 }
 
-header > div.hidden-sm-down { // Full screen hero image
-  min-height: 85vh;
-  h1 {
-    position: absolute;
-    right: 5vw;
-    bottom: 0;
-    font-size: 60px;
-  }
+#home-news.grid-container {
+  padding-top: 15px;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: 1fr 4fr 1fr;
+  grid-template-areas: "text text text text"
+                       "content content content content"
+                       ". . . text2";
+  background-color: rgba($grey2, 0.1);
 }
 
-header > div.hidden-md-up { // Mobile banner
-  min-height: 75vh;
-  h1 {
-    position: absolute;
-    right: 5vw;
-    bottom: 0;
-    font-size: 2rem;
-  }
+#home-news > .text {
+  text-align: center;
+}
+
+#home-news > div:nth-child(1) { //"Latest News" container
+  grid-area: text;
+}
+
+#home-news > div:nth-child(3) { // "News archive" container
+  grid-area: text2;
+  text-align: right;
+}
+
+#home-news > div:nth-child(3) span {
+  text-transform: uppercase;
+}
+
+#home-news > .grid-container.content-wrapper {
+  grid-area: content;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  margin: 0 $PAGE_MARGINS;
+}
+
+#home-news .news-img, #home-news .blank-news-img {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#home-news .blank-news-img {
+  background-image: url("../img/logo.png");
+}
+
+#home-news a {
+  color: $grey2;
+}
+
+.news-item .text {
+  padding: 0;
+  margin: 10px;
+  text-align: justify;
+}
+
+.news-item .text h3 {
+  font-weight: 400;
+}
+
+.news-item .text span {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.news-item .text p {
+  font-family: "EB Garamond", serif;
 }
