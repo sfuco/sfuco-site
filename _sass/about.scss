@@ -15,6 +15,19 @@
   text-align: justify;
 }
 
+#about .text {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  grid-area: text;
+}
+
+#about.grid-container {
+  grid-template-rows: repeat(4, 1fr);
+}
+
 #about-overview, #about-vision, #about-history, #about-execs {
   margin-bottom: 20vh;
   padding: 0 $PAGE_MARGINS;
@@ -22,23 +35,19 @@
 
 #about-overview, #about-vision, #about-history {
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: 1fr;
 }
 
 #about-overview {
-  height: 70vh;
-  grid-template-areas: "text text . ."
-                       "text text . .";
+  grid-template-areas: "text text . .";
 }
 
 #about-vision {
-  grid-template-areas: "img img text text"
-                       "img img text text";
+  grid-template-areas: "img img text text";
 }
 
 #about-history {
-  grid-template-areas: "text text img img"
-                       "text text img img";
+  grid-template-areas: "text text img img";
 }
 
 #about-vision > img, #about-history > img {

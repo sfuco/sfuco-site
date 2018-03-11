@@ -17,6 +17,7 @@ subsections:
       <p>
         Every Monday, from 4:30pm to 7:30pm in the Forum Chambers at SFU Burnaby, the souds of an orchestra can be heard rehearsing. The SFU Concert Orchestra is comprised of student musicians and community members that have played in concert bands, wind ensembles, and other orchestras, and now come together for the love of music. All our rehearsal schedules, concert plans, and repertoire choices are chosen and organized by students who wish to see the music community at SFU thrive and grow.
       </p>
+      <a href="#about-vision"><span></span></a>
     </div>
   </header>
   <section class="grid-container" id="about-vision">
@@ -50,21 +51,38 @@ subsections:
           <div class="flex-element">
             <div class="image-container">
               <a href="#{{exec.firstName}}">
-                <div class="hover-overlay"></div>
-                <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+                {% if forloop.first %} <!--Makes the first exec photo active -->
+                  <div class=""></div>
+                  {% if exec.image %}
+                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+                  {% else %}
+                    <img src="{{site.baseurl}}/img/logo.png" alt="no-exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+                  {% endif %}
+
+                {% else %}
+                  <div class="hover-overlay"></div>
+                  {% if exec.image %}
+                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+                  {% else %}
+                    <img src="{{site.baseurl}}/img/logo.png" alt="no-exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
+                  {% endif %}
+                {% endif %}
               </a>
             </div>
           </div>
         {% endfor %}
       </div>
       <div class="exec-text">
-        <div class="background-shading"></div>
-        <h3></h3>
-        <span></span>
-        <hr />
-        <div class="content">
-          <p></p>
-        </div>
+        {% assign default = site.execs | sort: 'order' | where: "status", "active" %}
+        {% for exec in default limit: 1 %}
+          <div class="background-shading"></div>
+          <h3>{{exec.title}}</h3>
+          <span>{{exec.position}}</span>
+          <hr />
+          <div class="content">
+            <p>{{exec.content}}</p>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>
