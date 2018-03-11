@@ -30,6 +30,7 @@ body {
 #home > header.grid-container {
   height: 60vh;
   //margin: $PAGE_MARGINS;
+  opacity: 0.9;
   background-image: url("../img/bg.jpg");
   background-position: center;
   grid-template-areas: "text text text text text text text text";
