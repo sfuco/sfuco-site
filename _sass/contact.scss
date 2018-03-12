@@ -1,70 +1,53 @@
-@import 'colors';
+@import 'global_variables';
 
-#contact {
-  min-height: 80vh;
-  padding-top: 60px;
-  margin-bottom: 24px;
-  overflow: auto;
+#contact.grid-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto-fill;
+  grid-template-areas: "title"
+                       "content";
+}
 
-  h1, h2, h3, h4, p, span, label {
-    color: $grey;
-  }
+#contact > .text {
+  grid-area: title;
+  min-height: 40vh;
+  margin: $NAVBAR_HEIGHT $PAGE_MARGINS;
+  margin-bottom: 0;
+  padding: 0 $PAGE_MARGINS;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  h1 {
-    text-align: center;
-    letter-spacing: 2px;
-  }
+#contact .text {
+  text-transform: uppercase;
+  letter-spacing: 8px;
+}
 
-  b {
-    color: $grey;
-  }
+#contact > .content {
+  grid-area: content;
+  min-height: 37vh;
+  padding: 0 calc(#{$PAGE_MARGINS} * 2);
+  background-color: rgba($grey2, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  hr {
-    border-color: rgba($grey, 0.3);
-  }
+#contact > .content h2 {
+  text-transform: uppercase;
+}
 
-  label {
-    color: rgba($grey, 0.6);
-    padding-right: 12px;
-  }
+#contact > .content ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
 
-  input {
-    width: 100%;
-    color: $grey;
-    background-color: $white;
-    padding-bottom: 0px;
-    border: none;
-    border-bottom: 1px solid $grey;
-    border-radius: 0px;
-    outline: none;
-  }
+#contact > .content li {
+  margin: 0 15px;
+}
 
-  input[type=submit] {
-    float: right;
-    font-weight: bold;
-    border: 1px solid $grey;
-    background-color: $white;
-
-    &:hover {
-        color: $white;
-        background-color: $grey;
-    }
-  }
-
-  textarea {
-    width: 100%;
-    border: none;
-    color: $grey;
-    background-color: $white;
-    border-bottom: 1px solid $grey;
-    outline: none;
-  }
-
-  .error-text {
-    color: $red;
-  }
-
-  .send-button {
-    width: 100px;
-  }
+#contact > .content img {
+  width: 50px;
+  height: 50px;
 }
