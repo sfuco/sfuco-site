@@ -1,73 +1,80 @@
-@import 'colors';
+@import 'global_variables';
 
-footer {
-  min-height: 25vh;
-  padding-top: 24px;
+footer h2, footer a, footer p, footer span {
+  color: rgba(white, 0.5);
+}
+
+footer h2 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(white, 0.25);
+}
+
+footer a {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer .grid-container {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "sections other social info";
+  padding: $PAGE_MARGINS 10%; // L-R margins are arbitrary to center content
   background-color: $grey;
-
-  h4, p, a, span {
-    color: rgba($white, 0.5);
-  }
-
-  h4 {
-    font-size: 18px;
-  }
-
-  p {
-    padding: 0;
-    margin: 0;
-  }
-
-  a {
-    font-size: 14px;
-  }
-
-  a:hover {
-    color: $white;
-  }
-
-  span {
-    font-size: 8px;
-  }
-
-  ul {
-    padding: 0; // Reset padding-left
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-  hr {
-    margin-top: 0;
-    border: 1px solid rgba($white, 0.25)
-  }
-
-  .img-overlay-container > img {
-    width: 24px;
-    height: 24px;
-  }
-
-  img {
-    width: 64px;
-    height: 64px;
-  }
 }
 
-.social-links {
-  ul {
-    display: flex;
-  }
-
-  li {
-    padding: 0 5px;
-  }
+#footer-sections {
+  grid-area: sections;
 }
 
-#footer-mobile {
-  text-align: center;
+#footer-other {
+  grid-area: other;
+}
 
-  .social-links ul {
-    justify-content: center;
-  }
+#footer-social {
+  grid-area: social;
+}
+
+#footer-social ul {
+  display: flex;
+}
+
+#footer-social li {
+  margin: 5px;
+}
+
+#footer-social img {
+  width: 25px;
+  height: 25px;
+}
+
+#footer-info {
+  grid-area: info;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo text";
+}
+
+#footer-info img {
+  grid-area: logo;
+  width: 100px;
+  height: 100px;
+}
+
+#footer-info p {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+}
+
+#footer-info p > span {
+  text-transform: uppercase;
 }
