@@ -16,6 +16,11 @@ footer a {
   text-transform: uppercase;
 }
 
+footer a:hover {
+  color: white;
+  text-decoration: none;
+}
+
 footer ul {
   list-style-type: none;
   padding: 0;
