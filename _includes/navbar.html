@@ -1,63 +1,10 @@
-
-<!-- Full nav -->
-<nav id="nav-full" class="hidden-sm-down">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-1">
-        <a href="{{site.baseurl}}/"><div class="logo"></div></a>
-      </div>
-      <div class="menu col-md-11">
-        <ul>
-          <!-- since home is not a section, it won't show up in the loop -->
-          <li><a href="{{site.baseurl}}/">home</a></li>
-          {% assign sections = site.pages | where: "category", "page" %}
-          {% assign sorted = sections | sort: 'order' %}
-          {% for section in sorted %}
-            <li>
-              {% if section.subsections %} <!-- if the section has subsections, make a dropdown -->
-              <div class="dropdown-container">
-                  <div class="dropdown-parent">
-                    <a href="{{section.permalink}}">{{section.name}}</a>
-                    <div class="down-triangle"></div>
-                    <div class="dropdown-submenu">
-                      <ul>
-                        {% for subsection in section.subsections %}
-                        <li>
-                          <a href="{{site.baseurl}}/{{subsection.permalink}}">
-                          {{subsection.name}}
-                          </a>
-                        </li>
-                        {% endfor %}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              {% else %}
-                <a href="{{section.permalink}}">{{section.name}}</a>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+<nav class="grid-container" id="desktop-nav">
+  <div class="logo">
+    <a href="{{site.baseurl}}/">
+      <div class="img"></div>
+    </a>
   </div>
-</nav>
-
-<!-- Mobile nav -->
-<nav id="nav-mobile" class="hidden-md-up">
-  <!-- Nav bar -->
-  <div class="container-fluid">
-    <div class="row">
-      <a href="{{site.baseurl}}/"><div class="logo"></div></a>
-      <a href="#0" class="nav-trigger"> <!-- The #0 prevents the screen from snapping back to top when nav opens -->
-        <div class="trigger-icon"></div>
-        <div class="trigger-icon"></div>
-        <div class="trigger-icon"></div>
-      </a>
-    </div>
-  </div>
-  <!-- Dropdown nav menu -->
-  <div class="container-fluid nav-menu">
+  <div class="links">
     <ul>
       <!-- since home is not a section, it won't show up in the loop -->
       <li><a href="{{site.baseurl}}/">home</a></li>
@@ -65,17 +12,22 @@
       {% assign sorted = sections | sort: 'order' %}
       {% for section in sorted %}
         <li>
-          {% if section.subsections %}
-            <a href="{{section.permalink}}">{{section.name}}</a>
-            <ul>
-              {% for subsection in section.subsections %}
-              <li>
-                <a href="{{site.baseurl}}/{{subsection.permalink}}">
-                {{subsection.name}}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
+          {% if section.subsections %} <!-- if the section has subsections, make a dropdown -->
+            <div class="grid-container dropdown">
+              <a href="{{section.permalink}}">{{section.name}}</a>
+              <div class="down-triangle"></div>
+              <div class="dropdown-submenu">
+                 <ul>
+                  {% for subsection in section.subsections %}
+                    <li>
+                    <a href="{{site.baseurl}}/{{subsection.permalink}}">
+                      {{subsection.name}}
+                    </a>
+                  </li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
           {% else %}
             <a href="{{section.permalink}}">{{section.name}}</a>
           {% endif %}

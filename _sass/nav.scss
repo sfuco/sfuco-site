@@ -1,252 +1,101 @@
 @import 'global_variables';
 
-nav {
-  z-index: 10; // Set nav as the top most layer
-}
-
-.logo {
-  /// Setting a static width here apparently causes
-  /// the menu columns to get 'pulled' towards
-  /// the logo and end up leaving empty space
-  /// to the right
-  height: 100%;
-  display: block;
-
-  background-image: url("../img/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.menu {
-  height: 100%;
-  display: flex; // allows ul to be centered horizontally
-  justify-content: flex-end;
-
-  ul {
-    height: 100%;
-    margin: 0;
-    padding: 0; // remove default padding-left on ul
-    //overflow: hidden; // having overflow hidden hides navbar dropdowns
-
-    display: flex; // allows li to be centered vertically
-    align-items: flex-end; // align li to bottom
-  }
-
-  li {
-    list-style-type: none;
-    letter-spacing: 2px;
-  }
-
-  li a {
-    padding: 0 12px;
-    font-size: 12px;
-    color: $grey;
-  }
-}
-
-#nav-full {
-  .row {
-    height: $NAVBAR_HEIGHT;
-  }
-  .dropdown-container {
-    padding: 0 12px; // take over the default <a> padding so that
-                    // the arrow can be positioned
-    a {
-      padding: 0;
-    }
-  }
-  .down-triangle {
-    max-width: 8px;
-    max-height: 8px;
-    background-size: contain;
-  }
-  .dropdown-submenu {
-    min-width: 100px;
-    padding-left: 2px;
-    position: absolute;
-    background-color: $grey;
-    ul {
-      display: block; // resets horizontal nav styling to vertical
-      text-align: left; // overrite <ul> settings in components.scss
-      padding-left: 6px;
-    }
-    a {
-      font-size: 12px;
-      color: $white;
-    }
-  }
-}
-
-#nav-mobile {
-  width: 100vw;
+#desktop-nav {
+  max-height: $NAVBAR_HEIGHT;
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  min-height: $NAVBAR_HEIGHT;
-  background-color: rgba($grey, 1);
+  z-index: 10;
+  background-color: rgba($grey, 0.9);
+  // Don't hide overflow since the dropdown menus would be cut off otherwise
+  overflow: visible;
 
-  hr {
-    width: 50%;
-    position: absolute;
-    right: 5%;
-    border-color: $white;
-  }
-
-  .container-fluid:nth-child(1) {
-    z-index: 5;
-    height: $NAVBAR_HEIGHT;
-  }
-
-  .container-fluid:nth-child(1) .logo {
-    height: 55px;
-    width: 55px;
-    margin-left: 24px;
-    transition: transform .9s;
-  }
-
-  .container-fluid:nth-child(1) .logo.is-active {
-    transform: translateX(-50vw);
-  }
-
-  .nav-trigger-wrapper {
-    height: 100%;
-    width: 100%;
-    background-color: red;
-  }
-
-  // Nav Trigger
-  .nav-trigger {
-    height: 100%;
-    width: 25px;
-    position: absolute;
-    top: 0;
-    right: 10%;
-  }
-
-  .trigger-icon {
-    width: 100%;
-    height: 5%;
-    background-color: white;
-    position: absolute;
-  }
-
-  .trigger-icon:nth-child(1) {
-    top: 35%;
-  }
-
-  .trigger-icon:nth-child(2) { // Middle bar
-    top: 50%;
-    transition: background-color 0.3s; // Disappears as top and bottom form an 'X'
-  }
-
-  .trigger-icon:nth-child(3) {
-    top: 65%;
-  }
-
-  .trigger-icon:nth-child(1), .trigger-icon:nth-child(3) {
-    transition: transform .3s, top .3s, height .3s;
-  }
-
-  .trigger-icon.is-active:nth-child(2) {
-    background-color: rgba($white, 0);
-  }
-
-  .trigger-icon.is-active:nth-child(1) {
-    transform: rotate(135deg);
-    top: 50%;
-    height: 15%;
-  }
-  .trigger-icon.is-active:nth-child(3) {
-    transform: rotate(225deg);
-    top: 50%;
-    height: 15%;
-  }
-
-  .nav-menu {
-    background-color: $grey;
-
-    min-width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-
-    padding-top: 25vh;
-    overflow-y: auto;
-    transform: translateY(-100%); // Hide menu by default
-    transition: transform .75s ease-in-out;
-
-    ul {
-      list-style-type: none;
-      text-align: right;
-      padding-right: 48px;
-    }
-
-    li a {
-      color: $white;
-      font-size: 2.5rem
-    }
-
-    ul ul { // Sublists
-      padding-right: 24px;
-    }
-
-    ul ul li a{
-      font-size: 1.75rem;
-      font-weight: 100;
-    }
-  }
-
-  .nav-menu.is-active {
-    transform: translateY(0);
-  }
-
-  /*
-  .nav-menu .logo {
-    width: 55px;
-    height: 55px;
-    float: right;
-    margin: 5%;
-    transform: translateX(20vw);
-    transition: transform .9s ease-in-out;
-  }
-  .nav-menu .logo.is-active {
-    transform: translateX(0);
-  }
-  @media (max-height: 600px) { // hide bottom elements when screen too short
-    .nav-menu .logo, .nav-menu hr {
-      display: none;
-    }
-  }
-  */
-
+  grid-template-columns: 1fr 7fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo . links";
 }
 
-#vertical-nav {
-  position: fixed;
-  left: 1vw;
-  top: 25vh;
+#desktop-nav a {
+  color: rgba(white, 0.5);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
 
-  ul {
-      padding: 0;
-  }
+#desktop-nav a:hover {
+  text-decoration: none;
+  color: white;
+}
 
-  li {
-     display: block;
-     clear: left;
-     float: left;
-     margin: 12px;
-     vertical-align: left;
- }
- a {
-   color: $grey;
- }
- .active-nav {
-   color: $white;
-   background-color: rgba($grey, 0.8);
- }
-  @media screen and (min-width: 1400px) {
-         visibility: visible;; /*1400 px is when the content
-                           containers start overlapping with
-                           the vertical nav*/
-  }
+#desktop-nav .logo {
+  grid-area: logo;
+  height: $NAVBAR_HEIGHT;
+  margin-left: $PAGE_MARGINS;
+}
+
+#desktop-nav .logo .img {
+  height: 100%;
+  background-image: url('../img/logo.png');
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+#desktop-nav .links {
+  grid-area: links;
+}
+
+#desktop-nav .links ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
+#desktop-nav .links li {
+  margin: calc(#{$PAGE_MARGINS} * 2);
+}
+
+#desktop-nav .grid-container.dropdown {
+  grid-template-columns: 1fr 0.25fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "text arrow";
+  margin-top: 5px; // UNSOLVED: since the div is adding space below??
+  position: relative;
+}
+
+#desktop-nav .grid-container.dropdown .text {
+  grid-area: text;
+}
+
+#desktop-nav .grid-container.dropdown .down-triangle {
+  grid-area: arrow;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgba(white, 0.5);
+  position: absolute;
+  margin-top: 5px;
+}
+
+#desktop-nav .grid-container.dropdown:hover .dropdown-submenu {
+  opacity: 1;
+}
+
+#desktop-nav .grid-container.dropdown .dropdown-submenu {
+  min-width: 200%;
+  background-color: rgba($grey2, 0.9);
+}
+
+#desktop-nav .dropdown-submenu ul {
+  flex-direction: column; // Reset the horizontal flex from the main nav ul
+}
+
+#desktop-nav .dropdown-submenu li {
+  margin: 5px;
+  padding: 5px;
+  text-align: left;
+}
+
+#desktop-nav .dropdown-submenu a {
+  font-size: 10px;
 }
