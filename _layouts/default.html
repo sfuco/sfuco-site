@@ -30,10 +30,13 @@
     <link rel="stylesheet" href="{{site.baseurl}}/css/style.css">
   </head>
 
-  <body>
-    {% include navbar.html %}
-    {{content}}
-
+  <body class="grid-container">
+    <div class="nav-container">
+      {% include navbar.html %}
+    </div>
+    <div class="content-container">
+      {{content}}
+    </div>
     <footer>
       {% include footer.html %}
     </footer>

@@ -10,6 +10,27 @@ body {
   }
 }
 
+body.grid-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 4fr auto;
+  grid-template-areas: "nav"
+                       "content"
+                       "footer";
+  min-height: 100vh;
+}
+
+body > .nav-container {
+  grid-area: nav;
+}
+
+body > .content-container {
+  grid-area: content;
+}
+
+body > footer {
+  grid-area: footer;
+}
+
 // Homepage
 
 #home h2 { // For Upcoming Concert, Latest News headings
