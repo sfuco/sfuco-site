@@ -7,80 +7,27 @@ order: 1
 permalink: /news/
 ---
 
-<section id="news">
-  <div id="news-full" class="container hidden-sm-down full-margins">
-    <!-- Page title -->
-    <div class="row">
-      <div class="col-12">
-        <h1>sfuco <b>news</b></h1>
-      </div>
-    </div>
-    <!-- News Section -->
-    <div class="news-list">
-      <ul>
-        {% for post in site.posts %}
-          <li>
-            <div class="news-item row">
-              <div class="col-md-2">
-                <div class="news-photo">
-                  <a href="{{post.url}}">
-                    {% if post.image %}
-                      <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
-                    {% else %}
-                      <img src="{{site.baseurl}}/img/logo.png" alt="news-image"/>
-                    {% endif %}
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-10">
-                <div class="row">
-                  <a href="{{post.url}}">
-                    <h4>{{post.title}}</h4>
-                  </a>
-                </div>
-                <div class="row">
-                  <span>{{ post.date | date: "%B %-d, %Y" }}</span>
-                </div>
-                <div class="news-content row">
-                  {{post.summary}}
-                </div>
-              </div>
-            </div>
-          </li>
-          <hr />
-        {% endfor %}
-      </ul>
-    </div>
+<section class="grid-container" id="news">
+  <div class="text">
+    <h1>News _ </h1>
   </div>
-
-  <div id="news-mobile" class="container-fluid hidden-md-up mobile-margins">
-    <!-- Page title -->
-    <div class="row">
-      <div class="col-12">
-        <h1>sfuco <b>news</b></h1>
-      </div>
-    </div>
-    <!-- News Section -->
-    <div class="news-list row">
-      <div class="col-12">
-        <ul>
-          {% for post in site.posts %}
-            <li>
-              <a href="{{post.url}}">
-                <div class="news-item row">
-                  <img src="{{site.baseurl}}/img/post-photos/{{post.image}}" alt="news-image"/>
-                  <div class="col-10">
-                    <h2>{{post.title}}</h2>
-                  </div>
-                  <div class="col-2">
-                    <span>{{ post.date | date: "%D" }}</span>
-                  </div>
-                </div>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+  <div class="grid-container content-wrapper">
+    {% assign news = site.posts | where: "category", "news" %}
+    {% for post in news %}
+      <a href="{{post.url}}">
+        <div class="grid-container news-item">
+          <div class="text">
+            <h3>{{post.title}}</h3>
+            <span>{{post.date | date: "%B %-d, %Y" }}</span>
+          </div>
+          {% if post.image %}
+            <div class="news-img" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
+            </div>
+          {% else %}
+            <div class="blank-news-img"></div>
+          {% endif %}
+        </div>
+      </a>
+    {% endfor %}
   </div>
 </section>

@@ -1,157 +1,78 @@
-@import 'colors';
+@import 'global_variables';
 
-#news {
-  padding-top: 80px;
-
-  a {
-    color: $grey;
-  }
-  h1 {
-    margin-bottom: 48px;
-  }
-
-  .news-list {
-    ul {
-      padding: 0;
-      list-style-type: none;
-    }
-  }
-  .news-item {
-    li {
-      padding: 0;
-      list-style-type: none;
-    }
-    h2 {
-      font-weight: bold;
-    }
-    span {
-      font-weight: 400;
-    }
-  }
-  .news-content {
-    margin-top: 16px;
-  }
+#news.grid-container {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.25fr 1fr;
 }
 
-#news-full {
-  .news-item {
-    margin: 12px 0;
-    overflow: auto;
-  }
-
-  .news-photo { // div containing photo
-    width: 100px;
-    height: 100px;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .news-item .col-md-10 { // The text column
-    padding-left: 48px;
-  }
+#news > .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 $PAGE_MARGINS;
+  padding: 0 $PAGE_MARGINS;
 }
 
-#news-mobile, #latest-news-mobile {
-  h2, span, p {
-    color: $white;
-  }
-  span {
-    font-size: 0.8rem;
-  }
-  h2 {
-    font-size: 2rem;
-    text-shadow: 2px 2px $grey;
-  }
-  li {
-    margin: 10px 0;
-  }
-
-  .news-item {
-    height: 100px;
-    position: relative;
-    padding: 5px 5px 5px 0;
-    overflow-y: hidden;
-    box-shadow: 5px 5px 1px rgba($grey, 0.25);
-    background-color: $grey;
-  }
-  .news-item img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    filter: blur(3px);
-    opacity: 0.3;
-  }
+#news > .text h1 {
+  text-transform: uppercase;
+  letter-spacing: 8px;
 }
 
-// These section appears on the home page
-#latest-news-mobile {
-  .dropdown-container h2 { // Reset from #news-mobile, #latest-news-mobile block
-    padding-left: 15px;
-    color: $grey;
-    text-shadow: none;
-  }
-  .dropdown-submenu { // Override default opacity
-    background-color: $grey;
-    margin-left: 15px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  .news-item {
-    height: 75px;
-  }
-  .news-item h2 {
-    font-size: 1rem;
-    font-weight: bold;
-  }
+#news > .grid-container.content-wrapper {
+  //background-color: $grey;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  // Note that we're not using grid-template-areas
+  // since that requires the number of rows to be defined
 }
 
-#latest-news-full {  
-  .flex-container a { // Have to target this specifically since we want to keep dropdown link white
-    color: $grey;
-    text-decoration: none; // Remove so that content doesn't get underlined
-  }
+#news .content-wrapper a {
+  grid-column: 1 / 4;
+}
 
-  .flex-container a > div{ // container for news entry
-    width: 250px;
-    height: 300px;
-    margin: 5px;
-  }
+#news .content-wrapper a > .grid-container.news-item {
+  height: 250px;
+  margin: $PAGE_MARGINS;
+  padding: 0 $PAGE_MARGINS;
+  box-shadow: 0px 5px 3px rgba($grey2, 0.1);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "img img text text text text";
+}
 
-  .flex-container a > div div:nth-child(1) { // Image
-    display: flex;
-    justify-content: center;
-    height: 100px;
-  }
+#news .news-item:hover {
+  background-color: rgba($grey2, 0.1);
+}
 
-  .flex-container a > div div:nth-child(2) { // Title
-    padding: 5px;
-  }
+#news a:hover {
+  text-decoration: none;
+}
 
-  .flex-container a:hover span { // Manually put underline on hover on title
-    text-decoration: underline;
-  }
+#news .news-item > .text{
+  grid-area: text;
+  color: $grey2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+#news .news-item > .text h3 {
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-  .flex-container a > div div:nth-child(3) { // Date
-    padding: 0 5px;
-  }
+#news .news-item > .text span {
+  font-weight: 300;
+}
 
-  .flex-container a > div div:nth-child(4) { // Date
-    padding: 0 5px;
-  }
+#news .news-item > .news-img, #news .news-item > .blank-news-img {
+  grid-area: img;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
-  .flex-container img{
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover
-  }
+#news .blank-news-img {
+  background-image: url("../img/logo.png");
 }
