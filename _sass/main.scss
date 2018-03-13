@@ -173,17 +173,21 @@ body > footer {
   box-shadow: 0px 2px 3px rgba($grey2, 0.5);
   overflow: hidden;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
   grid-template-areas: "img text text";
+  position: relative;
+  overflow: visible;
 }
-#home-news .news-item:hover {
-  background-color: rgba($grey2, 0.01);
+#home-news .news-item:hover .news-img, #home-news .news-item:hover .blank-news-img {
+  transform: translateX(-10px);
+  transition: transform 0.25s;
 }
 #home-news a:hover {
   text-decoration: none;
 }
 #home-news .news-item .news-img, #home-news .news-item .blank-news-img {
   grid-area: img;
+  width: 110%;
+  z-index: 1;
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
@@ -195,6 +199,9 @@ body > footer {
   grid-area: text;
   width: 100%;
   padding: $PAGE_MARGINS;
+  z-index: 2;
+  background-color: white;
+  box-shadow: -2px 0px 1px rgba($grey2, 0.1);
 }
 #home-news .news-item > .text span {
   font-size: 0.75rem;
