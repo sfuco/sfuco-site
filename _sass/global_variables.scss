@@ -1,8 +1,18 @@
-// Global Variables
+/// Global Variables
+
 $PAGE_MARGINS: 15px;
 $NAVBAR_HEIGHT: 55px;
 
-/* Colors */
+// Screen thresholds
+// Each represents the minimum width to be considered that size
+$MIN_WIDTH: 375px; // This is the observed min width before content starts getting cut off
+// [Taken from Bootstrap thresholds]
+$SMALL_WIDTH: 576px;
+$MED_WIDTH: 768px;
+$LARGE_WIDTH: 992px;
+$XL_WIDTH: 1200px;
+
+// Colors
 
 $blue: rgb(64,120,209);
 $cool-black: rgb(5,47,95);
