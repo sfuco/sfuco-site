@@ -3,7 +3,7 @@ layout: default
 permalink:
 ---
 
-<section class="grid-container" id="home">
+<main class="grid-container" id="home">
   <header class="grid-container">
     <div class="text">
       <h1>SFU Concert Orchestra</h1>
@@ -37,7 +37,7 @@ permalink:
       {% assign news = site.posts | where: "category", "news" %}
       {% for post in news limit: 4 %}
         <a href="{{post.url}}">
-          <div class="news-item">
+          <div class="grid-container news-item">
             {% if post.image %}
               <div class="news-img" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
               </div>
@@ -57,4 +57,4 @@ permalink:
       <a href="{{site.baseurl}}/news/"><span>All News ></span></a>
     </div>
   </section>
-</section>
+</main>
