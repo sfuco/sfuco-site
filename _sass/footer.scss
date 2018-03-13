@@ -1,5 +1,10 @@
 @import 'global_variables';
 
+footer {
+  background-color: $grey;
+  padding: $PAGE_MARGINS;
+}
+
 footer h2, footer a, footer p, footer span {
   color: rgba(white, 0.5);
 }
@@ -26,60 +31,70 @@ footer ul {
   padding: 0;
 }
 
-footer .grid-container {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "sections other social info";
-  padding: $PAGE_MARGINS 10%; // L-R margins are arbitrary to center content
-  background-color: $grey;
+footer.grid-container {
+  grid-template: auto / auto;
+  justify-content: center;
+  text-align: center;
 }
 
-#footer-sections {
-  grid-area: sections;
-}
-
-#footer-other {
-  grid-area: other;
-}
-
-#footer-social {
-  grid-area: social;
-}
-
-#footer-social ul {
-  display: flex;
-}
-
-#footer-social li {
-  margin: 5px;
-}
-
-#footer-social img {
+footer img {
   width: 25px;
   height: 25px;
 }
 
-#footer-info {
-  grid-area: info;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "logo text";
-}
-
-#footer-info img {
-  grid-area: logo;
-  width: 100px;
-  height: 100px;
-}
-
-#footer-info p {
-  grid-area: text;
+#footer-social ul {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+#footer-social li {
+  margin-right: 5px;
+}
+
+#footer-info {
+  margin-top: calc(#{$PAGE_MARGINS} * 2);
+  justify-content: center;
+}
+
+#footer-info span, #footer-info p {
   font-size: 12px;
 }
 
-#footer-info p > span {
+#footer-info span {
   text-transform: uppercase;
+}
+
+#footer-info img { // Logo
+  width: 55px;
+  height: 55px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px){ // Desktop footer
+  footer {
+    padding: $PAGE_MARGINS 10%; // 10% roughly centers content
+  }
+  footer.grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+  }
+  #footer-social ul {
+    justify-content: flex-start;
+  }
+  #footer-info {
+    margin-top: 0;
+    justify-content: flex-start;
+    grid-template-columns: auto;
+    grid-template-areas: "logo text";
+  }
+  #footer-info > img {
+    grid-area: logo;
+  }
+  #footer-info > p {
+    grid-area: text;
+  }
 }
