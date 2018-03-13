@@ -196,6 +196,12 @@ body > footer {
   width: 100%;
   padding: $PAGE_MARGINS;
 }
+#home-news .news-item > .text span {
+  font-size: 0.75rem;
+}
+#home-news .news-item > .text p {
+  display: none;
+}
 #home-news > div:nth-child(3) {
   justify-content: flex-end;
 }
@@ -213,5 +219,8 @@ body > footer {
   }
   #home-news .news-item {
     height: 300px;
+  }
+  #home-news .news-item > .text p {
+    display: block;
   }
 }
