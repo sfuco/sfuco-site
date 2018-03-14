@@ -1,78 +1,35 @@
 @import 'global_variables';
 
-#news.grid-container {
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.25fr 1fr;
-}
-
-#news > .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#news {
+  grid-template: auto / auto;
+  grid-template-rows: 50vh auto;
   margin: 0 $PAGE_MARGINS;
-  padding: 0 $PAGE_MARGINS;
+}
+@media (min-width: $MED_WIDTH){ // Desktop news layout
+  #news {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  #news header {
+    grid-column: 1 / 7;
+  }
+  #news .content-wrapper {
+    grid-column: 1 / 4;
+  }
 }
 
-#news > .text h1 {
-  text-transform: uppercase;
-  letter-spacing: 8px;
-}
-
-#news > .grid-container.content-wrapper {
-  //background-color: $grey;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
-  // Note that we're not using grid-template-areas
-  // since that requires the number of rows to be defined
-}
-
-#news .content-wrapper a {
-  grid-column: 1 / 4;
-}
-
-#news .content-wrapper a > .grid-container.news-item {
-  height: 250px;
-  margin: $PAGE_MARGINS;
-  padding: 0 $PAGE_MARGINS;
-  box-shadow: 0px 5px 3px rgba($grey2, 0.1);
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "img img text text text text";
-}
-
-#news .news-item:hover {
-  background-color: rgba($grey2, 0.1);
-}
-
-#news a:hover {
-  text-decoration: none;
-}
-
-#news .news-item > .text{
-  grid-area: text;
+#news > .content-wrapper a {
   color: $grey2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-#news .news-item > .text h3 {
-  font-weight: 400;
-  //text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-#news .news-item > .text span {
-  font-weight: 300;
-}
-
-#news .news-item > .news-img, #news .news-item > .blank-news-img {
-  grid-area: img;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#news .blank-news-img {
-  background-image: url("../img/logo.png");
+  &:hover {
+    text-decoration: none;
+  }
+  &:hover .news-item-content {
+    background-color: $light-grey;
+  }
+  @media (min-width: $MED_WIDTH){
+    &:hover .news-item-img {
+      transform: translateX(-10px);
+      transition: transform 0.25s;
+    }
+  }
 }

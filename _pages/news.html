@@ -8,23 +8,25 @@ permalink: /news/
 ---
 
 <section class="grid-container" id="news">
-  <div class="text">
+  <header>
     <h1>News _ </h1>
-  </div>
+  </header>
   <div class="grid-container content-wrapper">
     {% assign news = site.posts | where: "category", "news" %}
     {% for post in news %}
       <a href="{{post.url}}">
         <div class="grid-container news-item">
-          <div class="text">
+          <div class="news-item-content news-text">
             <h3>{{post.title}}</h3>
             <span>{{post.date | date: "%B %-d, %Y" }}</span>
+            <p>{{post.summary}}</p>
           </div>
           {% if post.image %}
-            <div class="news-img" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
+            <div class="news-item-img" style="background-image: url('{{site.baseurl}}/img/post-photos/{{post.image}}')">
             </div>
           {% else %}
-            <div class="blank-news-img"></div>
+            <div class="news-item-img" style="background-image: url('{{site.baseurl}}/img/logo.png')">
+            </div>
           {% endif %}
         </div>
       </a>
