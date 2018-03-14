@@ -3,7 +3,7 @@
 
 @import 'global_variables';
 
-/// Dropdown Menu
+// A menu that appears when you hover over a dropdown container
 .dropdown-submenu {
     width: 100%;
     position: absolute;
@@ -27,7 +27,6 @@
     }
 }
 
-/// Flexbox
 // A collection of elements that are dynamically arranged
 // on the page.
 .flex-container {
@@ -47,7 +46,6 @@
   display: grid;
 }
 
-/// Image Container
 // A container for imgs with an overlay
 // (Takes on the width and height of its parent container
 // usually, a flex-element)
@@ -72,7 +70,6 @@
   background-color: $grey;
 }
 
-/// Image Overlay
 // An <img class="img-overlay"> will
 // be invisible until hovered over
 // Used to show transformation between one image into another on hover
@@ -90,6 +87,54 @@
 .img-overlay-container:hover .img-overlay {
   opacity: 1;
   transition: opacity .25s ease-out;
+}
+
+// Container for individual news posts
+// [Element should also be a .grid-container]
+.news-item {
+  height: 150px;
+  margin: 15px 0;
+  overflow: visible; // Necessary for slide out effect
+  box-shadow: 0 2px 3px rgba($grey2, 0.5);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "img text text";
+}
+@media (min-width: $MED_WIDTH){
+  .news-item {height: 300px;}
+}
+
+.news-item-img {
+  width: 110%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  position: relative;
+  z-index: 1;
+  grid-area: img;
+}
+.news-item-content {
+  padding: 15px;
+  background-color: white;
+  box-shadow: -2px 0 1px rgba($grey2, 0.1);
+  position: relative;
+  z-index: 2;
+  grid-area: text;
+}
+
+// Formatted text for .news-items
+.news-text {
+  span {
+    font-size: 0.75rem;
+  }
+  p {
+    font-size: 1rem;
+    display: none; // Hidden for small devices
+  }
+  @media(min-width: $MED_WIDTH) {
+    p {
+      display: block;
+    }
+  }
 }
 
 /// Misc classes
