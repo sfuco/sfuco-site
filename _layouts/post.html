@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<main class="post">
+<main class="grid-container post">
   <header>
     {% if page.image %}
       <a href="{{site.baseurl}}/img/post-photos/{{page.image}}">
-        <div class="image" style="background-image: url({{site.baseurl}}/img/post-photos/{{page.image}})">
+        <div class="img-header" style="background-image: url({{site.baseurl}}/img/post-photos/{{page.image}})">
         </div>
       </a>
     {% else %}
@@ -24,5 +24,9 @@ layout: default
     <div>
       {{page.content | markdownify}}
     </div>
+    {% if page.image %}
+      <img src="{{site.baseurl}}/img/post-photos/{{page.image}}" alt="post-photo">
+      </img> <!-- Only for full desktop -->
+    {% endif %}
   </article>
 </main>

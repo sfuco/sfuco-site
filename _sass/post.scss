@@ -1,14 +1,23 @@
 @import 'global_variables';
 
-
-.post header {
-  width: 100%;
-  height: 50vh;
+.post {
+  grid-template-rows: 50vh auto;
 }
 
-.post header .image {
-  width: 100%;
+.post p {
+  font-size: 1rem;
+}
+
+.post header a {
   height: 100%;
+  display: inline-block; // Necessary for .img-header to exist
+                         // since it wouldn't have a reference
+                         // for 100% height otherwise
+}
+
+.post .img-header {
+  height: 100%;
+  background-color: green;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -16,53 +25,84 @@
 }
 
 .post .default-header {
-  width: 100%;
-  height: 100%;
   background-color: $grey;
 }
 
-.post article.grid-container {
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr, 1fr, 4fr;
-  position: relative;
-  z-index: 0;
+.post article {
   padding: $PAGE_MARGINS;
+  grid-template-rows: auto;
+  grid-row-gap: $PAGE_MARGINS;
 }
 
-.post article > div:nth-child(1) {
+.post article div:nth-child(1) { // "Back to News"
   grid-row: 1 / 2;
-  grid-column: 1 / 2;
-  margin: $PAGE_MARGINS;
-
   a {
     text-transform: uppercase;
   }
 }
 
 .post article > div:nth-child(2) { // Title and date
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+  height: auto;
   outline: 5px solid rgba($grey2, 1);
-  outline-offset: 5px;
-  margin: $PAGE_MARGINS;
+  margin: 5px; // This is so that it lines up with the <p>
+  grid-row: 2 / 3;
+  h1 {
+    display: block;
+    padding: 5px;
+  }
+  span {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    background-color: $grey2;
+    color: rgba(white, 0.75);
+    font-weight: 400;
+    text-align: right;
+  }
 }
 
-.post article > div:nth-child(3) { // Post content
-  grid-row: 3 / 4;
-  grid-column: 1 / 4;
-  margin: $PAGE_MARGINS;
+.post article > div:nth-child(3) {
+  grid-row: 3 / 3;
+  text-align: justify;
 }
 
-.post h1 {
-  font-size: 4rem;
-  text-transform: uppercase;
-  letter-spacing: 8px;
+.post article img {
+  display: none; // Off for small screens
 }
 
-.post span {
-  font-weight: 300;
+@media (min-width: $MIN_WIDTH) {
+  .post article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .post article > div:nth-child(2) {
+    grid-column: 1 / 2;
+  }
+  .post article > div:nth-child(3) {
+    grid-column: 1 / 3;
+  }
 }
+@media (min-width: $MED_WIDTH) {
+  .post article {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .post article > div:nth-child(2) {
+    grid-column: 1 / 2;
+  }
+  .post article > div:nth-child(3) {
+    grid-column: 1 / 5;
+  }
+}
+@media (min-width: $LARGE_WIDTH) {
+  .post article {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (min-width: $XL_WIDTH) {
+  .post article {
+    padding-left: 10%; // arbitrary
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .post article img {
 
-.post p {
-  font-family: "EB Garamond", serif;
+  }
 }
