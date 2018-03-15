@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<main>
+  <article class="profile">
+    <div class="grid-container">
+      {% if page.image %}
+        <header class="masthead">
+          <div class="masthead-img" style="background-image:url({{site.baseurl}}/img/exec-photos/{{page.image}})">
+          </div>
+          <div class="masthead-txt">
+            <span>{{page.title}}</span>
+          </div>
+        </header>
+      {% else %}
+        <header>
+          <span>{{page.title}}</span>
+        </header>
+      {% endif %}
+      <section>
+        <header>
+          <h1>{{page.title}}</h1>
+          <span>{{page.position}}</span>
+        </header>
+        <div class="content grid-container">
+          {{page.content | markdownify}}
+        </div>
+      </section>
+    </div>
+  </article>
+</main>
