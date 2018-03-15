@@ -11,79 +11,70 @@ subsections:
 ---
 
 <section class="grid-container" id="about">
-  <header class="grid-container" id="about-overview">
-    <div class="text">
-      <h1>About Us _</h1>
-      <p>
-        Every Monday, from 4:30pm to 7:30pm in the Forum Chambers at SFU Burnaby, the souds of an orchestra can be heard rehearsing. The SFU Concert Orchestra is comprised of student musicians and community members that have played in concert bands, wind ensembles, and other orchestras, and now come together for the love of music. All our rehearsal schedules, concert plans, and repertoire choices are chosen and organized by students who wish to see the music community at SFU thrive and grow.
-      </p>
-      <a href="#about-vision"><span></span></a>
+  <header class="grid-container">
+    <div class="background-img"></div>
+    <div>
+      <h1>About Us</h1>
     </div>
   </header>
+  <section class="grid-container" id="about-overview">
+    <div>
+      <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+    </div>
+    <div>
+      <h2>The SFUCO</h2>
+      <p>
+       Every Monday, from 4:30 to 7:30 in the Forum Chambers on Burnaby campus, the sounds of an orchestra can be heard rehearsing. The <em>SFU Concert Orchestra</em> is comprised of student musicians and community members that have played in concert bands, wind ensembles, and other orchestras, and now come together for the love of music. All our rehearsal schedules, concert plans, and repertoire choices are chosen and organized by students who wish to see the music community at SFU thrive and grow.
+      </p>
+    </div>
+  </section>
   <section class="grid-container" id="about-vision">
-    <div class="text">
-      <div class="background-shading"></div>
+    <div>
       <h2>Vision</h2>
       <p>
         We hold concerts once a semester in the fall and spring, and plan a variety of outings such as karaoke throughout the year. Our repertoire includes everything from classical, world music, movie soundtracks, and original compositions. Our goal is to continue growing and pushing ourselves as musicians, and to share the joy of ensemble playing with the SFU community.
       </p>
     </div>
-    <img src="{{site.baseurl}}/img/about-photos/about1.jpg" alt="about-image" />
+    <div>
+      <img src="{{site.baseurl}}/img/about-photos/about1.jpg" alt="about-image" />
+    </div>
   </section>
+
   <section class="grid-container" id="about-history">
-    <div class="text">
-      <div class="background-shading"></div>
+    <div>
       <h2>History</h2>
       <p>
         The Simon Fraser University Concert Orchestra, formerly known as the SFU Chamber Orchestra, was founded in 2007 by Jerry Yon to provide an enjoyable, musical atmosphere that was severely lacking on campus at the time. Since the ensemble was formed, it has steadily grown each year in both musicians and audience members. In 2014 it was decided to formally change the ensemble name to Concert Orchestra due to an influx of musicians and an increasing variety of instruments. SFUCO is made up of students attending Simon Fraser University as well as members of the community. They promote a comfortable, entertaining atmosphere where people can come together and share their passion for music. Membership is open to all levels of musicians and  anyone who would like to experience the love for good music.
       </p>
     </div>
-    <img src="{{site.baseurl}}/img/about-photos/about2.jpg" alt="about-image" />
-  </section>
-  <section class="grid-container" id="about-execs">
-    <div class="text">
-      <h2>Execs</h2>
+    <div>
+      <img src="{{site.baseurl}}/img/about-photos/about2.jpg" alt="about-image" />
     </div>
-    <div class="grid-container">
-      <div class="flex-container">
-        {% assign sorted_active_execs = site.execs | sort: 'order' | where: "status", "active" %}
-        {% for exec in sorted_active_execs %}
-          <div class="flex-element">
-            <div class="image-container">
-              <a href="#{{exec.firstName}}">
-                {% if forloop.first %} <!--Makes the first exec photo active -->
-                  <div class=""></div>
-                  {% if exec.image %}
-                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
-                  {% else %}
-                    <img src="{{site.baseurl}}/img/logo.png" alt="no-exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
-                  {% endif %}
+  </section>
 
-                {% else %}
-                  <div class="hover-overlay"></div>
-                  {% if exec.image %}
-                    <img src="{{site.baseurl}}/img/exec-photos/{{exec.image}}" alt="exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
-                  {% else %}
-                    <img src="{{site.baseurl}}/img/logo.png" alt="no-exec-image" data-title="{{exec.title}}" data-position="{{exec.position}}" data-content="{{exec.content | markdownify}}"/>
-                  {% endif %}
-                {% endif %}
-              </a>
-            </div>
+  <section class="grid-container" id="about-execs">
+    <h2>Execs</h2>
+    <div class="grid-container content-wrapper">
+      {% assign sorted_active_execs = site.execs | sort: 'order' | where: "status", "active" %}
+      {% for exec in sorted_active_execs %}
+        <div class="card-wrapper">
+          <a href="{{exec.url}}">
+            <div class="grid-container exec-card">
+              {% if exec.image %}
+                <div style="background-image:url('{{site.baseurl}}/img/exec-photos/{{exec.image}}')">
+                </div>
+              {% else %}
+                <div style="background-image:url('{{site.baseurl}}/img/logo.png')">
+                </div>
+              {% endif %}
+              <div>
+                <h3>{{exec.title}}</h3>
+                <span>{{exec.position}}</span>
+              </div>
           </div>
-        {% endfor %}
-      </div>
-      <div class="exec-text">
-        {% assign default = site.execs | sort: 'order' | where: "status", "active" %}
-        {% for exec in default limit: 1 %}
-          <div class="background-shading"></div>
-          <h3>{{exec.title}}</h3>
-          <span>{{exec.position}}</span>
-          <hr />
-          <div class="content">
-            <p>{{exec.content}}</p>
-          </div>
-        {% endfor %}
-      </div>
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </section>
 </section>
