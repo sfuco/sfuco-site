@@ -1,17 +1,13 @@
+/// Website global rules
+
 @import 'global_variables';
 
-// Website global rules
 body {
   font-family: 'Montserrat', sans-serif;
-  color: $grey;
-
-  p {
-    font-size: 16px;
-    font-family: "EB Garamond", serif;
-  }
+  color: $grey2;
 }
 
-body.grid-container {
+body {
   grid-template-columns: 1fr;
   grid-template-rows: auto 4fr auto;
   grid-template-areas: "nav"
@@ -28,206 +24,26 @@ body > .content-container {
   grid-area: content;
 }
 
-body > footer {
+header {
+  display: grid;
+}
+
+h1 {
+  //font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+}
+
+header h1 { // Page titles
+  font-size: 3.5rem;
+  letter-spacing: 20px;
+}
+
+p {
+  font-size: 16px;
+  font-family: "EB Garamond", serif;
+}
+
+footer {
   grid-area: footer;
-}
-
-#home.grid-container {
-  grid-template: auto / auto;
-  grid-template-rows: 65vh auto;
-}
-
-#home > header {
-  opacity: 0.88;
-  padding-left: $PAGE_MARGINS;
-  background-color: $grey;
-  background-image: url('../img/logo.png');
-  background-position: center;
-  background-size: auto;
-  background-attachment: fixed;
-}
-#home > header > .text {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: flex-end;
-}
-#home > header h1 {
-  display: none; // Off on smallest screens
-}
-@media (min-width: $MED_WIDTH) {
-  #home > header {
-    background-image: url('../img/bg.jpg');
-    background-size: cover;
-    background-position: bottom;
-  }
-  #home > header .text {
-    justify-content: center;
-    text-align: center;
-  }
-  #home > header h1 {
-    display: block;
-    color: white;
-    font-size: 2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 10px;
-  }
-}
-@media (min-width: $LARGE_WIDTH) {
-  #home > header > .text h1 {
-    font-size: 4.5rem;
-    letter-spacing: 25px;
-  }
-}
-
-#home-upcoming, #home-news {
-  padding: $PAGE_MARGINS;
-}
-
-#home-upcoming {
-  color: white;
-}
-#home-upcoming.grid-container {
-  background-color: $grey;
-  grid-template-areas: "title"
-                       "content";
-}
-#home-upcoming > .text { //"Upcoming Concert"
-  grid-area: title;
-  margin-bottom: $PAGE_MARGINS;
-}
-#home-upcoming > .text h2 {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 8px;
-  color: rgba(white, 0.5);
-}
-#home-upcoming h3, #home-upcoming span {
-  font-weight: 200;
-}
-#home-upcoming > .content-wrapper {
-  grid-area: content;
-}
-@media (min-width: $LARGE_WIDTH) {
-  #home-upcoming.grid-container {
-    grid-template-columns: 1fr 5fr;
-    grid-template-areas: "title content";
-    grid-gap: 15px;
-  }
-  #home-upcoming > .text {
-    grid-area: title;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-  }
-  #home-upcoming > .content-wrapper {
-    grid-area: content;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-areas: "text text text img img img";
-    grid-gap: 15px;
-  }
-  #home-upcoming.grid-container > .grid-container.content-wrapper > .text {
-    grid-area: text;
-    overflow-y: auto;
-    color: white;
-    text-align: justify;
-  }
-  #home-upcoming.grid-container > .grid-container.content-wrapper > a {
-    grid-area: img;
-  }
-  #home-upcoming .image {
-    width: 100%;
-    height: 105%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 2px 2px 10px rgba(white, 0.2);
-    transform:translateY(-30px);
-  }
-}
-@media (min-width: $XL_WIDTH) {
-  #home-upcoming > .content-wrapper {
-    grid-template-areas: "text text text img img .";
-  }
-}
-
-
-#home-news.grid-container {
-  padding-top: calc(#{$PAGE_MARGINS} * 2);
-  background-color: rgba($grey2, 0.1);
-}
-#home-news h2 {
-  color: rgba($grey2, 1);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-#home-news a {
-  color: $grey2;
-}
-#home-news .news-item {
-  height: 150px;
-  margin: $PAGE_MARGINS 0;
-  background-color: rgba(white, 1);
-  box-shadow: 0px 2px 3px rgba($grey2, 0.5);
-  overflow: hidden;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "img text text";
-  position: relative;
-  overflow: visible;
-}
-#home-news .news-item:hover .news-img, #home-news .news-item:hover .blank-news-img {
-  transform: translateX(-10px);
-  transition: transform 0.25s;
-}
-#home-news a:hover {
-  text-decoration: none;
-}
-#home-news .news-item .news-img, #home-news .news-item .blank-news-img {
-  grid-area: img;
-  width: 110%;
-  z-index: 1;
-  background-size: cover;
-  background-position: left;
-  background-repeat: no-repeat;
-}
-#home-news .blank-news-img {
-  background-image: url('../img/logo.png');
-}
-#home-news .news-item > .text {
-  grid-area: text;
-  width: 100%;
-  padding: $PAGE_MARGINS;
-  z-index: 2;
-  background-color: white;
-  box-shadow: -2px 0px 1px rgba($grey2, 0.1);
-}
-#home-news .news-item > .text span {
-  font-size: 0.75rem;
-}
-#home-news .news-item > .text p {
-  display: none;
-}
-#home-news > div:nth-child(3) {
-  justify-content: flex-end;
-}
-@media (min-width: $MED_WIDTH) {
-  #home-news > .text {
-    display: flex;
-    justify-content: center;
-  }
-  #home-news h2 {
-    letter-spacing: 10px;
-  }
-  #home-news .grid-container.content-wrapper {
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
-  }
-  #home-news .news-item {
-    height: 300px;
-  }
-  #home-news .news-item > .text p {
-    display: block;
-  }
 }
