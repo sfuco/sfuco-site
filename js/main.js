@@ -212,13 +212,6 @@ $(document).ready(function() {
     $('.trigger-icon, .nav-menu, .logo').toggleClass('is-active');
   });
 
-  // Exec Section
-  $('#about-execs a').on('click', function(e) {
-    e.preventDefault();
-    loadExecData($(this));
-    toggleExecPhoto($(this));
-  });
-
   // Modal Window
   $('.modal-overlay').on('click', function(e) {
     if (e.target != this) {
