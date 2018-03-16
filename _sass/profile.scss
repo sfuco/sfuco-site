@@ -1,68 +1,141 @@
 @import 'global_variables';
 
-.profile > .grid-container {
-  // [Should probably consolidate these rules with
-  // the other pages]
-  grid-template: auto / auto;
-  grid-template-rows: minmax(80vh, auto) auto;
+article.profile {
+  display: grid;
+  grid-template: minmax(85vh, auto) auto / auto;
 }
 
-.profile .masthead {
-  background-color: $grey;
+.profile header.masthead {
+  background-color: $grey2;
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-template: 1fr auto / 1fr;
 }
 
 .profile .masthead-img {
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: center;
   background-size: cover;
-  grid-column: 1 / 5;
-  grid-row: 1 / 5;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   z-index: 1;
 }
 
 .profile .masthead-txt {
-  display: flex;
-  flex-direction: column;
-  grid-column: 1 / 5;
-  grid-row: 2 / 4;
-  justify-content: center;
+  background-color: white;
+  display: grid;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
   z-index: 2;
 }
 
-.profile .masthead-txt span {
-  color: white;
-  display: none;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 10px;
-}
-
-.profile section header {
-  display: grid;
-  grid-template: 1fr auto / 1fr;
-  grid-row-gap: 0;
-  margin: 0;
-}
-
-.profile section h1 {
+.profile .masthead-txt h1 {
   border: 10px solid $grey2;
+  display: flex;
+  flex-direction: column;
   font-size: 2rem;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  justify-content: center;
   margin: 0;
 }
 
-.profile section span {
+.profile .masthead-txt span {
   background-color: $grey2;
   color: rgba(white, .8);
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  padding-bottom: $PAGE_MARGINS;
-  padding-left: $PAGE_MARGINS;
+  padding: 0 $PAGE_MARGINS;
+}
+
+.profile .profile-photo {
+  display: none; // Used only in > large screens
 }
 
 .profile .content {
-  margin: $PAGE_MARGINS;
+  padding: 0 $PAGE_MARGINS;
+}
+
+.profile .content-body {
+  padding-top: $PAGE_MARGINS;
+  text-align: justify;
+}
+
+@media (min-width: $LARGE_WIDTH) {
+  article.profile {
+    display: grid;
+    grid-template: 50vh 40vh / auto;
+  }
+
+  .profile header.masthead {
+    grid-template: repeat(4, 1fr) / 1fr;
+  }
+
+  .profile .masthead-txt {
+    background-color: transparent;
+    display: grid;
+    grid-column: 1 / 2;
+    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    grid-row: 2 / 4;
+    padding: 0 $PAGE_MARGINS;
+  }
+
+  .profile .masthead-txt h1 {
+    border: none;
+    color: white;
+    font-size: 2.75rem;
+    grid-row: 2 / 4;
+    grid-column: 1 / 6;
+    letter-spacing: 30px;
+    text-align: right;
+  }
+
+  .profile .masthead-txt span {
+    background-color: rgba($grey2, .5);
+    border: 10px solid rgba(white, .5);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    grid-column: 6 / 7;
+    grid-row: 1 / 5;
+    justify-content: center;
+    padding: 0 $PAGE_MARGINS;
+    text-align: left;
+  }
+
+  .profile .masthead-img {
+    background-position: bottom;
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    opacity: .5;
+  }
+
+  .profile .content {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template: auto / 3fr 1fr;
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    padding-left: $PAGE_MARGINS;
+  }
+
+  .profile .content-body {
+    grid-column: 1 / 2;
+  }
+
+  .profile .content-wrapper {
+    max-height: 40vh; // From the grid-template of article.profile
+    overflow: auto;
+    padding: 15px;
+  }
+
+  .profile .content-extra {
+    display: grid;
+    grid-template: auto / 1fr;
+  }
+
+  .profile .profile-photo {
+    background-position: center;
+    background-size: cover;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: $grey;
+  }
 }
