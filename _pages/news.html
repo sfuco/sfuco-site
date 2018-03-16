@@ -8,8 +8,11 @@ permalink: /news/
 ---
 
 <section class="grid-container" id="news">
-  <header>
-    <h1>News _ </h1>
+  <header class="masthead">
+    <div class="masthead-img"></div>
+    <div class="masthead-txt">
+      <h1>News</h1>
+    </div>
   </header>
   <div class="grid-container content-wrapper">
     {% assign news = site.posts | where: "category", "news" %}
