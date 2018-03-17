@@ -12,7 +12,6 @@
 #about header {
   background-color: black;
   grid-template-columns: 1fr 1fr;
-  margin-top: $NAVBAR_HEIGHT;
 }
 
 #about header .background-img {
@@ -183,6 +182,12 @@
 }
 
 @media (min-width: $LARGE_WIDTH) {
+  #about-execs .content-wrapper {
+    grid-template-columns: repeat(3, 300px);
+  }
+}
+
+@media (min-width: $XL_WIDTH) {
   #about-execs .content-wrapper {
     grid-template-columns: repeat(4, 300px);
   }
