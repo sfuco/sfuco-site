@@ -1,4 +1,4 @@
-<footer class="mobile">
+<footer>
   <div class="tabs">
     <div class="logo-wrapper">
       <a href="{{site.baseurl}}/"><div class="logo"></div></a>
@@ -7,62 +7,77 @@
     <button class="tab"><div>Media</div></button>
     <button class="tab"><div>Social</div></button>
   </div>
-  <div class="pages-container">
-    <nav class="mobile-pages">
-      <h2>Sections</h2>
+  <div class="nav-wrapper">
+    <div class="nav-container">
+      <h2>Pages</h2>
+      <nav class="pages">
         <ul>
+          <li><a href="{{site.baseurl}}/">home</a></li>
           {% assign sections = site.pages | where: "category", "page" %}
           {% assign sorted = sections | sort: 'order' %}
           {% for section in sorted %}
             <li><a href="{{section.permalink}}">{{section.name}}</a></li>
           {% endfor %}
-      </ul>
-    </nav>
-  </div>
-  <div class="media-container">
-    <nav class="mobile-media">
-      <h2>Other Pages</h2>
-      <ul>
-        {% assign sections = site.pages | where: "category", "archive" %}
-        {% assign sorted = sections | sort: 'order' %}
-        {% for section in sorted %}
-          <li><a href="{{section.permalink}}">{{section.name}}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </div>
-  <div class="social-container">
-    <nav class="mobile-social">
+        </ul>
+      </nav>
+      <button class="arrow">
+        <div class="arrow-container">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
+    <div class="nav-container">
+      <h2>Media</h2>
+      <nav class="media">
+        <ul>
+          {% assign sections = site.pages | where: "category", "archive" %}
+          {% assign sorted = sections | sort: 'order' %}
+          {% for section in sorted %}
+            <li><a href="{{section.permalink}}">{{section.name}}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <button class="arrow">
+        <div class="arrow-container">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
+    <div class="nav-container">
       <h2>Social</h2>
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/sfuorchestra/">
-            <div class="img-overlay-container">
-              <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/fb_col.png" />
-              <img src="{{site.baseurl}}/img/icons/social/fb_white.png" />
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/sfuorchestra">
-            <div class="img-overlay-container">
-              <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/tw_col.png"/>
-              <img src="{{site.baseurl}}/img/icons/social/tw_white.png" alt="envelope" />
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/channel/UCtXPR57Dp0Uy1G1nAajO0HQ">
-            <div class="img-overlay-container">
-              <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/yt_col.png"/>
-              <img src="{{site.baseurl}}/img/icons/social/yt_white.png" alt="envelope" />
-            </div>
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="social">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/sfuorchestra/">
+              <div class="img-overlay-container">
+                <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/fb_col.png" />
+                <img src="{{site.baseurl}}/img/icons/social/fb_white.png" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/sfuorchestra">
+              <div class="img-overlay-container">
+                <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/tw_col.png"/>
+                <img src="{{site.baseurl}}/img/icons/social/tw_white.png" alt="envelope" />
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/channel/UCtXPR57Dp0Uy1G1nAajO0HQ">
+              <div class="img-overlay-container">
+                <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/yt_col.png"/>
+                <img src="{{site.baseurl}}/img/icons/social/yt_white.png" alt="envelope" />
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="arrow">
+        <div class="arrow-container">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
   </div>
-</footer>
-<footer class="desktop">
-
 </footer>

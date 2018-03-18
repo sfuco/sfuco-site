@@ -1,58 +1,147 @@
 @import 'global_variables';
 
-footer img {
-  display: none;
-}
-
-footer.mobile {
-  background-color: rgba($grey, 1);
+footer {
+  background-color: rgba($grey2, .95);
   bottom: 0;
   height: $NAVBAR_HEIGHT;
   left: 0;
   overflow: hidden;
   position: fixed;
-  width: 100%;
-}
-
-footer .tabs {
-  display: grid;
-  grid-template: 1fr / repeat(4, 1fr);
-  height: 100%;
+  width: 100vw;
 }
 
 footer .logo-wrapper {
   display: flex;
   justify-content: center;
 }
-footer .logo{
+
+footer .logo {
   background-image: url('../img/logo.png');
   background-size: cover;
+  background-position: center;
   height: $NAVBAR_HEIGHT;
   opacity: .8;
   width: $NAVBAR_HEIGHT;
 }
 
-footer button {
-  background-color: inherit;
-  border: none;
+footer .tabs {
+  display: grid;
+  height: 100%;
+  grid-template: 1fr / repeat(4, 1fr);
+  position: relative;
 }
 
-footer button > div {
+button.tab {
   background-color: inherit;
-  border-left: 1px solid rgba(white, .1);
-  color: rgba(white, .8);
+  border: none;
+  cursor: pointer;
+}
+
+button.tab > div {
+  color: rgba(white, .5);
   display: flex;
   flex-direction: column;
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  height: 75%;
-  letter-spacing: 5px;
+  font-size: 12px;
+  height: 100%;
   justify-content: center;
+  text-align: center;
   text-transform: uppercase;
+}
+
+footer img {
+  display: none;
+}
+
+footer .nav-container:nth-child(1){
+  background-color: $grey;
+  display: grid;
+  grid-template: 4rem auto 25px / auto;
+  height: calc(100vh - #{$NAVBAR_HEIGHT});
+  left: 0;
+  padding: $PAGE_MARGINS;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: -1;
+}
+
+footer .nav-container > h2 {
+  color: $light-grey;
+  display: block;
+  height: 100%;
+  font-size: 3.5rem;
+  font-weight: 300;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  letter-spacing: 20px;
+  margin-bottom: 15vh;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+footer .nav-container > nav {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  justify-content: center;
+  min-height: 100%;
+  overflow: scroll;
+}
+
+footer .nav-container .pages ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer .nav-container .pages li {
+  margin-bottom: 15px;
+  padding-right: 15px;
+  text-align: right;
+}
+
+footer .nav-container a {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+footer button.arrow {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
   width: 100%;
 }
 
+footer .nav-container .arrow-container {
+  background-color: rgba($grey2, .5);
+  display: flex;
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  height: 40px;
+  justify-content: center;
+  justify-self: center;
+  width: 100%;
+}
 
-.sections-container, .media-container, .social-container {
-  display: none;
+footer .nav-container div.arrow {
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgba(white, 1);
+  width: 0;
+  height: 0;
+  margin-top: 7.5px;
+}
+
+
+
+@media (min-width: $SMALL_WIDTH) {
+  button.tab > div {
+    letter-spacing: 5px;
+  }
+}
+
+@media (min-width: $MED_WIDTH) {
+
 }
