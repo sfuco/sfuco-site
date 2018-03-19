@@ -51,5 +51,6 @@ $(document).ready(function() {
 
   $('footer button.arrow').on('click', function() {
     $('footer .nav-container').removeClass('down');
+    $('footer label').removeClass('active');
   });
 });
