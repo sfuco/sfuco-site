@@ -1,4 +1,4 @@
-<footer>
+<footer class="mobile">
   <div class="tabs">
     <div class="logo-wrapper">
       <a href="{{site.baseurl}}/"><div class="logo"></div></a>
@@ -59,5 +59,67 @@
         </a></li>
       </ul>
     </nav>
+  </div>
+</footer>
+
+<footer class="desktop">
+  <nav>
+    <h2>Pages</h2>
+    <ul>
+      {% assign sections = site.pages | where: "category", "page" %}
+      {% assign sorted = sections | sort: 'order' %}
+      {% for section in sorted %}
+        <li><a href="{{section.permalink}}">{{section.name}}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <nav>
+    <h2>Media</h2>
+    <ul>
+      {% assign sections = site.pages | where: "category", "archive" %}
+      {% assign sorted = sections | sort: 'order' %}
+      {% for section in sorted %}
+        <li><a href="{{section.permalink}}">{{section.name}}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <nav>
+    <h2>Social</h2>
+    <ul>
+      <li>
+        <a href="https://www.facebook.com/sfuorchestra/">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/fb_col.png" />
+            <img src="{{site.baseurl}}/img/icons/social/fb_white.png" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://twitter.com/sfuorchestra">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/tw_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/tw_white.png" alt="envelope" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.youtube.com/channel/UCtXPR57Dp0Uy1G1nAajO0HQ">
+          <div class="img-overlay-container">
+            <img class="img-overlay" src="{{site.baseurl}}/img/icons/social/yt_col.png"/>
+            <img src="{{site.baseurl}}/img/icons/social/yt_white.png" alt="envelope" />
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="grid-container">
+    <img src="{{site.baseurl}}/img/logo.png" alt="logo" />
+    <p>
+      <span>Simon Fraser University <br /> Concert Orchestra</span>
+      <br />
+      SFU Burnaby
+      <br />
+      sfuco.ca &copy 2018
+    </p>
   </div>
 </footer>

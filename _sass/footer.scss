@@ -1,7 +1,12 @@
 @import 'global_variables';
 
-footer {
-  background-color: blue;
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer.mobile {
+  background-color: $grey;
   font-family: 'Montserrat', sans-serif;
   position: fixed;
   bottom: 0;
@@ -10,7 +15,7 @@ footer {
   width: 100vw;
 }
 
-footer .logo {
+footer.mobile .logo {
   background-image: url('../img/logo.png');
   background-position: center;
   background-size: cover;
@@ -80,7 +85,7 @@ footer .nav-container nav {
   grid-template: auto / auto;
 }
 
-footer nav h2 {
+footer.mobile nav h2 {
   color: white;
   font-size: 4rem;
   font-weight: 300;
@@ -88,20 +93,25 @@ footer nav h2 {
   letter-spacing: 10px;
 }
 
-footer nav ul {
+footer.mobile nav ul {
   grid-row: 2 / 3;
   list-style-type: none;
   padding: 0;
 }
 
-footer nav li {
+footer.mobile nav li {
   font-size: 1.5rem;
   letter-spacing: 5px;
   margin: $PAGE_MARGINS;
 }
 
+#social ul {
+  display: flex;
+}
+
 footer img {
-  display: none;
+  height: 50px;
+  width: 50px;
 }
 
 footer button.arrow {
@@ -125,8 +135,85 @@ footer div.arrow {
   border-bottom: 25px solid $light-grey;
 }
 
+footer.desktop {
+  display: none;
+}
+
 @media (min-width: $MIN_WIDTH) {
   footer button.arrow {
     justify-content: flex-end;
+  }
+}
+
+@media (min-width: $LARGE_WIDTH) {
+  footer.mobile {
+    display: none;
+  }
+
+  footer.desktop {
+    background-color: $grey;
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    padding: 5%;
+    padding-top: 15%;
+    min-height: 10vh;
+  }
+
+  footer.desktop h2 {
+    color: rgba(white, .25);
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+
+  footer.desktop h2, footer.desktop a {
+    text-transform: uppercase;
+  }
+
+  footer.desktop nav:nth-child(1) {
+    grid-column: 1 / 2;
+  }
+
+  footer.desktop nav:nth-child(2) {
+    grid-column: 2 / 3;
+  }
+
+  footer.desktop nav:nth-child(3) {
+    grid-column: 3 / 4;
+  }
+
+  footer.desktop nav:nth-child(4) {
+    grid-column: 4 / 5;
+  }
+
+  footer.desktop img {
+    width: 30px;
+    height: 30px;
+  }
+
+  footer.desktop nav:nth-child(3) ul {
+    display: flex;
+  }
+
+  footer.desktop li {
+    margin-right: 10px;
+    font-size: 12px;
+  }
+
+  footer.desktop > div {
+    grid-template: auto / 75px auto;
+  }
+
+  footer.desktop > div > img {
+    width: 75px;
+    height: 75px;
+    grid-column: 1 / 2;
+  }
+
+  footer.desktop > div > p {
+    color: rgba(white, .5);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    grid-column: 2 / 3;
   }
 }
