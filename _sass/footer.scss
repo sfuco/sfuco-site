@@ -35,21 +35,21 @@ footer label {
   margin: 0;
   padding-top: 15px;
   text-align: center;
-  color: #bbb;
+  color: rgba(white, .5);
 }
 
 label:hover {
-  color: #888;
+  color: white;
   cursor: pointer;
 }
 
-input:checked + label {
-  color: #555;
-  border-top: 2px solid orange;
+label.active {
+  color: white;
+  border-top: 1px solid white;
 }
 
 footer .nav-container {
-  display: block;
+  display: grid;
   background-color: $grey2;
   position: fixed;
   top: 0;
@@ -58,6 +58,8 @@ footer .nav-container {
   height: calc(100vh - #{$NAVBAR_HEIGHT});
   transition: transform .5s;
   transform: translateY(-100vh);
+  grid-template: #{$NAVBAR_HEIGHT} auto / auto;
+  grid-row-gap: 30px;
 }
 
 .nav-container.down {
@@ -66,19 +68,28 @@ footer .nav-container {
 
 footer .nav-container nav {
   display: none;
+  grid-column: 1 / 2;
+  grid-row:  2 / 3;
   margin: $PAGE_MARGINS;
-  text-align: right;
 }
 
 .nav-container nav.active {
   display: grid;
+  grid-template: auto / auto;
 }
 
 footer nav h2 {
   color: white;
   font-size: 4rem;
   font-weight: 300;
+  grid-row: 1 / 2;
   letter-spacing: 10px;
+}
+
+footer nav ul {
+  grid-row: 2 / 3;
+  list-style-type: none;
+  padding: 0;
 }
 
 footer nav li {
@@ -91,8 +102,29 @@ footer img {
   display: none;
 }
 
-@media (min-width: $MED_WIDTH) {
-  footer .tabs {
-    display: none;
+footer button.arrow {
+  border: none;
+  border-bottom: 1px solid rgba(white, .1);
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  width: 100%;
+  padding-right: $PAGE_MARGINS;
+}
+
+footer div.arrow {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid $light-grey;
+}
+
+@media (min-width: $MIN_WIDTH) {
+  footer button.arrow {
+    justify-content: flex-end;
   }
 }

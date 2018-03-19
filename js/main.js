@@ -44,7 +44,12 @@ $(document).ready(function() {
   });
 
   $('footer input').on('click', function() {
+    $('footer label').removeClass('active');
+    $(this).next().addClass('active');
     loadNav(this.id);
   });
 
+  $('footer button.arrow').on('click', function() {
+    $('footer .nav-container').removeClass('down');
+  });
 });
