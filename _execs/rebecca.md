@@ -3,7 +3,7 @@ title: rebecca griesser
 firstName: rebecca
 position: social
 image: rebecca.jpg
-status: active
+status: inactive
 order: 5
 layout: profile
 ---

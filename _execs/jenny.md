@@ -1,8 +1,8 @@
 ---
-title: jenny seungwon jeon
+title: jenny jeon
 firstName: jenny
 position: treasurer
-image:
+image: 7.jpg
 status: active
 order: 5
 layout: profile
