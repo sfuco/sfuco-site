@@ -1,147 +1,98 @@
 @import 'global_variables';
 
 footer {
-  background-color: rgba($grey2, .95);
-  bottom: 0;
-  height: $NAVBAR_HEIGHT;
-  left: 0;
-  overflow: hidden;
+  background-color: blue;
+  font-family: 'Montserrat', sans-serif;
   position: fixed;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
   width: 100vw;
-}
-
-footer .logo-wrapper {
-  display: flex;
-  justify-content: center;
 }
 
 footer .logo {
   background-image: url('../img/logo.png');
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   height: $NAVBAR_HEIGHT;
-  opacity: .8;
+  margin-left: $PAGE_MARGINS;
   width: $NAVBAR_HEIGHT;
 }
 
 footer .tabs {
+  background-color: $grey;
   display: grid;
-  height: 100%;
-  grid-template: 1fr / repeat(4, 1fr);
-  position: relative;
+  grid-template: auto / repeat(4, 1fr);
 }
 
-button.tab {
-  background-color: inherit;
-  border: none;
+footer input {
+  display: none;
+}
+
+footer label {
+  display: inline-block;
+  font-size: 12px;
+  margin: 0;
+  padding-top: 15px;
+  text-align: center;
+  color: #bbb;
+}
+
+label:hover {
+  color: #888;
   cursor: pointer;
 }
 
-button.tab > div {
-  color: rgba(white, .5);
-  display: flex;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  height: 100%;
-  justify-content: center;
-  text-align: center;
-  text-transform: uppercase;
+input:checked + label {
+  color: #555;
+  border-top: 2px solid orange;
+}
+
+footer .nav-container {
+  display: block;
+  background-color: $grey2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - #{$NAVBAR_HEIGHT});
+  transition: transform .5s;
+  transform: translateY(-100vh);
+}
+
+.nav-container.down {
+  transform: translateY(0);
+}
+
+footer .nav-container nav {
+  display: none;
+  margin: $PAGE_MARGINS;
+  text-align: right;
+}
+
+.nav-container nav.active {
+  display: grid;
+}
+
+footer nav h2 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+
+footer nav li {
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  margin: $PAGE_MARGINS;
 }
 
 footer img {
   display: none;
 }
 
-footer .nav-container:nth-child(1){
-  background-color: $grey;
-  display: grid;
-  grid-template: 4rem auto 25px / auto;
-  height: calc(100vh - #{$NAVBAR_HEIGHT});
-  left: 0;
-  padding: $PAGE_MARGINS;
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  z-index: -1;
-}
-
-footer .nav-container > h2 {
-  color: $light-grey;
-  display: block;
-  height: 100%;
-  font-size: 3.5rem;
-  font-weight: 300;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-  letter-spacing: 20px;
-  margin-bottom: 15vh;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-footer .nav-container > nav {
-  display: flex;
-  flex-direction: column;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-  justify-content: center;
-  min-height: 100%;
-  overflow: scroll;
-}
-
-footer .nav-container .pages ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-footer .nav-container .pages li {
-  margin-bottom: 15px;
-  padding-right: 15px;
-  text-align: right;
-}
-
-footer .nav-container a {
-  font-size: 2rem;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-}
-
-footer button.arrow {
-  border: none;
-  background-color: inherit;
-  cursor: pointer;
-  justify-self: flex-end;
-  width: 75%;
-}
-
-footer .nav-container .arrow-container {
-  background-color: rgba($grey2, .5);
-  display: flex;
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
-  height: 40px;
-  justify-content: center;
-  justify-self: center;
-}
-
-footer .nav-container div.arrow {
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 15px solid rgba(white, 1);
-  width: 0;
-  height: 0;
-  margin-top: 7.5px;
-}
-
-
-
-@media (min-width: $SMALL_WIDTH) {
-  button.tab > div {
-    letter-spacing: 5px;
-  }
-}
-
 @media (min-width: $MED_WIDTH) {
-
+  footer .tabs {
+    display: none;
+  }
 }
