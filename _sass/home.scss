@@ -3,18 +3,13 @@
 @import 'global_variables';
 
 #home {
-  grid-template: auto / auto;
-  grid-template-rows: 65vh auto;
+  grid-template-rows: minmax(20vh, auto) auto;
 }
 
 #home > header {
-  opacity: 0.88;
+  opacity: .88;
   padding-left: $PAGE_MARGINS;
-  background-color: $grey;
-  background-image: url('../img/logo.png');
-  background-position: center;
-  background-size: auto;
-  background-attachment: fixed;
+  background-color: $grey2;
 }
 
 #home > header > .text {
@@ -25,14 +20,20 @@
 }
 
 #home > header h1 {
-  display: none; // Off on smallest screens
+  display: block;
+  font-size: 1rem;
+  color: rgba(white, .5);
 }
 
 @media (min-width: $MED_WIDTH) {
+  #home {
+    grid-template-rows: minmax(80vh, auto) auto;
+  }
+
   #home > header {
     background-image: url('../img/bg.jpg');
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
   }
 
   #home > header .text {
