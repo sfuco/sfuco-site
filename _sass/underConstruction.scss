@@ -1,17 +1,24 @@
-@import 'colors';
+@import 'global_variables';
 
 #under-construction {
-  padding-top: 25vh;
+  display: grid;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  min-height: 80vh;
+}
 
-  span {
-    font-family: 'EB Garamond', sans-serif;
-    font-size: 20px;
-  }
+#under-construction > div {
+  display: grid;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  grid-template: auto / auto;
+  justify-content: center;
+  align-items: center;
+}
 
-  .row > div {
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
+#under-construction > div img {
+  grid-row: 1 / 2;
+}
+
+#under-construction > div span {
+  grid-row: 2 / 3;
 }
