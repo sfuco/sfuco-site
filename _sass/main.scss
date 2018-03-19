@@ -8,12 +8,13 @@ body {
 }
 
 body {
-  grid-template: auto / auto;
+  grid-template: auto minmax(20vh, auto) / auto;
 }
 
 body > .content-container {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  margin-bottom: $NAVBAR_HEIGHT; // Mobile nav is at the bottom
   z-index: 0;
 }
 
@@ -39,5 +40,11 @@ p {
 
 footer {
   grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+@media (min-width: $LARGE_WIDTH) {
+  body > .content-container {
+    margin-bottom: 0; // Mobile nav is at the bottom
+  }
 }
