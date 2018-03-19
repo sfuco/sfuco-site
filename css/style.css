@@ -445,8 +445,7 @@ footer.desktop {
     background-color: #1a1a1a;
     display: grid;
     grid-template: auto/repeat(4, 1fr);
-    padding: 5%;
-    padding-top: 15%;
+    padding: 25px;
     min-height: 10vh; }
   footer.desktop h2 {
     color: rgba(255, 255, 255, 0.25);
